@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--region PALETTE-->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bluishGreen">#008577</color>
+    <color name="bluishGreenDark">#00574B</color>
+    <color name="fuchsia">#D81B60</color>
+    <color name="lightRed">#FD8888</color>
+    <color name="lightGreen">#9FF4AA</color>
+    <color name="gray">#C0CFCF</color>
+    <color name="lightGray">#BBCFCF</color>
+    <color name="darkGray">#8BA3BCBC</color>
+    <color name="black">#000000</color>
+    <color name="darkRed">#AF2626</color>
+    <!--endregion-->
+
+    <!-- region COMMON -->
+    <color name="colorPrimary">@color/bluishGreen</color>
+    <color name="colorPrimaryDark">@color/bluishGreenDark</color>
+    <color name="colorAccent">@color/fuchsia</color>
+    <color name="colorSecondary">@color/teal_200</color>
+    <color name="colorSecondaryVariant">@color/teal_700</color>
+    <color name="colorOnSecondary">@color/black</color>
+    <color name="colorWindowBackground">@color/lightGray</color>
+    <!--endregion-->
 </resources>

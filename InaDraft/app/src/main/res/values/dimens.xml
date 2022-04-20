@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--region modulo common-->
+    <dimen name="common__margin_default">8dp</dimen>
+    <dimen name="common__img__height">64dp</dimen>
+    <dimen name="common__img__width">64dp</dimen>
+    <dimen name="common__cardview__elevation">4dp</dimen>
+    <dimen name="common__cardview__corner_radius">12dp</dimen>
+    <!--endregion-->
+
+    <!--region modulo common sp-->
+    <dimen name="common__font__h1">96sp</dimen>
+    <dimen name="common__font__h2">60sp</dimen>
+    <dimen name="common__font__h3">48sp</dimen>
+    <dimen name="common__font__h4">34sp</dimen>
+    <dimen name="common__font__h5">24sp</dimen>
+    <dimen name="common__font__h6">20sp</dimen>
+    <dimen name="common__font__subtitle1">16sp</dimen>
+    <dimen name="common__font__subtitle2">14sp</dimen>
+    <dimen name="common__font__body1">16sp</dimen>
+    <dimen name="common__font__body2">14sp</dimen>
+    <dimen name="common__font__button">14sp</dimen>
+    <dimen name="common__font__caption">12sp</dimen>
+    <dimen name="common__font__overline">10sp</dimen>
+    <!--endregion-->
+
+</resources>

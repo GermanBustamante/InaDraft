@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.InaDraft">
         <activity
-            android:name=".MainActivity"
+            android:name="es.gdebustamante.inadraft.ui.view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
