@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InaDraft_BL\InaDraft_BL.csproj" />
+    <ProjectReference Include="..\InaDraft_Entities\InaDraft_Entities.csproj" />
+  </ItemGroup>
+
+</Project>

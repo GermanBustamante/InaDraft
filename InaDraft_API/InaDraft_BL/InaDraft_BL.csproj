@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InaDraft_DAL\InaDraft_DAL.csproj" />
+    <ProjectReference Include="..\InaDraft_Entities\InaDraft_Entities.csproj" />
+  </ItemGroup>
+
+</Project>
