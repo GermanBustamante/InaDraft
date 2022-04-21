@@ -66,14 +66,14 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     //Navigation component
     // Kotlin
-    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
-    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.2")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.2")
     // Feature module Support
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.1")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:2.4.2")
 
     // Testing Navigation
-    androidTestImplementation("androidx.navigation:navigation-testing:2.4.1")
+    androidTestImplementation("androidx.navigation:navigation-testing:2.4.2")
 
     // Jetpack Compose Integration
-    implementation("androidx.navigation:navigation-compose:2.4.1")
+    implementation("androidx.navigation:navigation-compose:2.4.2")
 }
