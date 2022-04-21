@@ -17,7 +17,7 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
         super.onDestroyView()
     }
 
-    protected fun getActivityToolbar(): Toolbar? {
-        return (activity as? BaseActivity)?.getToolbarBase()
-    }
+//    protected fun getActivityToolbar(): Toolbar? {
+//        return (activity as? BaseActivity)?.getToolbarBase()
+//    }
 }

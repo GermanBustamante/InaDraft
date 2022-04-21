@@ -24,4 +24,12 @@
     <dimen name="common__font__overline">10sp</dimen>
     <!--endregion-->
 
+    <!--region row_team-->
+    <dimen name="row_team__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="row_team__cardview__elevation">@dimen/common__cardview__elevation</dimen>
+    <dimen name="row_team__cardview__corner_radius">@dimen/common__cardview__corner_radius</dimen>
+    <dimen name="row_team__img__height">100dp</dimen>
+    <dimen name="row_team__img__width">100dp</dimen>
+    <!--endregion-->
+
 </resources>

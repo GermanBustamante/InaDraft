@@ -2,6 +2,7 @@
 <resources>
     <!--region common-->
     <integer name="common__list__span_count">2</integer>
+    <integer name="fragment_info__list__span_count">2</integer>
     <!--endregion-->
 
 </resources>
