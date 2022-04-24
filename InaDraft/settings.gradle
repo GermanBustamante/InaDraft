@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "InaDraft"
 include ':app'
+include ':data'
+include ':usescases'
+include ':domain'
