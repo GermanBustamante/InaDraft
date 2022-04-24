@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.RowTeamBinding
-import es.gdebustamante.inadraft.domain.entities.TeamBO
+import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.framework.ui.view.bindingExtension.bind
 
 class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAdapter<TeamBO, TeamAdapter.TeamViewHolder>(TeamDiffCallback){

@@ -11,11 +11,6 @@ import es.gdebustamante.inadraft.framework.ui.view.base.BaseFragment
 @AndroidEntryPoint
 class PlayerListFragment : BaseFragment<FragmentPlayerListBinding>() {
 
-    companion object {
-        @JvmStatic
-        fun newInstance() =PlayerListFragment()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
