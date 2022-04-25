@@ -18,14 +18,14 @@ class InaDraftVM @Inject constructor(private val loadTeamListUseCase: LoadTeamsU
     val progressVisible: MutableLiveData<Boolean> = MutableLiveData()
 
     fun onTeamClicked(teamSelected: TeamBO) {
-        // TODO CAMBIAR FRAGMENT AL DE JUGADORES
+
     }
 
     fun loadTeamList() {
-        viewModelScope.launch(Dispatchers.Main) {
-            progressVisible.value = true
+        viewModelScope.launch(Dispatchers.IO) {
+            progressVisible.postValue(true)
             teamList.postValue(loadTeamListUseCase.invoke()) // TODO VER SI PUEDO MEJORAR ESTO
-            progressVisible.value = false
+            progressVisible.postValue(false)
         }
     }
 }

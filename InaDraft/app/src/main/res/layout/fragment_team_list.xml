@@ -7,8 +7,8 @@
     tools:context=".framework.ui.view.fragment.TeamListFragment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teamListFragmentSlideListOfTeams"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:focusable="true"
         android:longClickable="true"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"

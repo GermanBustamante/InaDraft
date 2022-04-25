@@ -9,7 +9,7 @@ data class PlayerBO(
     val control: Int,
     val guard: Int,
     val speed: Int,
-    val stamina: Int,
+    val stamina: Int, // Este valor como no voy a simular partidas no lo necesito realmente, pero el juego lo tiene, lo dejo para futuras actualizaciones
     val guts: Int,
     val photo: String,
     val idTeam: Int
