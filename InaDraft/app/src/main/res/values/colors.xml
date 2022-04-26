@@ -17,6 +17,7 @@
     <color name="darkGray">#8BA3BCBC</color>
     <color name="black">#000000</color>
     <color name="darkRed">#AF2626</color>
+    <color name="yellowOrange">#d9b346</color>
     <!--endregion-->
 
     <!-- region COMMON -->
@@ -27,5 +28,27 @@
     <color name="colorSecondaryVariant">@color/teal_700</color>
     <color name="colorOnSecondary">@color/black</color>
     <color name="colorWindowBackground">@color/lightGray</color>
+    <!--endregion-->
+
+    <!--region common_player_card-->
+    <color name="commonPlayerCardText">@color/yellowOrange</color>
+    <!--endregion-->
+
+    <!--region player_details_card-->
+    <color name="playerDetailsLabelPlayerMedia">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerPosition">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerName">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerKickPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerKickDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerBodyPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerBodyDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerControlPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerControlDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerGuardPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerGuardDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerSpeedPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerSpeedDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerStaminaPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerStaminaDescription">@color/commonPlayerCardText</color>
     <!--endregion-->
 </resources>

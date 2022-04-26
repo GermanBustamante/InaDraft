@@ -14,7 +14,7 @@
             android:id="@+id/foregroundImgView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/player_card_medium"
+            android:src="@drawable/player_card_details"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,150 +24,280 @@
             android:id="@+id/mediaPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constrainedWidth="true"
-            app:layout_constraintBottom_toTopOf="@+id/positionPlayer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMediaWithPosition"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalPhotoWithInfo"
+            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="1"
             tools:text="94" />
 
         <TextView
             android:id="@+id/positionPlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toTopOf="@+id/teamPhotoPlayer"
-            app:layout_constraintEnd_toEndOf="@+id/mediaPlayer"
-            app:layout_constraintStart_toStartOf="@+id/mediaPlayer"
-            app:layout_constraintTop_toBottomOf="@+id/mediaPlayer"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/guidelinePositionWithShield"
+            app:layout_constraintEnd_toEndOf="@id/mediaPlayer"
+            app:layout_constraintStart_toStartOf="@id/mediaPlayer"
+            app:layout_constraintTop_toBottomOf="@id/guidelineMediaWithPosition"
             tools:text="GK" />
 
         <ImageView
             android:id="@+id/teamPhotoPlayer"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_marginTop="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/foregroundImgView"
-            app:layout_constraintEnd_toEndOf="@+id/positionPlayer"
-            app:layout_constraintStart_toStartOf="@+id/positionPlayer"
-            app:layout_constraintTop_toBottomOf="@+id/positionPlayer"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontalMedium"
+            app:layout_constraintEnd_toEndOf="@id/mediaPlayer"
+            app:layout_constraintStart_toStartOf="@id/mediaPlayer"
+            app:layout_constraintTop_toTopOf="@id/guidelinePositionWithShield"
             tools:src="@drawable/raimon_prueba" />
 
         <ImageView
             android:id="@+id/playerPhoto"
             android:layout_width="48dp"
             android:layout_height="54dp"
-            app:layout_constraintBottom_toBottomOf="@id/teamPhotoPlayer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.411"
-            app:layout_constraintStart_toStartOf="@id/mediaPlayer"
-            app:layout_constraintTop_toTopOf="@id/mediaPlayer"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontalMedium"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndCard"
+            app:layout_constraintStart_toStartOf="@id/guidelineVerticalPhotoWithInfo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
             tools:src="@drawable/mark_prueba" />
 
         <TextView
             android:id="@+id/playerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineNameWithStats"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/playerPhoto"
-            app:layout_constraintVertical_bias="0"
+            app:layout_constraintTop_toTopOf="@id/guidelineHorizontalMedium"
             tools:text="MARK" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/divider"
-            android:layout_width="92dp"
+        <TextView
+            android:id="@+id/kickPuntuation"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
+            app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/playerName"
+            app:layout_constraintTop_toTopOf="@id/guidelineNameWithStats"
+            app:layout_constraintVertical_bias="0"
+            tools:text="40" />
+
+        <TextView
+            android:id="@+id/kickDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KCK"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/kickPuntuation"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
+            app:layout_constraintStart_toEndOf="@+id/kickPuntuation"
+            app:layout_constraintTop_toTopOf="@id/kickPuntuation"
             app:layout_constraintVertical_bias="0" />
 
-        <LinearLayout
-            android:id="@+id/leftLinearLayout"
+        <TextView
+            android:id="@+id/bodyPunt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="vertical"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/verticalDivider"
+            app:layout_constraintEnd_toEndOf="@id/kickPuntuation"
+            app:layout_constraintStart_toStartOf="@id/kickPuntuation"
+            app:layout_constraintTop_toBottomOf="@id/kickPuntuation"
+            app:layout_constraintVertical_bias="0"
+            tools:text="89" />
+
+        <TextView
+            android:id="@+id/bodyDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BDY"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/kickDesc"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/kickDesc"
+            app:layout_constraintTop_toBottomOf="@id/kickDesc"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/GuardPunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/kickPuntuation"
+            app:layout_constraintStart_toStartOf="@id/kickPuntuation"
+            app:layout_constraintTop_toBottomOf="@id/bodyPunt"
+            app:layout_constraintVertical_bias="0"
+            tools:text="85" />
+
+        <TextView
+            android:id="@+id/GuardDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GRD"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/kickDesc"
+            app:layout_constraintStart_toStartOf="@+id/kickDesc"
+            app:layout_constraintTop_toBottomOf="@id/bodyDesc"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/speedPunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@id/guidelineVerticalMedium"
+            app:layout_constraintTop_toTopOf="@id/kickPuntuation"
+            app:layout_constraintVertical_bias="0"
+            tools:text="67" />
+
+        <TextView
+            android:id="@+id/speedDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="SPD"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/speedPunt"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEndCard"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toStartOf="@id/divider"
-            app:layout_constraintTop_toBottomOf="@id/divider"
-            app:layout_constraintVertical_bias="0">
+            app:layout_constraintStart_toEndOf="@+id/speedPunt"
+            app:layout_constraintTop_toTopOf="@id/speedPunt"
+            app:layout_constraintVertical_bias="0.0" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="40 KCK" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="89 BDY" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="89 CTR" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/rightLinearLayout"
+        <TextView
+            android:id="@+id/staminaPunt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="vertical"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/divider"
-            app:layout_constraintHorizontal_bias="1"
-            app:layout_constraintStart_toEndOf="@id/verticalDivider"
-            app:layout_constraintTop_toBottomOf="@id/divider"
-            app:layout_constraintVertical_bias="0">
+            app:layout_constraintEnd_toEndOf="@+id/speedPunt"
+            app:layout_constraintStart_toStartOf="@+id/speedPunt"
+            app:layout_constraintTop_toBottomOf="@+id/speedPunt"
+            app:layout_constraintVertical_bias="0"
+            tools:text="62" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="40 KCK" />
+        <TextView
+            android:id="@+id/staminaDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SPD"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/speedDesc"
+            app:layout_constraintStart_toStartOf="@+id/speedDesc"
+            app:layout_constraintTop_toBottomOf="@+id/speedDesc"
+            app:layout_constraintVertical_bias="0" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="89 BDY" />
+        <TextView
+            android:id="@+id/gutsPunt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/staminaPunt"
+            app:layout_constraintStart_toStartOf="@+id/staminaPunt"
+            app:layout_constraintTop_toBottomOf="@+id/staminaPunt"
+            app:layout_constraintVertical_bias="0"
+            tools:text="95" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="11sp"
-                tools:text="89 CTR" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/gutDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GUT"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/staminaDesc"
+            app:layout_constraintStart_toStartOf="@+id/staminaDesc"
+            app:layout_constraintTop_toBottomOf="@+id/staminaDesc"
+            app:layout_constraintVertical_bias="0" />
 
-        <com.google.android.material.divider.MaterialDivider
-            android:id="@+id/verticalDivider"
-            android:layout_width="1dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontalMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineNameWithStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.61" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="@id/divider"
-            app:layout_constraintStart_toStartOf="@id/divider"
-            app:layout_constraintTop_toBottomOf="@id/divider" />
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalPhotoWithInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMediaWithPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.31" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePositionWithShield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.397" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEndCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.83" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

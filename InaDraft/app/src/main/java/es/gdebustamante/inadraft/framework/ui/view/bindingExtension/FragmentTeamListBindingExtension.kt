@@ -1,8 +1,8 @@
 package es.gdebustamante.inadraft.framework.ui.view.bindingExtension
 
+
 import androidx.core.view.isVisible
 import androidx.lifecycle.findViewTreeLifecycleOwner
-import androidx.navigation.findNavController
 import es.gdebustamante.inadraft.databinding.FragmentTeamListBinding
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.framework.ui.adapter.TeamAdapter
