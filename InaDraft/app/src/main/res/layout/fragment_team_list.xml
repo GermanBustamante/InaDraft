@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".framework.ui.view.fragment.TeamListFragment">
+    tools:context=".ui.view.fragment.TeamListFragment">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/teamListFragmentSlideListOfTeams"
         android:layout_width="0dp"

@@ -4,8 +4,9 @@ plugins {
 }
 
 dependencies {
-    implementation project(':data')
     implementation project(':domain')
+    implementation project(path: ':data:repository')
+    implementation project(path: ':data:repository')
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7

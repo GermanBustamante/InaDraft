@@ -1,6 +1,12 @@
 <resources>
     <!--region common-->
     <string name="app_name">InaDraft</string>
+    <string name="common__card_kick_description">KCK</string>
+    <string name="common__card_body_description">BDY</string>
+    <string name="common__card_control_description">CTR</string>
+    <string name="common__card_guard_description">GRD</string>
+    <string name="common__card_speed_description">SPD</string>
+    <string name="common__card_guts_description">GUT</string>
     <!--endregion-->
 
     <!--region manifest-->
@@ -10,5 +16,14 @@
     <!--region menu_activity_main_btn_nav_view-->
     <string name="menu_activity_main_btn_nav_view__start_item">Inicio</string>
     <string name="menu_activity_main_btn_nav_view__info_item">Info</string>
+    <!--endregion-->
+
+    <!--region player_detail_card-->
+    <string name="player_detail_card__kick_description">@string/common__card_kick_description</string>
+    <string name="player_detail_card__body_description">@string/common__card_body_description</string>
+    <string name="player_detail_card__control_description">@string/common__card_control_description</string>
+    <string name="player_detail_card__guard_description">@string/common__card_guard_description</string>
+    <string name="player_detail_card__speed_description">@string/common__card_speed_description</string>
+    <string name="player_detail_card__guts_description">@string/common__card_guts_description</string>
     <!--endregion-->
 </resources>

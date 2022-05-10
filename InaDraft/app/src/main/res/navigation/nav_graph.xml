@@ -6,12 +6,12 @@
     app:startDestination="@id/homeFragment2">
     <fragment
         android:id="@+id/homeFragment2"
-        android:name="es.gdebustamante.inadraft.framework.ui.view.fragment.HomeFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/infoTeamFragment2"
-        android:name="es.gdebustamante.inadraft.framework.ui.view.fragment.TeamListFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamListFragment"
         android:label="fragment_info_team"
         tools:layout="@layout/fragment_team_list" />
 </navigation>

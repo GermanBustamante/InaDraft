@@ -22,6 +22,8 @@
     <dimen name="common__font__button">14sp</dimen>
     <dimen name="common__font__caption">12sp</dimen>
     <dimen name="common__font__overline">10sp</dimen>
+    <dimen name="common__font__label__player_puntuation">11sp</dimen>
+    <dimen name="common__font__label__player_description">11sp</dimen>
     <!--endregion-->
 
     <!--region row_team-->
@@ -30,6 +32,29 @@
     <dimen name="row_team__cardview__corner_radius">@dimen/common__cardview__corner_radius</dimen>
     <dimen name="row_team__img__height">100dp</dimen>
     <dimen name="row_team__img__width">100dp</dimen>
+    <!--endregion-->
+
+    <!--region player_detail_card-->
+    <dimen name="player_detail_card__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="player_detail_card__card_view__player_card__width">180dp</dimen>
+    <dimen name="player_detail_card__card_view__player_card__height">220dp</dimen>
+    <dimen name="player_detail_card__img__player_shield__width">20dp</dimen>
+    <dimen name="player_detail_card__img__player_shield__height">20dp</dimen>
+    <dimen name="player_detail_card__img__player_photo__height">54dp</dimen>
+    <dimen name="player_detail_card__font__label__player_name">12sp</dimen>
+    <dimen name="player_detail_card__font__label__player_media">20sp</dimen>
+    <dimen name="player_detail_card__font__label__player_kick_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_body_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_control_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_guard_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_speed_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_guts_punctuation">@dimen/common__font__label__player_puntuation</dimen>
+    <dimen name="player_detail_card__font__label__player_kick_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_body_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_control_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_guard_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_speed_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_guts_description">@dimen/common__font__label__player_description</dimen>
     <!--endregion-->
 
 </resources>

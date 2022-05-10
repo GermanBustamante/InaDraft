@@ -48,7 +48,7 @@
     <color name="playerDetailsLabelPlayerGuardDescription">@color/commonPlayerCardText</color>
     <color name="playerDetailsLabelPlayerSpeedPoint">@color/commonPlayerCardText</color>
     <color name="playerDetailsLabelPlayerSpeedDescription">@color/commonPlayerCardText</color>
-    <color name="playerDetailsLabelPlayerStaminaPoint">@color/commonPlayerCardText</color>
-    <color name="playerDetailsLabelPlayerStaminaDescription">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerGutsPoint">@color/commonPlayerCardText</color>
+    <color name="playerDetailsLabelPlayerGutsDescription">@color/commonPlayerCardText</color>
     <!--endregion-->
 </resources>
