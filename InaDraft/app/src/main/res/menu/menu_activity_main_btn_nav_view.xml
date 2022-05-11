@@ -5,7 +5,7 @@
         android:icon="@drawable/ic_home"
         android:title="@string/menu_activity_main_btn_nav_view__start_item"/>
     <item
-        android:id="@+id/infoTeamFragment2"
+        android:id="@+id/infoTeamFragment"
         android:icon="@drawable/ic_info"
         android:title="@string/menu_activity_main_btn_nav_view__info_item"/>
 </menu>

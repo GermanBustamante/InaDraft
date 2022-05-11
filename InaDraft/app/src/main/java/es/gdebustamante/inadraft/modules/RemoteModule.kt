@@ -4,9 +4,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import es.gdebustamante.inadraft.framework.data.datasources.TeamsRemoteDataSource
-import es.sdos.formacion.monumentosandaluces.datasource.TeamRemoteDataSource
-import es.gdebustamante.inadraft.prueba.api.TeamAPIService
+import es.gdebustamante.inadraft.PlayerRemoteDataSource
+import es.gdebustamante.inadraft.TeamRemoteDataSource
+import es.gdebustamante.inadraft.remote.api.APIService
+import es.gdebustamante.inadraft.remote.datasource.PlayerRemoteDataSourceImpl
+import es.gdebustamante.inadraft.remote.datasource.TeamRemoteDataSourceImpl
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
@@ -15,17 +17,19 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class RemoteModule {
     companion object {
-        private const val RETROFIT_PRODUCTS_API_BASE_URL = "https://inadraft.azurewebsites.net/api/"
+        private const val RETROFIT_PRODUCTS_API_BASE_URL = "http://130.61.60.150:3000/"
     }
 
-    @Provides// TODO si quiero dar otro dataSourceque hago
-    fun serverDataSourceProvider(teamApiService: TeamAPIService): TeamRemoteDataSource = TeamsRemoteDataSource(teamApiService)
+    @Provides
+    fun teamRemoteDataSourceProvider(apiService: APIService): TeamRemoteDataSource = TeamRemoteDataSourceImpl(apiService)
+
+    @Provides
+    fun playerRemoteDataSourceProvider(apiService: APIService): PlayerRemoteDataSource = PlayerRemoteDataSourceImpl(apiService)
 
     @Singleton
     @Provides
-    fun teamApiServiceProvider(retrofit: Retrofit): es.gdebustamante.inadraft.prueba.api.TeamAPIService {
-        return retrofit.create(es.gdebustamante.inadraft.prueba.api.TeamAPIService::class.java)
-    }
+    fun apiServiceProvider(retrofit: Retrofit): APIService =
+        retrofit.create(APIService::class.java)
 
     @Singleton
     @Provides

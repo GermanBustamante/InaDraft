@@ -10,8 +10,26 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/infoTeamFragment2"
-        android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamListFragment"
+        android:id="@+id/infoTeamFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragment"
         android:label="fragment_info_team"
-        tools:layout="@layout/fragment_team_list" />
+        tools:layout="@layout/fragment_team_info_list" >
+        <action
+            android:id="@+id/action_infoTeamFragment2_to_playerListFragment"
+            app:destination="@id/playerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerListFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.PlayerInfoListFragment"
+        android:label="fragment_player_list"
+        tools:layout="@layout/fragment_player_info_list" >
+        <argument
+            android:name="teamId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="urlShield"
+            app:argType="string"
+            android:defaultValue="a" />
+    </fragment>
 </navigation>

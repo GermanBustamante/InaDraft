@@ -10,13 +10,13 @@ java {
 }
 
 dependencies {
-    implementation project(path: ':domain')
-    implementation project(path: ':data:datasource')
-    implementation project(path: ':data:entity')
-
+    implementation project(':domain')
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
     //Moshi + Retrofit
     implementation "com.squareup.moshi:moshi:1.13.0"
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation project(path: ':data:entity')
+    implementation project(path: ':data:datasource')
     kapt "com.squareup.moshi:moshi-kotlin-codegen:1.13.0"
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
 }

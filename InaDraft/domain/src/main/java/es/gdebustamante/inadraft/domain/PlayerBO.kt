@@ -13,4 +13,6 @@ data class PlayerBO(
     val guts: Int,
     val photo: String,
     val idTeam: Int
-)
+) {
+    fun getMedia(): Int = kick + body + control + speed + guts / 6
+}
