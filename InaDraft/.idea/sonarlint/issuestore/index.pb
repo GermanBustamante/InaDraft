@@ -1,25 +1,7 @@
 
 A
 domain/.gitignore,f\0\f0beecb3fabf37dd9436f6a769abf826f97eba92
-?
-data/.gitignore,d\1\d1977b1bb1b3e249de790289a11d8f31156df269
-‚
-Rapp/src/main/java/es/gdebustamante/inadraft/framework/ui/view/base/BaseActivity.kt,d\f\df1a7878c5c0179e49a7c90f151e50b9903f0325
-‚
-Rapp/src/main/java/es/gdebustamante/inadraft/framework/ui/view/base/BaseFragment.kt,2\b\2b3d0aa41fb35dd17473b8dfb7b88d018ae76ff9
-™
-iapp/src/main/java/es/gdebustamante/inadraft/framework/ui/view/bindingExtension/RowTeamBindingExtension.kt,a\0\a0dbbd65b7b413e088ecb13b9a3de7a0332b9cea
 C
 domain/build.gradle,a\3\a3021bb5ba623a461b5fdb89ae51923a4945c354
 A
 data/build.gradle,7\2\72c2781d3d9ac8b82a3543f0fba5c796b2975232
->
-app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-v
-Fapp/src/main/java/es/gdebustamante/inadraft/framework/MyApplication.kt,a\9\a9e159bc7a8aa88b8fe0568341572310b5b5e6f5
-†
-Vapp/src/main/java/es/gdebustamante/inadraft/framework/ui/view/fragment/HomeFragment.kt,2\c\2c21c871990e4c79df894f260fe6c8fcb4e59c01
-Œ
-\app/src/main/java/es/gdebustamante/inadraft/framework/ui/view/fragment/PlayerListFragment.kt,b\0\b05f454d6ea9cc43694f89de2267df66fe1e0f95
-€
-Papp/src/main/java/es/gdebustamante/inadraft/framework/ui/viewmodel/InaDraftVM.kt,0\4\04ab35fcd65045d067bf7c036c5b0144923554dc

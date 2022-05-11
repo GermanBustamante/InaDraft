@@ -57,9 +57,6 @@ dependencies {
     implementation project(':usescases')
     implementation project(':domain')
     implementation project(path: ':data:repository')
-    implementation project(path: ':data:repository')
-    implementation project(path: ':data:repository')
-    implementation project(path: ':data:datasource')
     implementation project(path: ':data:datasource')
 
     //Coordinator layout
