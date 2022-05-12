@@ -13,6 +13,7 @@ namespace InaDraft_DAL.Lists
         #region constantes
         public const string QUERY_ALL_PLAYERS = "SELECT * FROM Players";
         public const string QUERY_PLAYER_BY_ID = "SELECT * FROM Players WHERE id = @id";
+        public const string QUERY_PLAYERS_BY_TEAMID = "SELECT * FROM Players WHERE idTeam = @id";
         #endregion
 
         #region metodos publicos
@@ -46,6 +47,25 @@ namespace InaDraft_DAL.Lists
             closeFlow();
             return oPlayer;
             #endregion
+        }
+
+
+        public List<clsPlayer> getPlayerListFromTeamDAL(int monumentId)
+        {
+            clsPlayer oPlayer;
+            List<clsPlayer> playerList = new List<clsPlayer>();
+            openConection();
+            MyReader = executeSelectCondition(QUERY_PLAYERS_BY_TEAMID, monumentId);
+            if (MyReader.HasRows)
+            {
+                while (MyReader.Read())
+                {
+                    oPlayer = rebuildPlayer();
+                    playerList.Add(oPlayer);
+                }
+            }
+            closeFlow();
+            return playerList;
         }
         #region metodos privados
         private clsPlayer rebuildPlayer()

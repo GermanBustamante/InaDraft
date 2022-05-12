@@ -19,5 +19,10 @@ namespace InaDraft_BL.Lists
         {
             return new clsPlayerListDAL().getPlayerDAL(id);
         }
+
+        public List<clsPlayer> getPlayerListFromTeamBL(int monumentId)
+        {
+            return new clsPlayerListDAL().getPlayerListFromTeamDAL(monumentId);
+        }
     }
 }

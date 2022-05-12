@@ -42,5 +42,21 @@ namespace InaDraft_API.Controllers
             }
             return oPlayer;
         }
+
+        // GET: api/<PlayersController>/team/5
+        [HttpGet("team/{id}")]
+        public IEnumerable<clsPlayer> GetPlayerFromTeam(int id)
+        {
+            List<clsPlayer> oPlayersList = new List<clsPlayer>();
+            try
+            {
+                oPlayersList = new clsPlayerListBL().getPlayerListFromTeamBL(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return oPlayersList;
+        }
     }
 }
