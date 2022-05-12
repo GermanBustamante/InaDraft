@@ -14,24 +14,29 @@
     <color name="lightGreen">#9FF4AA</color>
     <color name="gray">#C0CFCF</color>
     <color name="lightGray">#BBCFCF</color>
-    <color name="darkGray">#8BA3BCBC</color>
+    <color name="darkGray">#8FA9C8</color>
     <color name="black">#000000</color>
     <color name="darkRed">#AF2626</color>
     <color name="yellowOrange">#d9b346</color>
+    <color name="darkBlue2">#1e2d3e</color>
     <!--endregion-->
 
     <!-- region COMMON -->
-    <color name="colorPrimary">@color/bluishGreen</color>
+    <color name="colorPrimary">@color/darkGray</color>
     <color name="colorPrimaryDark">@color/bluishGreenDark</color>
     <color name="colorAccent">@color/fuchsia</color>
     <color name="colorSecondary">@color/teal_200</color>
     <color name="colorSecondaryVariant">@color/teal_700</color>
     <color name="colorOnSecondary">@color/black</color>
-    <color name="colorWindowBackground">@color/lightGray</color>
+    <color name="colorWindowBackground">@color/white</color>
     <!--endregion-->
 
     <!--region common_player_card-->
     <color name="commonPlayerCardText">@color/yellowOrange</color>
+    <!--endregion-->
+
+    <!--region activity_main-->
+    <color name="navDrawerBackground">@color/darkBlue2</color>
     <!--endregion-->
 
     <!--region player_details_card-->
@@ -50,5 +55,11 @@
     <color name="playerDetailsLabelPlayerSpeedDescription">@color/commonPlayerCardText</color>
     <color name="playerDetailsLabelPlayerGutsPoint">@color/commonPlayerCardText</color>
     <color name="playerDetailsLabelPlayerGutsDescription">@color/commonPlayerCardText</color>
+    <!--endregion-->
+
+    <!--region header_navigation_drawer-->
+    <color name="headerNavDrawerBackground">#2E3F53</color>
+    <color name="labelNavDrawerTitleApp">@color/white</color>
+    <color name="labelNavDrawerCompanySignature">@color/lightGray</color>
     <!--endregion-->
 </resources>

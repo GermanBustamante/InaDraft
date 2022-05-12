@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.RowTeamBinding
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.ui.view.bindingExtension.bind
+import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
 class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAdapter<TeamBO, TeamAdapter.TeamViewHolder>(TeamDiffCallback){
 
@@ -22,12 +22,16 @@ class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAd
         holder.binding.bind(getItem(position), onTeamClickedListener)
     }
 
+    private fun RowTeamBinding.bind(team: TeamBO, onTeamClickedListener: (TeamBO) -> Unit) {
+        rowTeamImgOfTeam.loadGlideCenterImage(team.shield)
+        rowTeamLabelTeamName.text = team.name
+        root.setOnClickListener { onTeamClickedListener(team) }
+    }
+
     inner class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
         val binding = RowTeamBinding.bind(view)
     }
 }
-
-
 
 object TeamDiffCallback: DiffUtil.ItemCallback<TeamBO>() {
     override fun areItemsTheSame(oldItem: TeamBO, newItem: TeamBO): Boolean =
@@ -37,3 +41,5 @@ object TeamDiffCallback: DiffUtil.ItemCallback<TeamBO>() {
         oldItem == newItem
 
 }
+
+

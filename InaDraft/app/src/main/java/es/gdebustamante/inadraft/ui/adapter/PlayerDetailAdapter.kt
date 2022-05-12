@@ -37,23 +37,6 @@ class PlayerDetailAdapter :
     }
 }
 
-private fun RowPlayerDetailBinding.bind(player: PlayerWithShieldVO) {
-    rowPlayerDetailContent.apply {
-        playerDetailCardLabelPlayerMedia.text = player.player.getMedia().toString()
-        playerDetailCardLabelPlayerPosition.text = player.player.position
-        playerDetailCardImgPlayerShield.loadGlideCenterImage(player.shield)
-        playerDetailCardLabelPlayerName.text = player.player.name
-        playerDetailCardImgPlayerPhoto.loadGlideCenterImage(player.player.photo)
-        playerDetailCardLabelPlayerKickPunctuation.text = player.player.kick.toString()
-        playerDetailCardLabelPlayerBodyPunctuation.text = player.player.body.toString()
-        playerDetailCardLabelPlayerControlPunctuation.text = player.player.control.toString()
-        playerDetailCardLabelPlayerGuardPunctuation.text = player.player.guard.toString()
-        playerDetailCardLabelPlayerSpeedPunctuation.text = player.player.speed.toString()
-        playerDetailCardLabelPlayerGutsPunctuation.text = player.player.guts.toString()
-
-    }
-}
-
 object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerWithShieldVO>() {
     override fun areItemsTheSame(
         oldItem: PlayerWithShieldVO,
@@ -67,4 +50,21 @@ object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerWithShieldVO
     ): Boolean =
         oldItem == newItem
 
+}
+
+private fun RowPlayerDetailBinding.bind(player: PlayerWithShieldVO) {
+    rowPlayerDetailContent.apply {
+        playerDetailCardLabelPlayerMedia.text = player.player.getMedia().toString()
+        playerDetailCardLabelPlayerPosition.text = player.player.position
+        playerDetailCardImgPlayerShield.loadGlideCenterImage(player.shield)
+        playerDetailCardLabelPlayerName.text = player.player.name.uppercase()
+        playerDetailCardImgPlayerPhoto.loadGlideCenterImage(player.player.photo)
+        playerDetailCardLabelPlayerKickPunctuation.text = player.player.kick.toString()
+        playerDetailCardLabelPlayerBodyPunctuation.text = player.player.body.toString()
+        playerDetailCardLabelPlayerControlPunctuation.text = player.player.control.toString()
+        playerDetailCardLabelPlayerGuardPunctuation.text = player.player.guard.toString()
+        playerDetailCardLabelPlayerSpeedPunctuation.text = player.player.speed.toString()
+        playerDetailCardLabelPlayerGutsPunctuation.text = player.player.guts.toString()
+
+    }
 }

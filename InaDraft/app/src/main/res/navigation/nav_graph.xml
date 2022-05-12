@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment2">
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
@@ -30,6 +30,10 @@
         <argument
             android:name="urlShield"
             app:argType="string"
-            android:defaultValue="a" />
+            android:defaultValue="" />
+        <argument
+            android:name="teamName"
+            app:argType="string"
+            android:defaultValue="" />
     </fragment>
 </navigation>

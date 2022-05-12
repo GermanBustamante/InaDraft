@@ -8,18 +8,26 @@ import es.gdebustamante.inadraft.ui.adapter.TeamAdapter
 import es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragmentDirections
 
 fun FragmentTeamInfoListBinding.setupRecyclerView(adapter: TeamAdapter) {
-    teamListFragmentSlideListOfTeams.adapter = adapter
+    infoTeamFragmentListOfTeams.adapter = adapter
 }
 
 fun FragmentTeamInfoListBinding.onTeamClicked(teamSelected: TeamBO) {
-    root.findNavController().navigate(TeamInfoListFragmentDirections.actionInfoTeamFragment2ToPlayerListFragment(teamSelected.id, teamSelected.shield))
+    root.findNavController().navigate(
+        TeamInfoListFragmentDirections.actionInfoTeamFragment2ToPlayerListFragment(
+            teamSelected.id,
+            teamSelected.shield,
+            teamSelected.name
+        )
+    )
 }
 
 fun FragmentTeamInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {
-    teamListFragmentSlideProgressIndicatorTeamList.isVisible = visibility
+    infoTeamFragmentListOfTeams.isVisible = visibility
 }
 
 fun FragmentTeamInfoListBinding.onTeamListChanged(
-    teamList: List<TeamBO>?,
+    teamList: List<TeamBO>,
     adapter: TeamAdapter
-) { adapter.submitList(teamList) }
+) {
+    adapter.submitList(teamList) //TODO COMPROBAR SI ES VACIO MOSTRAR MENSAJE CORRESPONDIENTE, O TIPO DE ERROR CUANDO VEA KBP
+}

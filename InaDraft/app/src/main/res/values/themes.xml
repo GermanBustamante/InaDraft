@@ -11,7 +11,9 @@
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <!-- Customize your theme here. -->
+        <item name="drawerArrowStyle">@style/DrawerIcon</item>
+        <item name="actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
     </style>
     <!--endregion-->
 
@@ -26,6 +28,22 @@
     <style name="CardView.CommonRoundedAndElevated" parent="">
         <item name="cardCornerRadius">@dimen/common__cardview__corner_radius</item>
         <item name="cardElevation">@dimen/common__cardview__corner_radius</item>
+    </style>
+    <!--endregion-->
+
+    <!--region common toolbar-->
+    <style name="BaseToolbar" parent="">
+        <item name="background">@color/colorPrimary</item>
+        <item name="titleTextColor">@color/white</item>
+    </style>
+    <!--endregion-->
+
+    <!--region common button and hamburguer icon drawer-->
+    <style name="MyActionButtonOverflow" parent="Widget.AppCompat.Light.ActionButton.Overflow">
+        <item name="color">@color/white</item>
+    </style>
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/white</item>
     </style>
     <!--endregion-->
 

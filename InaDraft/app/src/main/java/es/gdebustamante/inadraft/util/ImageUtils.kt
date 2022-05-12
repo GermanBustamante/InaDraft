@@ -7,7 +7,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 fun ImageView.loadGlideCenterImage(url: String) {
     Glide.with(context)
         .load(url)
-        .centerCrop()
+        .centerInside()
         .diskCacheStrategy(DiskCacheStrategy.ALL)
         .into(this)
 }

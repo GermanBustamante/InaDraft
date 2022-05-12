@@ -2,6 +2,7 @@
 <resources>
     <!--region modulo common-->
     <dimen name="common__margin_default">8dp</dimen>
+    <dimen name="common__margin_min">4dp</dimen>
     <dimen name="common__img__height">64dp</dimen>
     <dimen name="common__img__width">64dp</dimen>
     <dimen name="common__cardview__elevation">4dp</dimen>
@@ -36,13 +37,15 @@
 
     <!--region player_detail_card-->
     <dimen name="player_detail_card__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="player_detail_card__margin_min">@dimen/common__margin_min</dimen>
     <dimen name="player_detail_card__card_view__player_card__width">180dp</dimen>
     <dimen name="player_detail_card__card_view__player_card__height">220dp</dimen>
-    <dimen name="player_detail_card__img__player_shield__width">20dp</dimen>
-    <dimen name="player_detail_card__img__player_shield__height">20dp</dimen>
+    <dimen name="player_detail_card__img__player_shield__width">24dp</dimen>
+    <dimen name="player_detail_card__img__player_shield__height">24dp</dimen>
     <dimen name="player_detail_card__img__player_photo__height">54dp</dimen>
+    <dimen name="player_detail_card__font__label__player_position">16sp</dimen>
     <dimen name="player_detail_card__font__label__player_name">12sp</dimen>
-    <dimen name="player_detail_card__font__label__player_media">20sp</dimen>
+    <dimen name="player_detail_card__font__label__player_media">22sp</dimen>
     <dimen name="player_detail_card__font__label__player_kick_punctuation">@dimen/common__font__label__player_puntuation</dimen>
     <dimen name="player_detail_card__font__label__player_body_punctuation">@dimen/common__font__label__player_puntuation</dimen>
     <dimen name="player_detail_card__font__label__player_control_punctuation">@dimen/common__font__label__player_puntuation</dimen>
@@ -55,6 +58,8 @@
     <dimen name="player_detail_card__font__label__player_guard_description">@dimen/common__font__label__player_description</dimen>
     <dimen name="player_detail_card__font__label__player_speed_description">@dimen/common__font__label__player_description</dimen>
     <dimen name="player_detail_card__font__label__player_guts_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="header_navigation_drawer__root__height">160dp</dimen>
+    <dimen name="header_navigation_drawer__label__app_title__size">20sp</dimen>
     <!--endregion-->
 
 </resources>

@@ -2,7 +2,8 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/player_detail_card__card_view__player_card__width"
+    android:layout_width="match_parent"
+    app:cardElevation="0dp"
     android:layout_height="@dimen/player_detail_card__card_view__player_card__height"
     android:backgroundTint="@android:color/transparent">
 
@@ -40,6 +41,7 @@
             android:id="@+id/playerDetailCardLabelPlayerPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="@dimen/player_detail_card__font__label__player_position"
             android:textColor="@color/playerDetailsLabelPlayerPosition"
             app:layout_constraintBottom_toBottomOf="@id/guidelinePositionWithShield"
             app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerMedia"
@@ -85,7 +87,7 @@
             android:id="@+id/playerDetailCardLabelPlayerKickPunctuation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/player_detail_card__margin_default"
+            android:layout_marginTop="@dimen/player_detail_card__margin_min"
             android:textColor="@color/playerDetailsLabelPlayerKickPoint"
             android:textSize="@dimen/player_detail_card__font__label__player_kick_punctuation"
             android:textStyle="bold"

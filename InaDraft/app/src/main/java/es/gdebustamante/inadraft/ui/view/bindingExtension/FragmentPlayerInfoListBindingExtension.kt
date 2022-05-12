@@ -6,9 +6,15 @@ import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.view.vo.toPlayerWithShieldVO
 
 fun FragmentPlayerInfoListBinding.setupRecyclerView(adapter: PlayerDetailAdapter) {
-    playerListFragmentSlideListOfPlayers.adapter = adapter
+    playerInfoListFragmentSlideListOfPlayers.adapter = adapter
 }
 
- fun FragmentPlayerInfoListBinding.onPlayerListChanged(playerList: List<PlayerBO>, urlShield: String, adapter: PlayerDetailAdapter) {
+fun FragmentPlayerInfoListBinding.onPlayerListChanged(
+    playerList: List<PlayerBO>,
+    urlShield: String,
+    teamName: String,
+    adapter: PlayerDetailAdapter
+) {
     adapter.submitList(playerList.map { it.toPlayerWithShieldVO(urlShield) })
+    playerInfoListFragmentToolbarTop.title = teamName
 }

@@ -26,18 +26,17 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
         savedInstanceState: Bundle?
     ): View? {
         binding = inflateViewBinding(inflater, container)
-        binding?.setupRecyclerView(adapter)
+        binding?.apply {
+            setupDrawerWithFragmentToolbar(playerInfoListFragmentToolbarTop)
+            setupRecyclerView(adapter)
+        }
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.playerSelected.observe(viewLifecycleOwner) {
-            binding?.onPlayerListChanged(
-                it,
-                args.urlShield,
-                adapter
-            )
+            binding?.onPlayerListChanged(it, args.urlShield, args.teamName ,adapter)
         }
         viewModel.loadPlayerListByTeamId(args.teamId)
     }

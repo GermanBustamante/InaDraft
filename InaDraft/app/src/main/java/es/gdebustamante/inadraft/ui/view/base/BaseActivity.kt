@@ -1,10 +1,15 @@
 package es.gdebustamante.inadraft.ui.view.base
 
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
-abstract class BaseActivity<TypeViewModel : ViewModel> : AppCompatActivity() {
+abstract class BaseActivity : AppCompatActivity() {
 
-//    private val viewModel : TypeViewModel by viewModels()
-//    abstract fun getToolbarBase() : Toolbar?
+    abstract fun getActionBarBase() : ActionBar?
+
+    abstract fun getNavDrawer(): NavigationView?
+
+    abstract fun getDrawerLayout(): DrawerLayout?
 }

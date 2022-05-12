@@ -17,7 +17,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class RemoteModule {
     companion object {
-        private const val RETROFIT_PRODUCTS_API_BASE_URL = "http://130.61.60.150:3000/"
+        private const val RETROFIT_PRODUCTS_API_BASE_URL = "https://inadraft.azurewebsites.net/api/"
     }
 
     @Provides

@@ -2,8 +2,15 @@ package es.gdebustamante.inadraft.ui.view.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.ViewBinding
+import es.gdebustamante.inadraft.R
 
 abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
 
@@ -16,7 +23,16 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
         super.onDestroyView()
     }
 
-//    protected fun getActivityToolbar(): Toolbar? {
-//        return (activity as? BaseActivity)?.getToolbarBase()
-//    }
+    protected fun getActivityActionBar(): ActionBar? {
+        return (requireActivity() as? BaseActivity)?.getActionBarBase()
+    }
+
+    protected fun setupDrawerWithFragmentToolbar(toolbar: Toolbar?){
+        val navControler = findNavController()
+        (requireActivity() as BaseActivity).apply {
+            setSupportActionBar(toolbar)
+            getNavDrawer()?.setupWithNavController(navControler)
+            NavigationUI.setupActionBarWithNavController(this, navControler, getDrawerLayout())
+        }
+    }
 }

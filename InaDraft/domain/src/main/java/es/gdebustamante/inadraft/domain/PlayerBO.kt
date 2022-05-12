@@ -14,5 +14,5 @@ data class PlayerBO(
     val photo: String,
     val idTeam: Int
 ) {
-    fun getMedia(): Int = kick + body + control + speed + guts / 6
+    fun getMedia(): Int = (kick + body + control + speed + guts) / 6
 }

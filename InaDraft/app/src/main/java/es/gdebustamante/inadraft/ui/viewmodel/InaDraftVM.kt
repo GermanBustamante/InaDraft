@@ -28,10 +28,10 @@ class InaDraftVM @Inject constructor(
     val progressVisible: MutableLiveData<Boolean> = MutableLiveData()
 
     fun loadTeamList() {
-        viewModelScope.launch(Dispatchers.IO) {
-            progressVisible.postValue(true)
-            _teamList.postValue(getTeamListUseCase.invoke()) // TODO VER SI PUEDO MEJORAR ESTO
-            progressVisible.postValue(false)
+        viewModelScope.launch(Dispatchers.Main) {
+//            progressVisible.postValue(true)
+            _teamList.value = getTeamListUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
+//            progressVisible.postValue(false)
         }
     }
 

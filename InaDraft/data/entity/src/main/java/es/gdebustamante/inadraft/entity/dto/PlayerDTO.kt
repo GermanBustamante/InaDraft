@@ -1,16 +1,20 @@
 package es.gdebustamante.inadraft.entity.dto
 
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+
+@JsonClass(generateAdapter = true)
 data class PlayerDTO(
-    val id: Int?,
-    val name: String?,
-    val position: String?,
-    val kick: Int?,
-    val body: Int?,
-    val control: Int?,
-    val guard: Int?,
-    val speed: Int?,
-    val stamina: Int?,
-    val guts: Int?,
-    val photo: String?,
-    val idTeam: Int?
+    @Json(name = "id") val id: Int?,
+    @Json(name = "name") val name: String?,
+    @Json(name = "position") val position: String?,
+    @Json(name = "kick") val kick: Int?,
+    @Json(name = "body") val body: Int?,
+    @Json(name = "control") val control: Int?,
+    @Json(name = "guard") val guard: Int?,
+    @Json(name = "speed") val speed: Int?,
+    @Json(name = "stamina") val stamina: Int?,
+    @Json(name = "guts") val guts: Int?,
+    @Json(name = "photo") val photo: String?,
+    @Json(name = "idTeam") val idTeam: Int?
 )

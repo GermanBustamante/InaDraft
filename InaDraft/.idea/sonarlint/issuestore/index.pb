@@ -9,9 +9,15 @@ L
 data/repository/build.gradle,f\3\f39d60893e9b5079dc805aff11c89813ebde8fa6
 L
 data/datasource/build.gradle,a\6\a61a0f8eed886fa3cf080adc7823c5bc2543c3fc
-u
-Eapp/src/main/java/es/gdebustamante/inadraft/ui/adapter/TeamAdapter.kt,f\4\f450bd9a8d80767a2646ebc94511632b9da9c758
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+t
+Ddata/entity/src/main/java/es/gdebustamante/inadraft/entity/Mapper.kt,9\6\968cb9ab9960c57b64fe30e69574ae2dcd54edd3
 |
-Lapp/src/main/java/es/gdebustamante/inadraft/ui/view/fragment/HomeFragment.kt,3\6\36ddd6acd9f71c48529fb83a53f8120f2d9a14e5
-
-_app/src/main/java/es/gdebustamante/inadraft/ui/view/bindingExtension/RowTeamBindingExtension.kt,f\0\f0cdf1b3a7696db0aa4af0524c120b690b5b140a
+Lapp/src/main/java/es/gdebustamante/inadraft/ui/view/vo/PlayerWithShieldVO.kt,9\3\93835ef86493fa263728749aba746e8c7a11b4d2
+†
+Vdata/repository/src/main/java/es/gdebustamante/inadraft/repository/PlayerRepository.kt,e\e\eec9cab291dd827db000d554dad1f7c19f5c4069
+
+Qdata/datasource/src/main/java/es/gdebustamante/inadraft/PlayerRemoteDataSource.kt,0\9\09230a18770be8693ec7f1bd2a217f21aba64d79
+v
+Fapp/src/main/java/es/gdebustamante/inadraft/modules/UsesCasesModule.kt,6\0\6027ff9bacb900d6fea02973db0016ce3232a0fd
