@@ -1,15 +1,11 @@
-package es.sdos.formacion.monumentosandaluces.entity
+package es.gdebustamante.inadraft.entity
 
 import es.gdebustamante.inadraft.domain.PlayerBO
+import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.entity.dto.PlayerDTO
+import es.gdebustamante.inadraft.entity.dto.PositionDTO
 import es.gdebustamante.inadraft.entity.dto.TeamDTO
-
-//fun TeamBO.toDTO() = TeamDTO(
-//    id,
-//    name,
-//    shield
-//)
 
 fun TeamDTO.toBO() = TeamBO(
     id ?: -1,
@@ -20,7 +16,6 @@ fun TeamDTO.toBO() = TeamBO(
 fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     id ?: -1,
     name ?: "",
-    position ?: "",
     kick ?: -1,
     body ?: -1,
     control ?: -1,
@@ -29,7 +24,13 @@ fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     stamina ?: -1,
     guts ?: -1,
     photo ?: "",
-    idTeam ?: -1
+    teamId ?: -1,
+    positionId ?: -1
+)
+
+fun PositionDTO.toBO() : PositionBO = PositionBO(
+    id ?: -1,
+    name ?: ""
 )
 
 

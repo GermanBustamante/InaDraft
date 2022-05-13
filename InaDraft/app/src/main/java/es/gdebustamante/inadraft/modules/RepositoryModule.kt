@@ -5,8 +5,10 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.PlayerRemoteDataSource
+import es.gdebustamante.inadraft.PositionRemoteDataSource
 import es.gdebustamante.inadraft.TeamRemoteDataSource
 import es.gdebustamante.inadraft.repository.PlayerRepository
+import es.gdebustamante.inadraft.repository.PositionRepository
 import es.gdebustamante.inadraft.repository.TeamRepository
 
 @Module
@@ -20,4 +22,8 @@ class RepositoryModule {
     @Provides
     fun playerRepositoryProvider(playerRemoteDataSource: PlayerRemoteDataSource): PlayerRepository =
         PlayerRepository(playerRemoteDataSource)
+
+    @Provides
+    fun positionRepositoryProvider(positionRemoteDataSource: PositionRemoteDataSource): PositionRepository =
+        PositionRepository(positionRemoteDataSource)
 }

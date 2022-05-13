@@ -5,4 +5,6 @@ import es.gdebustamante.inadraft.TeamRemoteDataSource
 
 class TeamRepository(private val teamRemoteDataSource : TeamRemoteDataSource) {
     suspend fun getTeamList(): List<TeamBO> = teamRemoteDataSource.getTeams()
+
+    suspend fun getTeam(teamId: Int): TeamBO = teamRemoteDataSource.getTeam(teamId)
 }

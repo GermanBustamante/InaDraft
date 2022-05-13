@@ -15,7 +15,7 @@
         android:label="fragment_info_team"
         tools:layout="@layout/fragment_team_info_list" >
         <action
-            android:id="@+id/action_infoTeamFragment2_to_playerListFragment"
+            android:id="@+id/action_infoTeamFragment_to_playerListFragment"
             app:destination="@id/playerListFragment" />
     </fragment>
     <fragment
@@ -27,13 +27,5 @@
             android:name="teamId"
             app:argType="integer"
             android:defaultValue="-1" />
-        <argument
-            android:name="urlShield"
-            app:argType="string"
-            android:defaultValue="" />
-        <argument
-            android:name="teamName"
-            app:argType="string"
-            android:defaultValue="" />
     </fragment>
 </navigation>

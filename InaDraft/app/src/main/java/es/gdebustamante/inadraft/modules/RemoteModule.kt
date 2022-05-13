@@ -5,9 +5,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.PlayerRemoteDataSource
+import es.gdebustamante.inadraft.PositionRemoteDataSource
 import es.gdebustamante.inadraft.TeamRemoteDataSource
 import es.gdebustamante.inadraft.remote.api.APIService
 import es.gdebustamante.inadraft.remote.datasource.PlayerRemoteDataSourceImpl
+import es.gdebustamante.inadraft.remote.datasource.PositionRemoteDataSourceImpl
 import es.gdebustamante.inadraft.remote.datasource.TeamRemoteDataSourceImpl
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -25,6 +27,9 @@ class RemoteModule {
 
     @Provides
     fun playerRemoteDataSourceProvider(apiService: APIService): PlayerRemoteDataSource = PlayerRemoteDataSourceImpl(apiService)
+
+    @Provides
+    fun positionRemoteDataSourceProvider(apiService: APIService): PositionRemoteDataSource = PositionRemoteDataSourceImpl(apiService)
 
     @Singleton
     @Provides

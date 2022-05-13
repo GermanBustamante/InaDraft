@@ -7,7 +7,6 @@ import com.squareup.moshi.JsonClass
 data class PlayerDTO(
     @Json(name = "id") val id: Int?,
     @Json(name = "name") val name: String?,
-    @Json(name = "position") val position: String?,
     @Json(name = "kick") val kick: Int?,
     @Json(name = "body") val body: Int?,
     @Json(name = "control") val control: Int?,
@@ -16,5 +15,6 @@ data class PlayerDTO(
     @Json(name = "stamina") val stamina: Int?,
     @Json(name = "guts") val guts: Int?,
     @Json(name = "photo") val photo: String?,
-    @Json(name = "idTeam") val idTeam: Int?
+    @Json(name = "teamId") val teamId: Int?,
+    @Json(name = "positionId") val positionId: Int?
 )

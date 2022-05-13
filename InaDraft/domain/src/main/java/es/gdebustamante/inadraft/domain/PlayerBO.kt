@@ -3,7 +3,6 @@ package es.gdebustamante.inadraft.domain
 data class PlayerBO(
     val id: Int,
     val name: String,
-    val position: String,
     val kick: Int,
     val body: Int,
     val control: Int,
@@ -12,7 +11,8 @@ data class PlayerBO(
     val stamina: Int, // Este valor como no voy a simular partidas no lo necesito realmente, pero el juego lo tiene, lo dejo para futuras actualizaciones
     val guts: Int,
     val photo: String,
-    val idTeam: Int
+    val teamId: Int,
+    val positionId: Int
 ) {
     fun getMedia(): Int = (kick + body + control + speed + guts) / 6
 }

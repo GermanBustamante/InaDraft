@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
-import es.gdebustamante.inadraft.ui.view.vo.PlayerWithShieldVO
+import es.gdebustamante.inadraft.ui.view.vo.PlayerDetailVO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
 class PlayerDetailAdapter :
-    ListAdapter<PlayerWithShieldVO, PlayerDetailAdapter.PlayerWithShieldDetailViewHolder>(
+    ListAdapter<PlayerDetailVO, PlayerDetailAdapter.PlayerWithShieldDetailViewHolder>(
         PlayerWithShieldVODiffCallback
     ) {
 
@@ -37,26 +37,26 @@ class PlayerDetailAdapter :
     }
 }
 
-object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerWithShieldVO>() {
+object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerDetailVO>() {
     override fun areItemsTheSame(
-        oldItem: PlayerWithShieldVO,
-        newItem: PlayerWithShieldVO
+        oldItem: PlayerDetailVO,
+        newItem: PlayerDetailVO
     ): Boolean =
         oldItem.player.id == newItem.player.id
 
     override fun areContentsTheSame(
-        oldItem: PlayerWithShieldVO,
-        newItem: PlayerWithShieldVO
+        oldItem: PlayerDetailVO,
+        newItem: PlayerDetailVO
     ): Boolean =
         oldItem == newItem
 
 }
 
-private fun RowPlayerDetailBinding.bind(player: PlayerWithShieldVO) {
+private fun RowPlayerDetailBinding.bind(player: PlayerDetailVO) {
     rowPlayerDetailContent.apply {
         playerDetailCardLabelPlayerMedia.text = player.player.getMedia().toString()
-        playerDetailCardLabelPlayerPosition.text = player.player.position
-        playerDetailCardImgPlayerShield.loadGlideCenterImage(player.shield)
+        playerDetailCardLabelPlayerPosition.text = player.position.name
+        playerDetailCardImgPlayerShield.loadGlideCenterImage(player.team.shield)
         playerDetailCardLabelPlayerName.text = player.player.name.uppercase()
         playerDetailCardImgPlayerPhoto.loadGlideCenterImage(player.player.photo)
         playerDetailCardLabelPlayerKickPunctuation.text = player.player.kick.toString()

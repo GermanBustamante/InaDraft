@@ -11,6 +11,8 @@ import es.gdebustamante.inadraft.databinding.FragmentPlayerInfoListBinding
 import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayerListChanged
+import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayerPositionSelectedChanged
+import es.gdebustamante.inadraft.ui.view.bindingExtension.onTeamSelectedChanged
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupRecyclerView
 import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
 
@@ -35,10 +37,8 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.playerSelected.observe(viewLifecycleOwner) {
-            binding?.onPlayerListChanged(it, args.urlShield, args.teamName ,adapter)
-        }
-        viewModel.loadPlayerListByTeamId(args.teamId)
+        setupVMObservers()
+        viewModel.loadPlayersWithShieldAndPosition(args.teamId)
     }
 
     override fun inflateViewBinding(
@@ -46,6 +46,18 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
         container: ViewGroup?
     ): FragmentPlayerInfoListBinding =
         FragmentPlayerInfoListBinding.inflate(inflater, container, false)
+
+    private fun setupVMObservers(){
+        viewModel.playerList.observe(viewLifecycleOwner) {
+            binding?.onPlayerListChanged(it, viewModel)
+        }
+        viewModel.teamSelected.observe(viewLifecycleOwner){
+            binding?.onTeamSelectedChanged(it)
+        }
+        viewModel.positionList.observe(viewLifecycleOwner){
+            binding?.onPlayerPositionSelectedChanged(it, adapter)
+        }
+    }
 
 
 }

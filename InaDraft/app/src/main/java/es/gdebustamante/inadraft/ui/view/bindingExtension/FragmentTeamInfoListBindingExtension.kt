@@ -13,11 +13,7 @@ fun FragmentTeamInfoListBinding.setupRecyclerView(adapter: TeamAdapter) {
 
 fun FragmentTeamInfoListBinding.onTeamClicked(teamSelected: TeamBO) {
     root.findNavController().navigate(
-        TeamInfoListFragmentDirections.actionInfoTeamFragment2ToPlayerListFragment(
-            teamSelected.id,
-            teamSelected.shield,
-            teamSelected.name
-        )
+        TeamInfoListFragmentDirections.actionInfoTeamFragmentToPlayerListFragment(teamSelected.id)
     )
 }
 
