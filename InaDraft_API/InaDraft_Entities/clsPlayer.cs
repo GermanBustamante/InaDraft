@@ -11,7 +11,6 @@ namespace InaDraft_Entities
         #region propiedades publicas
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Position { get; set; }
         public int Kick { get; set; }
         public int Body { get; set; }
         public int Control { get; set; }
@@ -20,14 +19,15 @@ namespace InaDraft_Entities
         public int Stamina { get; set; }
         public int Guts { get; set; }
         public string  Photo { get; set; }
-        public int IdTeam { get; set; }
-        #endregion
+        public int TeamId { get; set; }
+        public int PositionId { get; set; }
         #region constructores
-        public clsPlayer(int id, string name, string position, int kick, int body, int control, int guard, int speed, int stamina, int guts, string photo, int idTeam)
+
+        #endregion
+        public clsPlayer(int id, string name, int kick, int body, int control, int guard, int speed, int stamina, int guts, string photo, int teamId, int positionId)
         {
             Id = id;
             Name = name;
-            Position = position;
             Kick = kick;
             Body = body;
             Control = control;
@@ -36,7 +36,8 @@ namespace InaDraft_Entities
             Stamina = stamina;
             Guts = guts;
             Photo = photo;
-            IdTeam = idTeam;
+            TeamId = teamId;
+            PositionId = positionId;
         }
 
         public clsPlayer()

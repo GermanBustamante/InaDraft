@@ -15,7 +15,7 @@ namespace InaDraft_DAL.Lists
         public List<clsTeam> getTeamListDAL()
         {
             clsTeam oTeam;
-            List<clsTeam> teamList = new List<clsTeam>();
+            List<clsTeam> teamList = new();
             openConection();
             MyReader = executeSelect(QUERY_ALL_TEAMS);
             if (MyReader.HasRows)

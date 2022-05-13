@@ -13,14 +13,14 @@ namespace InaDraft_DAL.Lists
         #region constantes
         public const string QUERY_ALL_PLAYERS = "SELECT * FROM Players";
         public const string QUERY_PLAYER_BY_ID = "SELECT * FROM Players WHERE id = @id";
-        public const string QUERY_PLAYERS_BY_TEAMID = "SELECT * FROM Players WHERE idTeam = @id";
+        public const string QUERY_PLAYERS_BY_TEAMID = "SELECT * FROM Players WHERE Teamid = @id";
         #endregion
 
         #region metodos publicos
         public List<clsPlayer> getPlayerListDAL()
         {
             clsPlayer oPlayer;
-            List<clsPlayer> playerList = new List<clsPlayer>();
+            List<clsPlayer> playerList = new();
             openConection();
             MyReader = executeSelect(QUERY_ALL_PLAYERS);
             if (MyReader.HasRows)
@@ -49,11 +49,10 @@ namespace InaDraft_DAL.Lists
             #endregion
         }
 
-
         public List<clsPlayer> getPlayerListFromTeamDAL(int monumentId)
         {
             clsPlayer oPlayer;
-            List<clsPlayer> playerList = new List<clsPlayer>();
+            List<clsPlayer> playerList = new();
             openConection();
             MyReader = executeSelectCondition(QUERY_PLAYERS_BY_TEAMID, monumentId);
             if (MyReader.HasRows)
@@ -72,7 +71,6 @@ namespace InaDraft_DAL.Lists
         {
             return new clsPlayer((int)MyReader["Id"],
                                          (string)MyReader["Name"],
-                                         (string)MyReader["Position"],
                                          (int)MyReader["Kick"],
                                          (int)MyReader["Body"],
                                          (int)MyReader["Control"],
@@ -81,7 +79,8 @@ namespace InaDraft_DAL.Lists
                                          (int)MyReader["Stamina"],
                                          (int)MyReader["Guts"],
                                          (string)MyReader["Photo"],
-                                         (int)MyReader["IdTeam"]);
+                                         (int)MyReader["TeamId"],
+                                         (int)MyReader["PositionId"]);
         }
         #endregion
     }
