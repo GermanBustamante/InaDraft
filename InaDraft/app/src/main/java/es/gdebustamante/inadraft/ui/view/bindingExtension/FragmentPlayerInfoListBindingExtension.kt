@@ -17,10 +17,8 @@ fun FragmentPlayerInfoListBinding.setupRecyclerView(adapter: PlayerDetailAdapter
 
 fun FragmentPlayerInfoListBinding.onPlayerListChanged(
     players: List<PlayerBO>,
-    viewModel: InaDraftVM
 ) {
     playerList = players
-    viewModel.loadPositionsById()
 }
 
 fun FragmentPlayerInfoListBinding.onTeamSelectedChanged(

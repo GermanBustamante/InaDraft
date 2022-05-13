@@ -7,12 +7,12 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
-        android:label="fragment_home"
+        android:label="Inicio"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/infoTeamFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragment"
-        android:label="fragment_info_team"
+        android:label="Equipos"
         tools:layout="@layout/fragment_team_info_list" >
         <action
             android:id="@+id/action_infoTeamFragment_to_playerListFragment"
@@ -21,11 +21,16 @@
     <fragment
         android:id="@+id/playerListFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.PlayerInfoListFragment"
-        android:label="fragment_player_list"
+        android:label=""
         tools:layout="@layout/fragment_player_info_list" >
         <argument
             android:name="teamId"
             app:argType="integer"
             android:defaultValue="-1" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.AboutAppFragment"
+        android:label="Sobre nosotros"
+        tools:layout="@layout/fragment_about_app" />
 </navigation>

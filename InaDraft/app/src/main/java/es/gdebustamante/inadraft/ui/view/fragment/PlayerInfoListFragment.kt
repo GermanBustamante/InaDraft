@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentPlayerInfoListBinding
@@ -19,7 +20,7 @@ import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
 @AndroidEntryPoint
 class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
-    private val viewModel: InaDraftVM by activityViewModels()
+    private val viewModel: InaDraftVM by viewModels()
     private val adapter = PlayerDetailAdapter()
     private val args: PlayerInfoListFragmentArgs by navArgs()
 
@@ -49,7 +50,7 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
     private fun setupVMObservers(){
         viewModel.playerList.observe(viewLifecycleOwner) {
-            binding?.onPlayerListChanged(it, viewModel)
+            binding?.onPlayerListChanged(it)
         }
         viewModel.teamSelected.observe(viewLifecycleOwner){
             binding?.onTeamSelectedChanged(it)

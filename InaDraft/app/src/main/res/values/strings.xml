@@ -35,5 +35,7 @@
     <!--region header_navigation_drawer-->
     <string name="header_navigation_drawer__label_app_name">@string/app_name</string>
     <string name="header_navigation_drawer__label_company_signature">Creado por Germán De Bustamante Conde</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!--endregion-->
 </resources>

@@ -3,6 +3,7 @@ package es.gdebustamante.inadraft.ui.view.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -40,6 +41,16 @@ class MainActivity : BaseActivity() {
     override fun getNavDrawer() : NavigationView? = binding?.activityMainDrawerStart
 
     override fun getDrawerLayout() : DrawerLayout? = binding?.root
+
+    override fun onBackPressed() {
+        binding?.apply {
+            if (root.isDrawerOpen(GravityCompat.START)) {
+                root.closeDrawer(GravityCompat.START)
+            } else {
+                super.onBackPressed()
+            }
+        }
+    }
 
     private fun getActivityNavController(): NavController =
         (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController

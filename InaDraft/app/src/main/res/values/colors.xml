@@ -14,7 +14,9 @@
     <color name="lightGreen">#9FF4AA</color>
     <color name="gray">#C0CFCF</color>
     <color name="lightGray">#BBCFCF</color>
-    <color name="darkGray">#8FA9C8</color>
+    <color name="bluishBlue">#eff2f7</color>
+    <color name="lightBlue">#8FA9C8</color>
+    <color name="darkBlue">#587393</color>
     <color name="black">#000000</color>
     <color name="darkRed">#AF2626</color>
     <color name="yellowOrange">#d9b346</color>
@@ -22,7 +24,7 @@
     <!--endregion-->
 
     <!-- region COMMON -->
-    <color name="colorPrimary">@color/darkGray</color>
+    <color name="colorPrimary">@color/lightBlue</color>
     <color name="colorPrimaryDark">@color/bluishGreenDark</color>
     <color name="colorAccent">@color/fuchsia</color>
     <color name="colorSecondary">@color/teal_200</color>
@@ -61,5 +63,13 @@
     <color name="headerNavDrawerBackground">#2E3F53</color>
     <color name="labelNavDrawerTitleApp">@color/white</color>
     <color name="labelNavDrawerCompanySignature">@color/lightGray</color>
+    <!--endregion-->
+
+    <!--region row_team-->
+    <color name="rowTeamCardViewBackground">@color/bluishBlue</color>
+    <!--endregion-->
+
+    <!--region row_player_details-->
+    <color name="rowPlayerDetailsCardViewBackground">@color/bluishBlue</color>
     <!--endregion-->
 </resources>

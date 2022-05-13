@@ -37,7 +37,6 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
         binding?.apply {
             setupRecyclerView(adapter)
             setupDrawerWithFragmentToolbar(infoTeamFragmentToolbarTop)
-            infoTeamFragmentToolbarTop.title = getString(R.string.fragment_team_info_list__toolbar_tittle)
         }
         return binding?.root
     }

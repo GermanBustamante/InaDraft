@@ -23,9 +23,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
             setupDrawerWithFragmentToolbar(homeFragmentToolbarTop)
-            homeFragmentToolbarTop.apply {
-                title = getString(R.string.app_name) //TODO PASAR A FICHERO
-            }
         }
         return binding?.root
     }

@@ -47,7 +47,7 @@ class InaDraftVM @Inject constructor(
     }
 
     fun loadPlayersWithShieldAndPosition(teamId: Int) {
-        viewModelScope.launch(Dispatchers.Main) {
+        viewModelScope.launch(Dispatchers.IO) {
             loadPlayerListByTeamId(teamId)
             loadTeamById(teamId)
             loadPositionsById()

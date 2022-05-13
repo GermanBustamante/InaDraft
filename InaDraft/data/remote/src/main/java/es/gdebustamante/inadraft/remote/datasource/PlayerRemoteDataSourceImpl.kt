@@ -8,7 +8,7 @@ import es.gdebustamante.inadraft.entity.toBO
 class PlayerRemoteDataSourceImpl(private val apiService: APIService) : PlayerRemoteDataSource {
 
     override suspend fun getPlayerListFromTeam(teamId: Int): List<PlayerBO> {
-        val playersResponse = apiService.getPlayers()
+        val playersResponse = apiService.getPlayersFromTeam(teamId)
         return if (playersResponse.isSuccessful) playersResponse.body()?.map { it.toBO() } ?: emptyList() else emptyList()
     }
 
