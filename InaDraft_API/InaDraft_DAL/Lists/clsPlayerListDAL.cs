@@ -46,7 +46,6 @@ namespace InaDraft_DAL.Lists
             }
             closeFlow();
             return oPlayer;
-            #endregion
         }
 
         public List<clsPlayer> getPlayerListFromTeamDAL(int monumentId)
@@ -66,6 +65,9 @@ namespace InaDraft_DAL.Lists
             closeFlow();
             return playerList;
         }
+        
+        #endregion
+
         #region metodos privados
         private clsPlayer rebuildPlayer()
         {
