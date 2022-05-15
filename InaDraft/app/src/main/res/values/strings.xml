@@ -14,10 +14,17 @@
     <!--endregion-->
 
     <!--region menu_activity_main_drawer-->
-    <string name="menu_activity_main_drawer__action_home_tittle">Inicio</string>
-    <string name="menu_activity_main_drawer__action_home_info">Info</string>
-    <string name="menu_activity_main_drawer__action_home_about_us">Sobre nosotros</string>
+    <string name="menu_activity_main_drawer__action_home">Inicio</string>
+    <string name="menu_activity_main_drawer__action_info">Info</string>
+    <string name="menu_activity_main_drawer__action_about_app">Sobre nosotros</string>
     <!--endregion-->
+
+    <!--region nav_graph-->
+    <string name="nav_graph__fragment_home__title">@string/menu_activity_main_drawer__action_home</string>
+    <string name="nav_graph__fragment_team_info_list__title">Equipos</string>
+    <string name="nav_graph__fragment_about_app__title">@string/menu_activity_main_drawer__action_about_app</string>
+    <!--endregion-->
+
 
     <!--region fragment_team_info_list-->
     <string name="fragment_team_info_list__toolbar_tittle">Equipos</string>

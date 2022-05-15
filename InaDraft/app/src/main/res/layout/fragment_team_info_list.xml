@@ -18,18 +18,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/infoTeamFragmentListOfTeams"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/infoTeamFragmentSwipeRefreshLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:focusable="true"
-        android:longClickable="true"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/infoTeamFragmentToolbarTop"
-        app:spanCount="@integer/fragment_info__list__span_count"
-        tools:listitem="@layout/row_team" />
+        app:layout_constraintTop_toBottomOf="@id/infoTeamFragmentToolbarTop">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/infoTeamFragmentListOfTeams"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:focusable="true"
+            android:longClickable="true"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:spanCount="@integer/fragment_info__list__span_count"
+            tools:listitem="@layout/row_team" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <include
+        android:id="@+id/infoTeamFragmentLoading"
+        layout="@layout/fragment_team_info_list_loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoTeamFragmentToolbarTop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

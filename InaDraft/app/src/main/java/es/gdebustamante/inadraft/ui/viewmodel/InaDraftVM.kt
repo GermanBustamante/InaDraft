@@ -40,9 +40,9 @@ class InaDraftVM @Inject constructor(
 
     fun loadTeamList() {
         viewModelScope.launch(Dispatchers.Main) {
-//            progressVisible.postValue(true)
+            progressVisible.value = true
             _teamList.value = getTeamListUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
-//            progressVisible.postValue(false)
+            progressVisible.value = false
         }
     }
 

@@ -21,6 +21,7 @@
         android:layout_gravity="start"
         android:backgroundTint="@color/navDrawerBackground"
         app:headerLayout="@layout/header_navigation_drawer"
+        app:itemIconTint="@drawable/drawer_item_text_color_selector"
         app:itemTextColor="@drawable/drawer_item_text_color_selector"
         app:menu="@menu/menu_activity_main_drawer" />
 

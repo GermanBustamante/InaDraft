@@ -39,6 +39,7 @@
     <dimen name="row_team__cardview__corner_radius">@dimen/common__cardview__corner_radius</dimen>
     <dimen name="row_team__img__height">100dp</dimen>
     <dimen name="row_team__img__width">100dp</dimen>
+    <dimen name="row_team__font__label__team_name">22sp</dimen>
     <!--endregion-->
 
     <!--region player_detail_card-->
