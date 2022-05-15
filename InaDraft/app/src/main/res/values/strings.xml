@@ -17,6 +17,7 @@
     <string name="menu_activity_main_drawer__action_home">Inicio</string>
     <string name="menu_activity_main_drawer__action_info">Info</string>
     <string name="menu_activity_main_drawer__action_about_app">Sobre nosotros</string>
+    <string name="menu_activity_main_drawer__action_ranking">Clasificación</string>
     <!--endregion-->
 
     <!--region nav_graph-->

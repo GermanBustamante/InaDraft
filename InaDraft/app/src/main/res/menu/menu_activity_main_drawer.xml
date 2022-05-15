@@ -8,6 +8,11 @@
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_home"/>
         <item
+            android:id="@+id/rankingFragment"
+            android:icon="@drawable/ic_ranking"
+            app:showAsAction="ifRoom"
+            android:title="@string/menu_activity_main_drawer__action_ranking"/>
+        <item
             android:id="@+id/infoTeamFragment"
             android:icon="@drawable/ic_people_alt"
             app:showAsAction="ifRoom"
@@ -17,10 +22,6 @@
             android:icon="@drawable/ic_info"
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_about_app"/>
-        <item
-            android:id="@+id/aboutAppFragment"
-            android:icon="@drawable/ic_info"
-            app:showAsAction="ifRoom"
-            android:title="@string/menu_activity_main_drawer__action_about_app"/>
+
     </group>
 </menu>
