@@ -6,15 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
-import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentHomeBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
-import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
-    private val viewModel: InaDraftVM by activityViewModels()
+    private val viewModel: PlayerInfoListFragmentVM by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

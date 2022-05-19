@@ -10,12 +10,12 @@ import es.gdebustamante.inadraft.databinding.FragmentTeamInfoListBinding
 import es.gdebustamante.inadraft.ui.adapter.TeamAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.*
-import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
 
 @AndroidEntryPoint
 class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
-    private val viewModel: InaDraftVM by viewModels()
+    private val viewModel: PlayerInfoListFragmentVM by viewModels()
     private val adapter = TeamAdapter { binding?.onTeamClicked(it) }
 
     override fun onCreateView(
@@ -24,7 +24,7 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
     ): View? {
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
-            infoTeamFragmentLoading.root.startShimmer()
+            teamInfoListFragmentLoading.root.startShimmer()
             setupRecyclerView(adapter)
             setupDrawerWithFragmentToolbar(infoTeamFragmentToolbarTop)
             setupListeners(viewModel)

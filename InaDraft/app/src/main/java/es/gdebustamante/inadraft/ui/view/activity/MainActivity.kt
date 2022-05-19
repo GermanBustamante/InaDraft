@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.ActivityMainBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseActivity
-import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -22,7 +22,7 @@ class MainActivity : BaseActivity() {
 
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
-    private val viewModel : InaDraftVM by viewModels()
+    private val viewModel : PlayerInfoListFragmentVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

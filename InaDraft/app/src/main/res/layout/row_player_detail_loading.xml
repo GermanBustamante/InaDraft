@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RowTeamCardViewRoundedAndElevated"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/player_detail_card__card_view__player_card__height"
+    android:layout_marginStart="@dimen/player_detail_card__margin_default"
+    android:layout_marginTop="@dimen/player_detail_card__margin_default"
+    android:layout_marginEnd="@dimen/player_detail_card__margin_default">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/playerDetailCardImgPlayerCard"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:foregroundTint="@color/loadingGray"
+            android:src="@drawable/bg__card__player_details"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerMedia"
+            android:layout_width="@dimen/player_detail_card__font__label__player_media"
+            android:layout_height="@dimen/player_detail_card__font__label__player_media"
+            android:background="@color/loadingGray"
+            android:textColor="@color/playerDetailsLabelPlayerMedia"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineMediaWithPosition"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalPhotoWithInfo"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerPosition"
+            android:layout_width="@dimen/player_detail_card__font__label__player_position"
+            android:layout_height="@dimen/player_detail_card__font__label__player_position"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@id/guidelinePositionWithShield"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerMedia"
+            app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerMedia"
+            app:layout_constraintTop_toBottomOf="@id/guidelineMediaWithPosition" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardImgPlayerShield"
+            android:layout_width="@dimen/player_detail_card__img__player_shield__width"
+            android:layout_height="@dimen/player_detail_card__img__player_shield__height"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontalMedium"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerMedia"
+            app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerMedia"
+            app:layout_constraintTop_toTopOf="@id/guidelinePositionWithShield" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardImgPlayerPhoto"
+            android:layout_width="@dimen/player_detail_card__img__player_photo__height"
+            android:layout_height="@dimen/player_detail_card__img__player_photo__height"
+            android:layout_margin="4dp"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontalMedium"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEndCard"
+            app:layout_constraintStart_toStartOf="@id/guidelineVerticalPhotoWithInfo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
+
+        <TextView
+            android:id="@+id/playerDetailCardLabelPlayerName"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__player_name__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_name"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineNameWithStats"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineHorizontalMedium" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerKickPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_kick_punctuation"
+            android:layout_height="@dimen/player_detail_card__font__label__player_kick_punctuation"
+            android:layout_marginTop="2dp"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineNameWithStats"
+            app:layout_constraintVertical_bias="0"
+            tools:text="40" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerKickDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_kick_description"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@+id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
+            app:layout_constraintStart_toEndOf="@+id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintTop_toTopOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerBodyPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_kick_description"
+            android:layout_height="@dimen/player_detail_card__font__label__player_body_punctuation"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintTop_toBottomOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/playerDetailCardLabelPlayerBodyDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_body_description"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerKickDescription"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerKickDescription"
+            app:layout_constraintTop_toBottomOf="@id/playerDetailCardLabelPlayerKickDescription"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/playerDetailCardLabelPlayerControlPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_control_punctuation"
+            android:layout_height="@dimen/player_detail_card__font__label__player_control_punctuation"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            android:textColor="@color/playerDetailsLabelPlayerControlPoint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintTop_toBottomOf="@id/playerDetailCardLabelPlayerBodyPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerControlDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_control_description"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerKickDescription"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerKickDescription"
+            app:layout_constraintTop_toBottomOf="@id/playerDetailCardLabelPlayerBodyDescription"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_guard_punctuation"
+            android:layout_height="@dimen/player_detail_card__font__label__player_guard_punctuation"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@id/guidelineVerticalMedium"
+            app:layout_constraintTop_toTopOf="@id/playerDetailCardLabelPlayerKickPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/playerDetailCardLabelPlayerGuardDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_guard_description"
+            android:layout_marginStart="@dimen/player_detail_card__margin_default"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineEndCard"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintTop_toTopOf="@id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerSpeedPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_speed_punctuation"
+            android:layout_height="@dimen/player_detail_card__font__label__player_speed_punctuation"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintTop_toBottomOf="@+id/playerDetailCardLabelPlayerGuardPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerSpeedDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_speed_description"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/playerDetailCardLabelPlayerGuardDescription"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerGuardDescription"
+            app:layout_constraintTop_toBottomOf="@+id/playerDetailCardLabelPlayerGuardDescription"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerGutsPunctuation"
+            android:layout_width="@dimen/player_detail_card__font__label__player_guts_punctuation"
+            android:layout_height="@dimen/player_detail_card__font__label__player_guts_punctuation"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            android:background="@color/loadingGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/playerDetailCardLabelPlayerSpeedPunctuation"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerSpeedPunctuation"
+            app:layout_constraintTop_toBottomOf="@+id/playerDetailCardLabelPlayerSpeedPunctuation"
+            app:layout_constraintVertical_bias="0" />
+
+        <FrameLayout
+            android:id="@+id/playerDetailCardLabelPlayerGutsDescription"
+            android:layout_width="@dimen/row_player_detail_loading__frame_layout__loading__descriptive_stat__width"
+            android:layout_height="@dimen/player_detail_card__font__label__player_guts_description"
+            android:layout_marginTop="@dimen/row_player_detail_loading__margin_min"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/loadingGray"
+            app:layout_constraintEnd_toEndOf="@+id/playerDetailCardLabelPlayerSpeedDescription"
+            app:layout_constraintStart_toStartOf="@+id/playerDetailCardLabelPlayerSpeedDescription"
+            app:layout_constraintTop_toBottomOf="@+id/playerDetailCardLabelPlayerSpeedDescription"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontalMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.52" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineNameWithStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.61" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVerticalPhotoWithInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineMediaWithPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.31" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePositionWithShield"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.397" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineEndCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.83" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

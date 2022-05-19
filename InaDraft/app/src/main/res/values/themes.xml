@@ -22,6 +22,10 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20%</item>
     </style>
+
+    <style name="CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
     <!--endregion-->
 
     <!-- region common cardView-->

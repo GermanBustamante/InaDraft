@@ -9,7 +9,7 @@
         android:layout_height="match_parent">
 
         <include
-            android:id="@+id/teamLoading1"
+            android:id="@+id/playerLoading1"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -20,80 +20,80 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading2"
+            android:id="@+id/playerLoading2"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/teamLoading1"
+            app:layout_constraintStart_toEndOf="@+id/playerLoading1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading3"
+            android:id="@+id/playerLoading3"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guidelineVerticalMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading1"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading1"
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading4"
+            android:id="@+id/playerLoading4"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/teamLoading3"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading2"
+            app:layout_constraintStart_toEndOf="@+id/playerLoading3"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading2"
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading5"
+            android:id="@+id/playerLoading5"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guidelineVerticalMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading3"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading3"
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading6"
+            android:id="@+id/playerLoading6"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/teamLoading5"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading4"
+            app:layout_constraintStart_toEndOf="@+id/playerLoading5"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading4"
             app:layout_constraintVertical_bias="0.0" />
 
         <include
-            android:id="@+id/teamLoading7"
+            android:id="@+id/playerLoading7"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/guidelineVerticalMedium"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading5"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading5"
             app:layout_constraintVertical_bias="0" />
 
         <include
-            android:id="@+id/teamLoading8"
+            android:id="@+id/playerLoading8"
             layout="@layout/row_team_loading"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/teamLoading7"
-            app:layout_constraintTop_toBottomOf="@+id/teamLoading6"
+            app:layout_constraintStart_toEndOf="@+id/playerLoading7"
+            app:layout_constraintTop_toBottomOf="@+id/playerLoading6"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.Guideline

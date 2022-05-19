@@ -22,5 +22,4 @@ include ':data:entity'
 include ':data:repository'
 include ':data:datasource'
 include ':data:remote'
-include ':aboutlibrary'
 

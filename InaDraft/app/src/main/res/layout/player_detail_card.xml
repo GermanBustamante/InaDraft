@@ -2,10 +2,12 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RowTeamCardViewRoundedAndElevated"
     android:layout_width="match_parent"
-    app:cardElevation="0dp"
-    android:layout_height="@dimen/player_detail_card__card_view__player_card__height"
-    android:backgroundTint="@android:color/transparent">
+    android:layout_marginStart="@dimen/player_detail_card__margin_default"
+    android:layout_marginTop="@dimen/player_detail_card__margin_default"
+    android:layout_marginEnd="@dimen/player_detail_card__margin_default"
+    android:layout_height="@dimen/player_detail_card__card_view__player_card__height">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +17,7 @@
             android:id="@+id/playerDetailCardImgPlayerCard"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:src="@drawable/player_card_details"
+            android:src="@drawable/bg__card__player_details"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +43,8 @@
             android:id="@+id/playerDetailCardLabelPlayerPosition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/player_detail_card__font__label__player_position"
             android:textColor="@color/playerDetailsLabelPlayerPosition"
+            android:textSize="@dimen/player_detail_card__font__label__player_position"
             app:layout_constraintBottom_toBottomOf="@id/guidelinePositionWithShield"
             app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerMedia"
             app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerMedia"
@@ -57,7 +59,7 @@
             app:layout_constraintEnd_toEndOf="@id/playerDetailCardLabelPlayerMedia"
             app:layout_constraintStart_toStartOf="@id/playerDetailCardLabelPlayerMedia"
             app:layout_constraintTop_toTopOf="@id/guidelinePositionWithShield"
-            tools:src="@drawable/raimon_prueba" />
+            tools:src="@drawable/img__prueba_raimon_shield" />
 
         <ImageView
             android:id="@+id/playerDetailCardImgPlayerPhoto"
@@ -68,7 +70,7 @@
             app:layout_constraintStart_toStartOf="@id/guidelineVerticalPhotoWithInfo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1"
-            tools:src="@drawable/mark_prueba" />
+            tools:src="@drawable/img__prueba__mark_evans" />
 
         <TextView
             android:id="@+id/playerDetailCardLabelPlayerName"

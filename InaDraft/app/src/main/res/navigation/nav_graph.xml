@@ -29,8 +29,12 @@
             android:defaultValue="-1" />
     </fragment>
     <fragment
-        android:id="@+id/aboutAppFragment"
-        android:name="es.gdebustamante.inadraft.ui.view.fragment.AboutAppFragment"
-        android:label="@string/menu_activity_main_drawer__action_about_app"
-        tools:layout="@layout/fragment_about_app" />
+        android:id="@+id/rankingFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.RankingFragment"
+        android:label="fragment_ranking"
+        tools:layout="@layout/fragment_ranking" />
+    <fragment
+        android:id="@+id/aboutAppPreferenceFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.preference.AboutAppPreferenceFragment"
+        android:label="AboutAppPreferenceFragment" />
 </navigation>

@@ -6,7 +6,7 @@ import es.gdebustamante.inadraft.databinding.FragmentTeamInfoListBinding
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.ui.adapter.TeamAdapter
 import es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragmentDirections
-import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
 
 fun FragmentTeamInfoListBinding.setupRecyclerView(adapter: TeamAdapter) {
     infoTeamFragmentListOfTeams.adapter = adapter
@@ -18,7 +18,7 @@ fun FragmentTeamInfoListBinding.onTeamClicked(teamSelected: TeamBO) {
     )
 }
 
-fun FragmentTeamInfoListBinding.setupListeners(viewModel : InaDraftVM){
+fun FragmentTeamInfoListBinding.setupListeners(viewModel : PlayerInfoListFragmentVM){
     infoTeamFragmentSwipeRefreshLayout.setOnRefreshListener { onTeamInfoListRefreshed(viewModel) }
 }
 
@@ -33,14 +33,14 @@ fun FragmentTeamInfoListBinding.onTeamListChanged(
 
 fun FragmentTeamInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {
     if (visibility){
-        infoTeamFragmentLoading.root.startShimmer()
+        teamInfoListFragmentLoading.root.startShimmer()
     }else{
-        infoTeamFragmentLoading.root.stopShimmer()
+        teamInfoListFragmentLoading.root.stopShimmer()
     }
-    infoTeamFragmentLoading.root.isVisible = visibility
+    teamInfoListFragmentLoading.root.isVisible = visibility
     infoTeamFragmentListOfTeams.isVisible = !visibility
 }
 
-private fun FragmentTeamInfoListBinding.onTeamInfoListRefreshed(viewModel : InaDraftVM) {
+private fun FragmentTeamInfoListBinding.onTeamInfoListRefreshed(viewModel : PlayerInfoListFragmentVM) {
     viewModel.loadTeamList()
 }

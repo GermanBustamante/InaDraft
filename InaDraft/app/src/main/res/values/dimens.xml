@@ -45,6 +45,7 @@
     <!--region player_detail_card-->
     <dimen name="player_detail_card__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="player_detail_card__margin_min">@dimen/common__margin_min</dimen>
+    <dimen name="player_detail_card__card_view__player_card__elevation">@dimen/common__cardview__elevation</dimen>
     <dimen name="player_detail_card__card_view__player_card__width">180dp</dimen>
     <dimen name="player_detail_card__card_view__player_card__height">220dp</dimen>
     <dimen name="player_detail_card__img__player_shield__width">24dp</dimen>
@@ -65,6 +66,12 @@
     <dimen name="player_detail_card__font__label__player_guard_description">@dimen/common__font__label__player_description</dimen>
     <dimen name="player_detail_card__font__label__player_speed_description">@dimen/common__font__label__player_description</dimen>
     <dimen name="player_detail_card__font__label__player_guts_description">@dimen/common__font__label__player_description</dimen>
+    <!--endregion-->
+
+    <!--region row_player_detail_loading-->
+    <dimen name="row_player_detail_loading__frame_layout__loading__player_name__width">60dp</dimen>
+    <dimen name="row_player_detail_loading__frame_layout__loading__descriptive_stat__width">18dp</dimen>
+    <dimen name="row_player_detail_loading__margin_min">2dp</dimen>
     <!--endregion-->
 
 </resources>

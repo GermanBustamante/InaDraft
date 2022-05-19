@@ -4,23 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentPlayerInfoListBinding
 import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
-import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayerListChanged
-import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayerPositionSelectedChanged
-import es.gdebustamante.inadraft.ui.view.bindingExtension.onTeamSelectedChanged
-import es.gdebustamante.inadraft.ui.view.bindingExtension.setupRecyclerView
-import es.gdebustamante.inadraft.ui.viewmodel.InaDraftVM
+import es.gdebustamante.inadraft.ui.view.bindingExtension.*
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
+import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
 
 @AndroidEntryPoint
 class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
-    private val viewModel: InaDraftVM by viewModels()
+    private val viewModel: TeamInfoListVM by viewModels()
     private val adapter = PlayerDetailAdapter()
     private val args: PlayerInfoListFragmentArgs by navArgs()
 
@@ -30,8 +27,10 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
     ): View? {
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
+            playerInfoListFragmentLoading.root.startShimmer()
             setupDrawerWithFragmentToolbar(playerInfoListFragmentToolbarTop)
             setupRecyclerView(adapter)
+            setupListeners(viewModel, args.teamId)
         }
         return binding?.root
     }
@@ -58,9 +57,9 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
         viewModel.positionList.observe(viewLifecycleOwner){
             binding?.onPlayerPositionSelectedChanged(it, adapter)
         }
+        viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
+
     }
-
-
 }
 
 

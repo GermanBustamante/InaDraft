@@ -44,7 +44,7 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <include
-        android:id="@+id/infoTeamFragmentLoading"
+        android:id="@+id/teamInfoListFragmentLoading"
         layout="@layout/fragment_team_info_list_loading"
         android:layout_width="0dp"
         android:layout_height="0dp"

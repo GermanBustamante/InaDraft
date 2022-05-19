@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <attr name="about_app_background_color" format="color" />
+    <attr name="about_app_text_color" format="color" />
+    <attr name="about_app_name_color" format="color" />
+    <attr name="about_app_version_color" format="color" />
+
+    <item name="about_app_background_color" type="color">#000000</item>
+    <item name="about_app_text_color" type="color">#000000</item>
+    <item name="about_app_name_color" type="color">#000000</item>
+    <item name="about_app_version_color" type="color">#000000</item>
+</resources>

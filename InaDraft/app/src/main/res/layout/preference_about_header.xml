@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.view.fragment.CustomHeaderAboutAppPreference">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            app:title="@string/nav_graph__fragment_about_app__title"
+            android:id="@+id/aboutAppFragmentToolbarTop"
+            style="@style/BaseToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aboutAppFragmentImgBackground"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aboutAppFragmentToolbarTop"
+            app:layout_constraintVertical_bias="0"
+            app:srcCompat="@drawable/bg_futbol_frontier_stadium" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/aboutAppFragmentImgAppLogo"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
+            android:src="@drawable/img__logo__inazuma_eleven"
+            app:layout_constraintBottom_toBottomOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintEnd_toEndOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintStart_toStartOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintTop_toTopOf="@id/aboutAppFragmentImgBackground"
+            app:shapeAppearanceOverlay="@style/CornerSize50Percent" />
+
+        <TextView
+            android:id="@+id/aboutAppFragmentLabelAppName"
+            style="?android:attr/textAppearanceListItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintEnd_toEndOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintStart_toStartOf="@id/aboutAppFragmentImgBackground"
+            app:layout_constraintTop_toBottomOf="@id/aboutAppFragmentImgAppLogo"
+            app:layout_constraintVertical_bias="0"
+            tools:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/aboutAppFragmentLabelAppVersion"
+            style="?android:attr/textAppearanceSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@id/aboutAppFragmentLabelAppName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:text="version 1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
