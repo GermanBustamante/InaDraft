@@ -4,22 +4,22 @@
     <group>
         <item
             android:id="@+id/homeFragment"
-            android:icon="@drawable/ic__home__app_start"
+            android:icon="@drawable/ic_home"
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_home"/>
         <item
             android:id="@+id/rankingFragment"
-            android:icon="@drawable/ic__ranking__score_draft"
+            android:icon="@drawable/ic_ranking"
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_ranking"/>
         <item
             android:id="@+id/infoTeamFragment"
-            android:icon="@drawable/ic__people__teams_and_players_information"
+            android:icon="@drawable/ic_people_alt"
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_info"/>
         <item
-            android:id="@+id/aboutAppPreferenceFragment"
-            android:icon="@drawable/ic__info__about_app"
+            android:id="@+id/aboutAppFragment"
+            android:icon="@drawable/ic_info"
             app:showAsAction="ifRoom"
             android:title="@string/menu_activity_main_drawer__action_about_app"/>
 
