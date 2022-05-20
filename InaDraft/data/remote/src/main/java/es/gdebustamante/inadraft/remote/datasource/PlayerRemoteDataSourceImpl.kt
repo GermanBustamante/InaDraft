@@ -6,6 +6,9 @@ import es.gdebustamante.inadraft.remote.api.APIService
 import es.gdebustamante.inadraft.entity.toBO
 
 class PlayerRemoteDataSourceImpl(private val apiService: APIService) : PlayerRemoteDataSource {
+    override suspend fun getRemotePlayers(): List<PlayerBO> {
+        return emptyList()
+    }
 
     override suspend fun getRemotePlayersFromTeam(teamId: Int): List<PlayerBO> {
         val playersResponse = apiService.getPlayersFromTeam(teamId)

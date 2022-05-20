@@ -1,4 +1,4 @@
-package es.gdebustamante.inadraft.modules
+package es.gdebustamante.inadraft.usescases.di
 
 import dagger.Module
 import dagger.Provides
@@ -14,7 +14,7 @@ import es.gdebustamante.inadraft.usescases.GetTeamsUseCase
 
 @Module
 @InstallIn(SingletonComponent::class)
-class UsesCasesModule {
+object UsesCasesModule {
 
     @Provides
     fun loadTeamsUseCaseProvider(teamRepository: TeamRepository): GetTeamsUseCase =

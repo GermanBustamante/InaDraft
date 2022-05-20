@@ -1,12 +1,16 @@
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin-kapt'
 }
 
 dependencies {
     implementation project(':domain')
     implementation project(path: ':data:repository')
     implementation project(path: ':data:repository')
+    //Hilt
+    implementation "com.google.dagger:hilt-core:2.40.5"
+    kapt "com.google.dagger:hilt-compiler:2.40.5"
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_1_7

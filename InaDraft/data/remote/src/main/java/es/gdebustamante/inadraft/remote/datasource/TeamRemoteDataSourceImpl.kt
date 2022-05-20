@@ -9,7 +9,7 @@ class TeamRemoteDataSourceImpl(private val apiService: APIService): TeamRemoteDa
 
     private val teamNotSuccessful = TeamBO(-1, "null", "null")
 
-    override suspend fun getTeams(): List<TeamBO> {
+    override suspend fun getRemoteTeams(): List<TeamBO> {
         val teamsResponse = apiService.getTeams()
         return if (teamsResponse.isSuccessful) teamsResponse.body()?.map { it.toBO() } ?: emptyList() else emptyList()
     }
