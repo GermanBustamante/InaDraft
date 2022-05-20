@@ -1,10 +1,20 @@
 package es.gdebustamante.inadraft.repository
 
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.TeamRemoteDataSource
+import es.gdebustamante.inadraft.team.TeamLocalDataSource
+import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 
-class TeamRepository(private val teamRemoteDataSource : TeamRemoteDataSource) {
-    suspend fun getTeamList(): List<TeamBO> = teamRemoteDataSource.getTeams()
+class TeamRepository(private val teamRemoteDataSource : TeamRemoteDataSource, private val teamLocalDataSource: TeamLocalDataSource) {
 
-    suspend fun getTeam(teamId: Int): TeamBO = teamRemoteDataSource.getTeam(teamId)
+    //Carga el listado de equipos y además mete los de la BBDD
+    suspend fun getTeams(): List<TeamBO>{
+        var teams = teamLocalDataSource.getLocalTeams()
+        if (teams.isEmpty()){
+            teams = teamRemoteDataSource.getRemoteTeams()
+            teamLocalDataSource.insertLocalTeams(teams)
+        }
+        return teams
+    }
+
+    suspend fun getTeam(teamId: Int): TeamBO = teamLocalDataSource.getLocalTeam(teamId)
 }

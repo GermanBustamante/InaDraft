@@ -7,4 +7,5 @@ import com.squareup.moshi.JsonClass
 data class PositionDTO (
     @Json(name = "id") val id: Int?,
     @Json(name = "name") val name: String?,
+    @Json(name = "Preview") val photo : String? //TODO CAMBIAR
 )

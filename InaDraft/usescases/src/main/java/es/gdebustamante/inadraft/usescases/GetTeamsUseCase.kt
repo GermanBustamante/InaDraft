@@ -4,7 +4,7 @@ import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.repository.TeamRepository
 
 
-class GetTeamListUseCase (private val repository: TeamRepository) {
+class GetTeamsUseCase (private val repository: TeamRepository) {
 
-    suspend operator fun invoke(): List<TeamBO> = repository.getTeamList()
+    suspend operator fun invoke(): List<TeamBO> = repository.getTeams()
 }

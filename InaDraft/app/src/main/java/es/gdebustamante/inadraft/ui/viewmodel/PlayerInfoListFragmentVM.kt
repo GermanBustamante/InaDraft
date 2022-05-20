@@ -8,19 +8,16 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.usescases.GetPlayerListByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionListUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamListUseCase
+import es.gdebustamante.inadraft.usescases.GetTeamsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class PlayerInfoListFragmentVM @Inject constructor(
-    private val getTeamListUseCase: GetTeamListUseCase,
+    private val getTeamsUseCase: GetTeamsUseCase,
 
-) : ViewModel() {
+    ) : ViewModel() {
 
     private val _teamList = MutableLiveData<List<TeamBO>>()
     val teamList: LiveData<List<TeamBO>> get() = _teamList
@@ -40,7 +37,7 @@ class PlayerInfoListFragmentVM @Inject constructor(
     fun loadTeamList() {
         viewModelScope.launch(Dispatchers.Main) {
             _progressVisible.value = true
-            _teamList.value = getTeamListUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
+            _teamList.value = getTeamsUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
             _progressVisible.value = false
         }
     }

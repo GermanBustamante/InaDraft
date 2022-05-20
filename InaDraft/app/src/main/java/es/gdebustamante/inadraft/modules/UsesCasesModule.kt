@@ -7,22 +7,22 @@ import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.repository.PlayerRepository
 import es.gdebustamante.inadraft.repository.PositionRepository
 import es.gdebustamante.inadraft.repository.TeamRepository
-import es.gdebustamante.inadraft.usescases.GetPlayerListByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionListUseCase
+import es.gdebustamante.inadraft.usescases.GetPlayersByTeamUseCase
+import es.gdebustamante.inadraft.usescases.GetPositionsUseCase
 import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamListUseCase
+import es.gdebustamante.inadraft.usescases.GetTeamsUseCase
 
 @Module
 @InstallIn(SingletonComponent::class)
 class UsesCasesModule {
 
     @Provides
-    fun loadTeamsUseCaseProvider(teamRepository: TeamRepository): GetTeamListUseCase =
-        GetTeamListUseCase(teamRepository)
+    fun loadTeamsUseCaseProvider(teamRepository: TeamRepository): GetTeamsUseCase =
+        GetTeamsUseCase(teamRepository)
 
     @Provides
     fun getPlayerListByTeamUseCaseProvider(playerRepository: PlayerRepository) =
-        GetPlayerListByTeamUseCase(playerRepository)
+        GetPlayersByTeamUseCase(playerRepository)
 
     @Provides
     fun getTeamByIdUseCaseProvider(teamRepository: TeamRepository) =
@@ -30,5 +30,5 @@ class UsesCasesModule {
 
     @Provides
     fun getPositionListUseCase(positionRepository: PositionRepository) =
-        GetPositionListUseCase(positionRepository)
+        GetPositionsUseCase(positionRepository)
 }

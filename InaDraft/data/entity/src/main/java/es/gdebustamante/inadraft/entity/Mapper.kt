@@ -30,7 +30,8 @@ fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
 
 fun PositionDTO.toBO() : PositionBO = PositionBO(
     id ?: -1,
-    name ?: ""
+    name ?: "",
+    photo ?: ""
 )
 
 

@@ -4,9 +4,9 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import es.gdebustamante.inadraft.PlayerRemoteDataSource
-import es.gdebustamante.inadraft.PositionRemoteDataSource
-import es.gdebustamante.inadraft.TeamRemoteDataSource
+import es.gdebustamante.inadraft.player.PlayerRemoteDataSource
+import es.gdebustamante.inadraft.position.PositionRemoteDataSource
+import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 import es.gdebustamante.inadraft.repository.PlayerRepository
 import es.gdebustamante.inadraft.repository.PositionRepository
 import es.gdebustamante.inadraft.repository.TeamRepository

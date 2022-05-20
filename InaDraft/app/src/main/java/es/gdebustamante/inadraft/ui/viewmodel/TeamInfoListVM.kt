@@ -8,8 +8,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.usescases.GetPlayerListByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionListUseCase
+import es.gdebustamante.inadraft.usescases.GetPlayersByTeamUseCase
+import es.gdebustamante.inadraft.usescases.GetPositionsUseCase
 import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -17,9 +17,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class TeamInfoListVM @Inject constructor(
-    private val getPlayerListByTeamUseCase: GetPlayerListByTeamUseCase,
+    private val getPlayersByTeamUseCase: GetPlayersByTeamUseCase,
     private val getTeamByIdUseCase: GetTeamByIdUseCase,
-    private val getPositionListUseCase: GetPositionListUseCase
+    private val getPositionsUseCase: GetPositionsUseCase
 ) : ViewModel() {
 
     private val _playerList = MutableLiveData<List<PlayerBO>>()
@@ -45,7 +45,7 @@ class TeamInfoListVM @Inject constructor(
     }
 
     private suspend fun loadPlayerListByTeamId(teamId: Int) {
-        _playerList.postValue(getPlayerListByTeamUseCase.invoke(teamId))
+        _playerList.postValue(getPlayersByTeamUseCase.invoke(teamId))
     }
 
     private suspend fun loadTeamById(teamId: Int) {
@@ -53,6 +53,6 @@ class TeamInfoListVM @Inject constructor(
     }
 
     private suspend fun loadPositionsById() {
-        _positionList.postValue(getPositionListUseCase.invoke())
+        _positionList.postValue(getPositionsUseCase.invoke())
     }
 }
