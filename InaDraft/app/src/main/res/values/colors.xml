@@ -60,6 +60,12 @@
     <color name="playerDetailsLabelPlayerGutsDescription">@color/commonPlayerCardText</color>
     <!--endregion-->
 
+    <!--region player_mini_card-->
+    <color name="playerMiniLabelPlayerMedia">@color/commonPlayerCardText</color>
+    <color name="playerMiniLabelPlayerPosition">@color/commonPlayerCardText</color>
+    <color name="playerMiniLabelPlayerName">@color/commonPlayerCardText</color>
+    <!--endregion-->
+
     <!--region header_navigation_drawer-->
     <color name="headerNavDrawerBackground">#2E3F53</color>
     <color name="labelNavDrawerTitleApp">@color/white</color>

@@ -20,7 +20,7 @@ class CustomHeaderAboutAppPreference @JvmOverloads constructor(
 ) : Preference(context, attrs, defStyleAttr){
 
     init {
-        widgetLayoutResource = R.layout.preference_about_header
+        widgetLayoutResource = R.layout.preference_about_app_header
     }
 
     //region override methods
@@ -28,17 +28,18 @@ class CustomHeaderAboutAppPreference @JvmOverloads constructor(
     override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
         holder.apply {
-            val mainBackground = findViewById(es.gdebustamante.inadraft.R.id.aboutAppFragmentImgBackground)
+            val mainBackground = findViewById(R.id.aboutAppFragmentImgBackground)
                     as AppCompatImageView
-            val appNameLabel = findViewById(es.gdebustamante.inadraft.R.id.aboutAppFragmentLabelAppName)
+            val appNameLabel = findViewById(R.id.aboutAppFragmentLabelAppName)
                     as TextView
-            val appVersionLabel = findViewById(es.gdebustamante.inadraft.R.id.aboutAppFragmentLabelAppVersion)
+            val appVersionLabel = findViewById(R.id.aboutAppFragmentLabelAppVersion)
                     as TextView
             setHeaderBackgroundWhenIsDarkThemeOn(mainBackground)
             appVersionLabel.text = getVersionName()
             appNameLabel.text = this@CustomHeaderAboutAppPreference.context.getAppName()
         }
     }
+
 
     //endregion
 

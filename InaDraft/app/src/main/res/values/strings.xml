@@ -43,7 +43,11 @@
     <!--region header_navigation_drawer-->
     <string name="header_navigation_drawer__label_app_name">@string/app_name</string>
     <string name="header_navigation_drawer__label_company_signature">Creado por Germán De Bustamante Conde</string>
+    <!--endregion-->
 
+    <!--region preference_about_app_header-->
+    <string name="preference_about_app_header__title">@string/menu_activity_main_drawer__action_about_app</string>
+    <!--endregion-->
 
     <!-- region about_app_preferences -->
     <!-- Textos fijos de cada categoría -->
@@ -55,7 +59,7 @@
     <string name="privacy_policy_title">Licence and privacy policy</string>
     <string name="privacy_policy_summary">Licensing details and privacy policy</string>
     <string name="follow_twitter_title">Follow me on Github</string>
-    <string name="developer_page_title">My Linkedin page</string>
+    <string name="developer_page_title">My Linkeding page</string>
     <string name="developer_page_summary">A summary of what I do</string>
     <string name="email_contact_title">Contact via email</string>
 
@@ -69,7 +73,7 @@
     <string name="category_dev">Developer</string>
 
     <!--  Enlace hacía el apartado de todas tus aplicaciones de Google Play  -->
-    <string name="other_apps_link" translatable="false">https://play.google.com/store/apps/collection/cluster?clp=igM4ChkKEzY3NDY1MTU1MzI0MDYzMjQzODQQCBgDEhkKEzY3NDY1MTU1MzI0MDYzMjQzODQQCBgDGAA%3D:S:ANO1ljJ_J6Igsr=CjuKAzgKGQoTNjc0NjUxNTUzMjQwNjMyNDM4NBAIGAMSGQoTNjc0NjUxNTUzMjQwNjMyNDM4NBAIGAMYAA%3D%3D:S:ANO1ljKZSDE</string>
+    <string name="other_apps_link" translatable="false">https://www.instagram.com/germanbustamante_</string>
     <!--  Enlace hacía tu política de privacidad  -->
     <string name="privacy_policy_link" translatable="false">https://theuselessweb.com/</string>
     <!--  Enlace hacía tu perfil de usuario de Twitter  -->

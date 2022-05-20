@@ -26,7 +26,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/aboutAppFragmentImgBackground"
             android:layout_width="0dp"
-            android:layout_height="240dp"
+            android:layout_height="@dimen/preference_about_app_header__img__background_height"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/aboutAppFragmentImgAppLogo"
-            android:layout_width="68dp"
-            android:layout_height="68dp"
+            android:layout_width="@dimen/preference_about_app_header__img__app_width"
+            android:layout_height="@dimen/preference_about_app_header__img__app_height"
             android:src="@drawable/img__logo__inazuma_eleven"
             app:layout_constraintBottom_toBottomOf="@id/aboutAppFragmentImgBackground"
             app:layout_constraintEnd_toEndOf="@id/aboutAppFragmentImgBackground"
@@ -51,7 +51,7 @@
             style="?android:attr/textAppearanceListItem"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/preference_about_app_header__margin_min"
             app:layout_constraintBottom_toBottomOf="@id/aboutAppFragmentImgBackground"
             app:layout_constraintEnd_toEndOf="@id/aboutAppFragmentImgBackground"
             app:layout_constraintStart_toStartOf="@id/aboutAppFragmentImgBackground"
@@ -64,7 +64,6 @@
             style="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
             app:layout_constraintTop_toBottomOf="@id/aboutAppFragmentLabelAppName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/player_mini_card__card_view__player_card__width"
+    android:layout_height="@dimen/player_mini_card__card_view__player_card__height">
+
+    <ImageView
+        android:id="@+id/playerMiniCardImgPlayerCard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/bg__card__player_mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/playerMiniCardLabelPlayerMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/playerMiniLabelPlayerMedia"
+        android:textSize="@dimen/player_mini_card__font__label__player_media"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalPreviewWithPhoto"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalStartCard"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25"
+        tools:text="94" />
+
+    <TextView
+        android:id="@+id/playerMiniCardLabelPlayerPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/playerMiniLabelPlayerPosition"
+        android:textSize="@dimen/player_mini_card__font__label__player_position"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/playerMiniCardLabelPlayerMedia"
+        app:layout_constraintStart_toStartOf="@id/playerMiniCardLabelPlayerMedia"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintTop_toBottomOf="@+id/playerMiniCardLabelPlayerMedia"
+        tools:text="GK" />
+
+    <ImageView
+        android:id="@+id/playerMiniCardImgPlayerShield"
+        android:layout_width="@dimen/player_mini_card__img__player_shield__width"
+        android:layout_height="@dimen/player_mini_card__img__player_shield__height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="@id/playerMiniCardLabelPlayerPosition"
+        app:layout_constraintStart_toStartOf="@id/playerMiniCardLabelPlayerPosition"
+        app:layout_constraintTop_toBottomOf="@id/playerMiniCardLabelPlayerPosition"
+        tools:src="@drawable/img__prueba_raimon_shield" />
+
+    <ImageView
+        android:id="@+id/playerMiniCardImgPlayerPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/player_mini_card__img__player_photo__height"
+        app:layout_constraintBottom_toTopOf="@+id/playerMiniCardLabelPlayerName"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalEndCard"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalPreviewWithPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        tools:src="@drawable/img__prueba__mark_evans" />
+
+    <TextView
+        android:id="@+id/playerMiniCardLabelPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/playerMiniLabelPlayerName"
+        android:textSize="@dimen/player_mini_card__font__label__player_name"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineHorizontalPhotoWithName"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineVerticalEndCard"
+        app:layout_constraintStart_toStartOf="@+id/guidelineVerticalPreviewWithPhoto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:text="MARK" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalStartCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalEndCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.83" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalPreviewWithPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineHorizontalPhotoWithName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+</androidx.constraintlayout.widget.ConstraintLayout>
