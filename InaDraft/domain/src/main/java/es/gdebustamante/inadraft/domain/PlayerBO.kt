@@ -14,7 +14,10 @@ data class PlayerBO(
     val teamId: Int,
     val positionId: Int
 ) {
-    fun getMedia(): Int {
+
+    val average: Int
+        get() = (kick + body + control + guard + speed + stamina + guts) / 7
+
 //        return (when (positionId) {
 //            1 -> kick * 0.22 + (guts + speed + control) * 0.18 + stamina * 0.14 + (body + guard) * 0.10
 //            2 -> control * 0.22 + (body + stamina + guts + kick + speed) * 0.14 + kick * 0.08
@@ -22,8 +25,6 @@ data class PlayerBO(
 //            4 -> guard * 0.22 + (control + guts + body) * 0.16 + (kick + speed + stamina) * 0.1
 //            else -> 0.0
 //        }).toInt()
-        return (kick + body + control + guard + speed + stamina + guts) / 7
-    }
 }
 
 /*

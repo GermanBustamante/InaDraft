@@ -54,7 +54,7 @@ object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerDetailVO>() 
 
 private fun RowPlayerDetailBinding.bind(player: PlayerDetailVO) {
     rowPlayerDetailContent.apply {
-        playerDetailCardLabelPlayerMedia.text = player.player.getMedia().toString()
+        playerDetailCardLabelPlayerMedia.text = player.player.average.toString()
         playerDetailCardLabelPlayerPosition.text = player.position.name
         playerDetailCardImgPlayerShield.loadGlideCenterImage(player.team.shield)
         playerDetailCardLabelPlayerName.text = player.player.name.uppercase()

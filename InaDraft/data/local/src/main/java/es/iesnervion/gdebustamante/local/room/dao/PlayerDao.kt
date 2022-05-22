@@ -1,0 +1,37 @@
+package es.iesnervion.gdebustamante.local.room.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Transaction
+import es.iesnervion.gdebustamante.local.room.dbo.entity.PlayerDBO
+import es.iesnervion.gdebustamante.local.room.dbo.relation.PlayersWithTeam
+
+@Dao
+interface PlayerDao {
+
+    //region queries
+
+    @Transaction
+    @Query("SELECT * FROM players WHERE teamId = :teamId")
+    suspend fun getPlayersFromTeam(teamId : Int) : List<PlayersWithTeam>
+
+    //TODO VER COMO MEJORARLO
+    @Transaction
+    @Query("SELECT * FROM players WHERE ((kick + body + control + guard + speed + stamina + guts + photo)/7) >= 70")
+    suspend fun getPlayersWithHighAverage(): List<PlayersWithTeam>
+
+    @Transaction
+    @Query("SELECT * FROM players WHERE positionId = :positionId")
+    suspend fun getPlayersFromPosition(positionId : Int) : List<PlayersWithTeam>
+
+    //endregion
+
+    //region insert
+
+    @Insert
+    suspend fun insertPlayers(players : List<PlayerDBO>)
+
+    //endregion
+
+}
