@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/RowTeamCardViewRoundedAndElevated"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_marginStart="@dimen/player_detail_card__margin_default"
     android:layout_marginTop="@dimen/player_detail_card__margin_default"
     android:layout_marginEnd="@dimen/player_detail_card__margin_default"

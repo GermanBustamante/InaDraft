@@ -1,4 +1,4 @@
-package es.gdebustamante.inadraft.ui.view.fragment
+package es.gdebustamante.inadraft.ui.view.preference
 
 import android.content.Context
 import android.content.pm.PackageManager

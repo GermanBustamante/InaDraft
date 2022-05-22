@@ -21,7 +21,7 @@
     <fragment
         android:id="@+id/playerListFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.PlayerInfoListFragment"
-        android:label=""
+        android:label="Players"
         tools:layout="@layout/fragment_player_info_list" >
         <argument
             android:name="teamId"

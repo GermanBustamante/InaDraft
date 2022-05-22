@@ -23,6 +23,7 @@
     <!--region nav_graph-->
     <string name="nav_graph__fragment_home__title">@string/menu_activity_main_drawer__action_home</string>
     <string name="nav_graph__fragment_team_info_list__title">Equipos</string>
+    <string name="nav_graph__fragment_player_info_list__title">Jugadores</string>
     <string name="nav_graph__fragment_about_app__title">@string/menu_activity_main_drawer__action_about_app</string>
     <!--endregion-->
 
@@ -52,16 +53,16 @@
     <!-- region about_app_preferences -->
     <!-- Textos fijos de cada categoría -->
 
-    <string name="other_apps_title">My other applications</string>
-    <string name="other_apps_summary">Discover the rest of my applications</string>
-    <string name="rate_app_title">Rate me on Google Play</string>
-    <string name="rate_app_summary">It helps me to further improve the application</string>
-    <string name="privacy_policy_title">Licence and privacy policy</string>
-    <string name="privacy_policy_summary">Licensing details and privacy policy</string>
-    <string name="follow_twitter_title">Follow me on Github</string>
-    <string name="developer_page_title">My Linkeding page</string>
-    <string name="developer_page_summary">A summary of what I do</string>
-    <string name="email_contact_title">Contact via email</string>
+    <string name="other_apps_title">Mis otras aplicaciones</string>
+    <string name="other_apps_summary">Descubre el resto de mis aplicaciones</string>
+    <string name="rate_app_title">Califícame en Google Play</string>
+    <string name="rate_app_summary">Me ayuda a mejorar aún más la aplicación</string>
+    <string name="privacy_policy_title">Licencia y política de privacidad</string>
+    <string name="privacy_policy_summary">Detalles de licencia y política de privacidad</string>
+    <string name="follow_twitter_title">Sigueme en GitHub</string>
+    <string name="developer_page_title">Mi página de Linkedin</string>
+    <string name="developer_page_summary">Un resumen de lo que hago</string>
+    <string name="email_contact_title">Contáctame por email</string>
 
     <!-- Botones de la toolbar -->
     <string name="share_app_content">Hi! I\'d like to show you the %1$s app: %2$s</string>

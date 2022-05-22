@@ -1,4 +1,4 @@
-package es.gdebustamante.inadraft.modules
+package es.iesnervion.gdebustamante.local.module
 
 import dagger.Module
 import dagger.Provides
