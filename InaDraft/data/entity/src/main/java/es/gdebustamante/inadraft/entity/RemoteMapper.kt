@@ -7,12 +7,6 @@ import es.gdebustamante.inadraft.entity.dto.PlayerDTO
 import es.gdebustamante.inadraft.entity.dto.PositionDTO
 import es.gdebustamante.inadraft.entity.dto.TeamDTO
 
-fun TeamDTO.toBO() = TeamBO(
-    id ?: -1,
-    name ?: "",
-    shield ?: ""
-)
-
 fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     id ?: -1,
     name ?: "",
@@ -24,14 +18,19 @@ fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     stamina ?: -1,
     guts ?: -1,
     photo ?: "",
-    teamId ?: -1,
-    positionId ?: -1
+    TeamBO(teamId ?: -1, "", ""),
+    PositionBO(positionId ?: -1, "")
+)
+
+fun TeamDTO.toBO() = TeamBO(
+    id ?: -1,
+    name ?: "",
+    shield ?: ""
 )
 
 fun PositionDTO.toBO() : PositionBO = PositionBO(
     id ?: -1,
     name ?: "",
-    photo ?: ""
 )
 
 

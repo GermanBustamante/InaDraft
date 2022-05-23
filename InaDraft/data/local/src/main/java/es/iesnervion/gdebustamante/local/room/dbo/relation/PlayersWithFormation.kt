@@ -14,5 +14,5 @@ data class PlayersWithFormation(
         entityColumn = "playerId",
         associateBy = Junction(PlayerFormationCrossRef::class)
     )
-    val players : List<PlayerDBO>
-    )
+    val players: List<PlayerDBO>
+)

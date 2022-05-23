@@ -5,7 +5,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -14,21 +13,20 @@ import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.ActivityMainBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseActivity
-import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
-import kotlinx.coroutines.launch
+import es.gdebustamante.inadraft.ui.viewmodel.MainAcvitiyVM
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
-    private val viewModel : PlayerInfoListFragmentVM by viewModels()
+    private val viewModel : MainAcvitiyVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        lifecycleScope.launch{}
+        viewModel.init()
     }
 
     override fun onSupportNavigateUp(): Boolean {

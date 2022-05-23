@@ -36,7 +36,6 @@ object LocalModule {
     @Singleton
     @Provides
     fun playerDaoProvider(database: InaDraftDatabase) = database.getPlayerDao()
-
     @Singleton
     @Provides
     fun teamDaoProvider(database: InaDraftDatabase) = database.getTeamDao()

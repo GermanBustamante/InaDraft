@@ -7,14 +7,15 @@ import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.repository.PlayerRepository
 import es.gdebustamante.inadraft.repository.PositionRepository
 import es.gdebustamante.inadraft.repository.TeamRepository
-import es.gdebustamante.inadraft.usescases.GetPlayersByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionsUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamsUseCase
+import es.gdebustamante.inadraft.usescases.*
 
 @Module
 @InstallIn(SingletonComponent::class)
 object UsesCasesModule {
+
+    @Provides
+    fun populateDatabaseUseCaseProvider(playerRepository: PlayerRepository) =
+        PopulateDatabaseUseCase(playerRepository)
 
     @Provides
     fun loadTeamsUseCaseProvider(teamRepository: TeamRepository): GetTeamsUseCase =

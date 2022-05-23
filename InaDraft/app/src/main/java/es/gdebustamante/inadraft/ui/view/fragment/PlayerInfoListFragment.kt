@@ -11,13 +11,12 @@ import es.gdebustamante.inadraft.databinding.FragmentPlayerInfoListBinding
 import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.*
-import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
-import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListVM
 
 @AndroidEntryPoint
 class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
-    private val viewModel: TeamInfoListVM by viewModels()
+    private val viewModel: PlayerInfoListVM by viewModels()
     private val adapter = PlayerDetailAdapter()
     private val args: PlayerInfoListFragmentArgs by navArgs()
 
@@ -38,7 +37,7 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupVMObservers()
-        viewModel.loadPlayersWithShieldAndPosition(args.teamId)
+        viewModel.loadPlayerByTeam(args.teamId)
     }
 
     override fun inflateViewBinding(
@@ -49,13 +48,7 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
     private fun setupVMObservers(){
         viewModel.playerList.observe(viewLifecycleOwner) {
-            binding?.onPlayerListChanged(it)
-        }
-        viewModel.teamSelected.observe(viewLifecycleOwner){
-            binding?.onTeamSelectedChanged(it)
-        }
-        viewModel.positionList.observe(viewLifecycleOwner){
-            binding?.onPlayerPositionSelectedChanged(it, adapter)
+            binding?.onPlayerListChanged(it, adapter)
         }
         viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
 

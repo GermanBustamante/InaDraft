@@ -6,6 +6,7 @@ import androidx.room.Query
 import androidx.room.Transaction
 import es.iesnervion.gdebustamante.local.room.dbo.entity.PlayerDBO
 import es.iesnervion.gdebustamante.local.room.dbo.relation.PlayersWithTeam
+import es.iesnervion.gdebustamante.local.room.dbo.relation.PlayerWithTeamAndPosition
 
 @Dao
 interface PlayerDao {
@@ -13,8 +14,12 @@ interface PlayerDao {
     //region queries
 
     @Transaction
+    @Query("SELECT * FROM players")
+    suspend fun getPlayers(): List<PlayerWithTeamAndPosition>
+
+    @Transaction
     @Query("SELECT * FROM players WHERE teamId = :teamId")
-    suspend fun getPlayersFromTeam(teamId : Int) : List<PlayersWithTeam>
+    suspend fun getPlayersFromTeam(teamId : Int) : List<PlayerWithTeamAndPosition>
 
     //TODO VER COMO MEJORARLO
     @Transaction

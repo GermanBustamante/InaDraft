@@ -8,51 +8,38 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.usescases.GetPlayersByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionsUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
+import es.gdebustamante.inadraft.usescases.GetTeamsUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class TeamInfoListVM @Inject constructor(
-    private val getPlayersByTeamUseCase: GetPlayersByTeamUseCase,
-    private val getTeamByIdUseCase: GetTeamByIdUseCase,
-    private val getPositionsUseCase: GetPositionsUseCase
-) : ViewModel() {
+    private val getTeamsUseCase: GetTeamsUseCase,
 
-    private val _playerList = MutableLiveData<List<PlayerBO>>()
-    val playerList: LiveData<List<PlayerBO>> get() = _playerList
+    ) : ViewModel() {
 
-    private val _teamSelected = MutableLiveData<TeamBO>()
-    val teamSelected: LiveData<TeamBO> get() = _teamSelected
+    //region live data
 
-    private val _positionList = MutableLiveData<List<PositionBO>>()
-    val positionList: LiveData<List<PositionBO>> get() = _positionList
+    private val _teamList = MutableLiveData<List<TeamBO>>()
+    val teamList: LiveData<List<TeamBO>> get() = _teamList
 
     private val _progressVisible = MutableLiveData<Boolean>()
     val progressVisible: LiveData<Boolean> get() = _progressVisible
 
-    fun loadPlayersWithShieldAndPosition(teamId: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            _progressVisible.postValue(true)
-            loadPlayerListByTeamId(teamId)
-            loadTeamById(teamId)
-            loadPositionsById()
-            _progressVisible.postValue(false)
+    //endregion
+
+    //region public functions
+
+    fun loadTeamList() {
+        viewModelScope.launch(Dispatchers.Main) {
+            _progressVisible.value = true
+            _teamList.value = getTeamsUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
+            _progressVisible.value = false
         }
     }
 
-    private suspend fun loadPlayerListByTeamId(teamId: Int) {
-        _playerList.postValue(getPlayersByTeamUseCase.invoke(teamId))
-    }
+    //endregion
 
-    private suspend fun loadTeamById(teamId: Int) {
-        _teamSelected.postValue(getTeamByIdUseCase.invoke(teamId))
-    }
 
-    private suspend fun loadPositionsById() {
-        _positionList.postValue(getPositionsUseCase.invoke())
-    }
 }

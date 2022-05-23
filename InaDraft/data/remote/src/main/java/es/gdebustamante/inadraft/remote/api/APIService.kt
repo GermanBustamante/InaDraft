@@ -9,6 +9,9 @@ import retrofit2.http.Path
 
 interface APIService {
 
+    @GET("Players")
+    suspend fun getPlayers(): Response<List<PlayerDTO>>
+
     @GET("Teams")
     suspend fun getTeams() : Response<List<TeamDTO>>
 

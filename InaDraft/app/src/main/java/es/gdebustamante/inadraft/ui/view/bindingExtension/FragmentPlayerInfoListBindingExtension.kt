@@ -7,11 +7,7 @@ import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.view.vo.toPlayerWithShieldVO
-import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListFragmentVM
-import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
-
-private lateinit var teamSelected: TeamBO
-private lateinit var playerList: List<PlayerBO>
+import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListVM
 
 fun FragmentPlayerInfoListBinding.setupRecyclerView(adapter: PlayerDetailAdapter) {
     playerInfoListFragmentSlideListOfPlayers.adapter = adapter
@@ -19,36 +15,18 @@ fun FragmentPlayerInfoListBinding.setupRecyclerView(adapter: PlayerDetailAdapter
 
 fun FragmentPlayerInfoListBinding.onPlayerListChanged(
     players: List<PlayerBO>,
+    adapter: PlayerDetailAdapter,
 ) {
-    playerList = players
-}
-
-fun FragmentPlayerInfoListBinding.onTeamSelectedChanged(
-    team: TeamBO,
-) {
-    teamSelected = team
-    playerInfoListFragmentToolbarTop.title = team.name
-}
-
-fun FragmentPlayerInfoListBinding.onPlayerPositionSelectedChanged(
-    positions: List<PositionBO>,
-    adapter: PlayerDetailAdapter
-) {
-    val playerListVO = playerList.map { player ->
-        player.toPlayerWithShieldVO(
-            teamSelected,
-            positions.first { it.id == player.positionId })
-    }
     playerInfoListFragmentSwipeRefreshLayout.isRefreshing = false
-    adapter.submitList(playerListVO)
+    adapter.submitList(players)
 }
 
-fun FragmentPlayerInfoListBinding.setupListeners(viewModel: TeamInfoListVM, teamId : Int) {
+fun FragmentPlayerInfoListBinding.setupListeners(viewModel: PlayerInfoListVM, teamId : Int) {
     playerInfoListFragmentSwipeRefreshLayout.setOnRefreshListener { onPlayerInfoListRefreshed(viewModel, teamId) }
 }
 
-fun onPlayerInfoListRefreshed(viewModel: TeamInfoListVM, teamId: Int) {
-viewModel.loadPlayersWithShieldAndPosition(teamId)
+fun onPlayerInfoListRefreshed(viewModel: PlayerInfoListVM, teamId: Int) {
+viewModel.loadPlayerByTeam(teamId)
 }
 
 fun FragmentPlayerInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {

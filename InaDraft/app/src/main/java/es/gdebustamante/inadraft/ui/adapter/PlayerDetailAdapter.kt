@@ -8,63 +8,64 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
+import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.view.vo.PlayerDetailVO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
 class PlayerDetailAdapter :
-    ListAdapter<PlayerDetailVO, PlayerDetailAdapter.PlayerWithShieldDetailViewHolder>(
-        PlayerWithShieldVODiffCallback
+    ListAdapter<PlayerBO, PlayerDetailAdapter.PlayerDetailViewHolder>(
+        PlayerBODiffCallback
     ) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): PlayerDetailAdapter.PlayerWithShieldDetailViewHolder {
+    ): PlayerDetailAdapter.PlayerDetailViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_player_detail, parent, false)
-        return PlayerWithShieldDetailViewHolder(view)
+        return PlayerDetailViewHolder(view)
     }
 
     override fun onBindViewHolder(
-        holderWithShield: PlayerDetailAdapter.PlayerWithShieldDetailViewHolder,
+        holderWithShield: PlayerDetailAdapter.PlayerDetailViewHolder,
         position: Int
     ) {
         holderWithShield.binding.bind(getItem(position))
     }
 
-    inner class PlayerWithShieldDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = RowPlayerDetailBinding.bind(view)
     }
 }
 
-object PlayerWithShieldVODiffCallback : DiffUtil.ItemCallback<PlayerDetailVO>() {
+object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
     override fun areItemsTheSame(
-        oldItem: PlayerDetailVO,
-        newItem: PlayerDetailVO
+        oldItem: PlayerBO,
+        newItem: PlayerBO
     ): Boolean =
-        oldItem.player.id == newItem.player.id
+        oldItem.id == newItem.id
 
     override fun areContentsTheSame(
-        oldItem: PlayerDetailVO,
-        newItem: PlayerDetailVO
+        oldItem: PlayerBO,
+        newItem: PlayerBO
     ): Boolean =
         oldItem == newItem
 
 }
 
-private fun RowPlayerDetailBinding.bind(player: PlayerDetailVO) {
+private fun RowPlayerDetailBinding.bind(player: PlayerBO) {
     rowPlayerDetailContent.apply {
-        playerDetailCardLabelPlayerMedia.text = player.player.average.toString()
+        playerDetailCardLabelPlayerMedia.text = player.average.toString()
         playerDetailCardLabelPlayerPosition.text = player.position.name
         playerDetailCardImgPlayerShield.loadGlideCenterImage(player.team.shield)
-        playerDetailCardLabelPlayerName.text = player.player.name.uppercase()
-        playerDetailCardImgPlayerPhoto.loadGlideCenterImage(player.player.photo)
-        playerDetailCardLabelPlayerKickPunctuation.text = player.player.kick.toString()
-        playerDetailCardLabelPlayerBodyPunctuation.text = player.player.body.toString()
-        playerDetailCardLabelPlayerControlPunctuation.text = player.player.control.toString()
-        playerDetailCardLabelPlayerGuardPunctuation.text = player.player.guard.toString()
-        playerDetailCardLabelPlayerSpeedPunctuation.text = player.player.speed.toString()
-        playerDetailCardLabelPlayerGutsPunctuation.text = player.player.guts.toString()
+        playerDetailCardLabelPlayerName.text = player.name.uppercase()
+        playerDetailCardImgPlayerPhoto.loadGlideCenterImage(player.photo)
+        playerDetailCardLabelPlayerKickPunctuation.text = player.kick.toString()
+        playerDetailCardLabelPlayerBodyPunctuation.text = player.body.toString()
+        playerDetailCardLabelPlayerControlPunctuation.text = player.control.toString()
+        playerDetailCardLabelPlayerGuardPunctuation.text = player.guard.toString()
+        playerDetailCardLabelPlayerSpeedPunctuation.text = player.speed.toString()
+        playerDetailCardLabelPlayerGutsPunctuation.text = player.guts.toString()
 
     }
 }
