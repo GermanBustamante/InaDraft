@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--region cards-->
+
+    <include
+        android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
+        android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
+        android:id="@+id/formation442Goalkeeper"
+        layout="@layout/player_mini_card"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/formation_4_4_2__margin_default"
+        app:layout_constraintVertical_bias="1" />
+
+    <include
+        android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
+        android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintVertical_bias="1" />
+
+    <!--endregion-->
+
+    <!--region dividers-->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rotate"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toStartOf="@+id/formation442Goalkeeper"
+        app:layout_constraintStart_toEndOf="@+id/formation442Defense1"
+        app:layout_constraintTop_toTopOf="@id/formation442Defense1"
+        />
+    <!--endregion-->
 </androidx.constraintlayout.widget.ConstraintLayout>
