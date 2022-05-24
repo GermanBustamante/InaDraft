@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="75dp"
-    android:layout_height="105dp">
+    android:layout_width="@dimen/player_mini_card__card_view__player_card__width"
+    android:layout_height="@dimen/player_mini_card__card_view__player_card__height">
+
+    <!--region base imageView + textView position preview-->
 
     <ImageView
         android:id="@+id/playerMiniCardImgPlayerCard"
@@ -38,6 +40,8 @@
         app:layout_constraintTop_toBottomOf="@id/playerMiniCardImgPlayerCard"
         app:layout_constraintVertical_bias="1"
         tools:text="CM" />
+
+    <!--endregion-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -141,4 +145,5 @@
         <!--endregion-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
