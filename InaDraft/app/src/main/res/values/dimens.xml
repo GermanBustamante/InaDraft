@@ -77,14 +77,16 @@
     <!--region player_mini_card-->
     <dimen name="player_mini_card__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="player_mini_card__margin_min">@dimen/common__margin_min</dimen>
-    <dimen name="player_mini_card__card_view__player_card__height">100dp</dimen>
-    <dimen name="player_mini_card__card_view__player_card__width">100dp</dimen>
+    <dimen name="player_mini_card__card_view__player_card__height">105dp</dimen>
+    <dimen name="player_mini_card__card_view__player_card__width">75dp</dimen>
+    <dimen name="player_mini_card__font__label__player_position_preview">12sp</dimen>
     <dimen name="player_mini_card__font__label__player_media">12sp</dimen>
     <dimen name="player_mini_card__font__label__player_name">9sp</dimen>
     <dimen name="player_mini_card__img__player_shield__width">15dp</dimen>
     <dimen name="player_mini_card__img__player_shield__height">15dp</dimen>
     <dimen name="player_mini_card__font__label__player_position">10sp</dimen>
     <dimen name="player_mini_card__img__player_photo__height">30dp</dimen>
+    <dimen name="player_mini_card__img__player_photo__width">30dp</dimen>
     <!--endregion-->
 
     <!--region preference_about_app_header-->

@@ -1,48 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <!--region background imagen campo futbol-->
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/campo_unity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--endregion-->
 
     <!--region cards-->
 
     <include
-        android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
-        android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+
+    <include
         android:id="@+id/formation442Goalkeeper"
         layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="@dimen/formation_4_4_2__margin_default"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/formation_4_4_2__margin_default"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintVertical_bias="0.78" />
+
 
     <include
-        android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
-        android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
         android:id="@+id/formation442Defense1"
         layout="@layout/player_mini_card"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
         app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.824" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.451" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.96" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.18" />
+
+    <include
+        android:id="@+id/formation442Defense1"
+        layout="@layout/player_mini_card"
+        android:layout_width="75dp"
+        android:layout_height="105dp"
+        app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
 
     <!--endregion-->
 
     <!--region dividers-->
+
     <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="75dp"
+        android:layout_height="89dp"
+        android:visibility="gone"
         android:background="@drawable/rotate"
         app:layout_constraintBottom_toTopOf="@id/formation442Goalkeeper"
         app:layout_constraintEnd_toStartOf="@+id/formation442Goalkeeper"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/formation442Defense1"
         app:layout_constraintTop_toTopOf="@id/formation442Defense1"
-        />
+        app:layout_constraintVertical_bias="1.0" />
     <!--endregion-->
 </androidx.constraintlayout.widget.ConstraintLayout>

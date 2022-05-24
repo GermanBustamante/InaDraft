@@ -64,6 +64,8 @@
     <color name="playerMiniLabelPlayerMedia">@color/commonPlayerCardText</color>
     <color name="playerMiniLabelPlayerPosition">@color/commonPlayerCardText</color>
     <color name="playerMiniLabelPlayerName">@color/commonPlayerCardText</color>
+    <color name="playerMiniCardLabelPositionPreview">@color/black</color>
+    <color name="playerMiniCardLabelPositionPreviewBackground">#CBE4DCDC</color>
     <!--endregion-->
 
     <!--region header_navigation_drawer-->
