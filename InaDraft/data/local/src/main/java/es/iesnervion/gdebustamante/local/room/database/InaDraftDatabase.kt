@@ -6,6 +6,7 @@ import androidx.room.TypeConverters
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.gdebustamante.inadraft.position.PositionLocalDataSource
 import es.gdebustamante.inadraft.team.TeamLocalDataSource
+import es.iesnervion.gdebustamante.local.room.dao.FormationDao
 import es.iesnervion.gdebustamante.local.room.dao.PlayerDao
 import es.iesnervion.gdebustamante.local.room.dao.PositionDao
 import es.iesnervion.gdebustamante.local.room.dao.TeamDao
@@ -24,5 +25,7 @@ abstract class InaDraftDatabase : RoomDatabase() {
     abstract fun getTeamDao(): TeamDao
 
     abstract fun getPositionDao(): PositionDao
+
+    abstract fun getFormationDao(): FormationDao
 
 }

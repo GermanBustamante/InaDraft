@@ -104,4 +104,10 @@
     <dimen name="formation_4_4_2__common_player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
     <!--endregion-->
 
+    <!--region row_formation-->
+    <dimen name="row_formation__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="row_formation__img__height">200dp</dimen>
+    <dimen name="row_formation__img__width">200dp</dimen>
+    <!--endregion-->
+
 </resources>

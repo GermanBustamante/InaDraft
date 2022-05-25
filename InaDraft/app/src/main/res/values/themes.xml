@@ -55,4 +55,8 @@
     <style name="RowTeamImgRounded" parent="ShapeAppearance.App.CommonImgRounded" />
     <style name="RowTeamCardViewRoundedAndElevated" parent="CardView.CommonRoundedAndElevated"/>
     <!--endregion-->
+
+    <!--region row_formation-->
+    <style name="RowFormationCardViewRoundedAndElevated" parent="CardView.CommonRoundedAndElevated"/>
+    <!--endregion-->
 </resources>

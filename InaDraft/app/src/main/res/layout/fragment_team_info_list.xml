@@ -38,7 +38,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:spanCount="@integer/fragment_info__list__span_count"
+            app:spanCount="@integer/fragment_team_info__list__span_count"
             tools:listitem="@layout/row_team" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

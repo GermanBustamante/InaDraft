@@ -1,8 +1,10 @@
 package es.gdebustamante.inadraft.entity
 
+import es.gdebustamante.inadraft.domain.FormationBO
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
+import es.gdebustamante.inadraft.entity.dto.FormationDTO
 import es.gdebustamante.inadraft.entity.dto.PlayerDTO
 import es.gdebustamante.inadraft.entity.dto.PositionDTO
 import es.gdebustamante.inadraft.entity.dto.TeamDTO
@@ -28,9 +30,15 @@ fun TeamDTO.toBO() = TeamBO(
     shield ?: ""
 )
 
-fun PositionDTO.toBO() : PositionBO = PositionBO(
+fun PositionDTO.toBO(): PositionBO = PositionBO(
     id ?: -1,
     name ?: "",
+)
+
+fun FormationDTO.toBO(): FormationBO = FormationBO(
+    id ?: -1,
+    name ?: "",
+    photo ?: ""
 )
 
 

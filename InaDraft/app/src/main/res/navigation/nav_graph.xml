@@ -8,7 +8,11 @@
         android:id="@+id/homeFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
         android:label="@string/nav_graph__fragment_home__title"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_formationListFragment"
+            app:destination="@id/formationListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/infoTeamFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragment"
@@ -37,4 +41,9 @@
         android:id="@+id/aboutAppPreferenceFragment"
         android:name="es.gdebustamante.inadraft.ui.view.preference.AboutAppPreferenceFragment"
         android:label="AboutAppPreferenceFragment" />
+    <fragment
+        android:id="@+id/formationListFragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.FormationListFragment"
+        android:label="fragment_formation_list"
+        tools:layout="@layout/fragment_formation_list" />
 </navigation>

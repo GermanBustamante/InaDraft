@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.ui.view.vo.PlayerDetailVO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
 class PlayerDetailAdapter :
@@ -27,16 +26,18 @@ class PlayerDetailAdapter :
     }
 
     override fun onBindViewHolder(
-        holderWithShield: PlayerDetailAdapter.PlayerDetailViewHolder,
+        holder: PlayerDetailAdapter.PlayerDetailViewHolder,
         position: Int
     ) {
-        holderWithShield.binding.bind(getItem(position))
+        holder.binding.bind(getItem(position))
     }
 
     inner class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = RowPlayerDetailBinding.bind(view)
     }
 }
+
+//region diffCallback
 
 object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
     override fun areItemsTheSame(
@@ -52,6 +53,8 @@ object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
         oldItem == newItem
 
 }
+
+//endregion
 
 private fun RowPlayerDetailBinding.bind(player: PlayerBO) {
     rowPlayerDetailContent.apply {

@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import es.gdebustamante.inadraft.repository.FormationRepository
 import es.gdebustamante.inadraft.repository.PlayerRepository
 import es.gdebustamante.inadraft.repository.PositionRepository
 import es.gdebustamante.inadraft.repository.TeamRepository
@@ -30,6 +31,10 @@ object UsesCasesModule {
         GetTeamByIdUseCase(teamRepository)
 
     @Provides
-    fun getPositionListUseCase(positionRepository: PositionRepository) =
+    fun getPositionListUseCaseProvider(positionRepository: PositionRepository) =
         GetPositionsUseCase(positionRepository)
+
+    @Provides
+    fun getFormationsUseCaseProvider(formationRepository: FormationRepository) =
+        GetFormationsUseCase(formationRepository)
 }

@@ -1,5 +1,6 @@
 package es.gdebustamante.inadraft.remote.api
 
+import es.gdebustamante.inadraft.entity.dto.FormationDTO
 import es.gdebustamante.inadraft.entity.dto.PlayerDTO
 import es.gdebustamante.inadraft.entity.dto.PositionDTO
 import es.gdebustamante.inadraft.entity.dto.TeamDTO
@@ -23,4 +24,7 @@ interface APIService {
 
     @GET("Positions")
     suspend fun getPositions() : Response<List<PositionDTO>>
+
+    @GET("Formations")
+    abstract fun getFormations(): Response<List<FormationDTO>>
 }

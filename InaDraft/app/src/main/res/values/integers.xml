@@ -2,7 +2,12 @@
 <resources>
     <!--region common-->
     <integer name="common__list__span_count">2</integer>
-    <integer name="fragment_info__list__span_count">2</integer>
+    <!--endregion-->
+
+    <!--region recycler_view_span_count-->
+    <integer name="fragment_team_info__list__span_count">@integer/common__list__span_count</integer>
+    <integer name="fragment_player_info__list__span_count">@integer/common__list__span_count</integer>
+    <integer name="fragment_formation_info__list__span_count">@integer/common__list__span_count</integer>
     <!--endregion-->
 
 </resources>

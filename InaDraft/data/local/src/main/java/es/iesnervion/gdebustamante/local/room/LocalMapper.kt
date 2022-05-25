@@ -1,8 +1,10 @@
 package es.iesnervion.gdebustamante.local.room
 
+import es.gdebustamante.inadraft.domain.FormationBO
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.domain.PositionBO
 import es.gdebustamante.inadraft.domain.TeamBO
+import es.iesnervion.gdebustamante.local.room.dbo.entity.FormationDBO
 import es.iesnervion.gdebustamante.local.room.dbo.entity.PlayerDBO
 import es.iesnervion.gdebustamante.local.room.dbo.entity.PositionDBO
 import es.iesnervion.gdebustamante.local.room.dbo.entity.TeamDBO
@@ -59,6 +61,18 @@ fun TeamBO.toDBO() = TeamDBO(
 fun PositionBO.toDBO() = PositionDBO(
     id,
     name
+)
+
+fun FormationDBO.toBO() = FormationBO(
+    id,
+    name ?: "",
+    photo ?: ""
+)
+
+fun FormationBO.toDBO() = FormationDBO(
+    id,
+    name,
+    photo
 )
 
 //fun PlayersWithTeam.toPlayerListBO(positions: List<PositionBO>): List<PlayerBO> {

@@ -1,4 +1,4 @@
-package es.iesnervion.gdebustamante.local.module
+package es.iesnervion.gdebustamante.local.di
 
 import android.content.Context
 import androidx.room.Room
@@ -7,12 +7,15 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import es.gdebustamante.inadraft.formation.FormationLocalDataSource
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.gdebustamante.inadraft.position.PositionLocalDataSource
 import es.gdebustamante.inadraft.team.TeamLocalDataSource
+import es.iesnervion.gdebustamante.local.datasource.FormationLocalDataSourceImpl
 import es.iesnervion.gdebustamante.local.datasource.PlayerLocalDataSourceImpl
 import es.iesnervion.gdebustamante.local.datasource.PositionLocalDataSourceImpl
 import es.iesnervion.gdebustamante.local.datasource.TeamLocalDataSourceImpl
+import es.iesnervion.gdebustamante.local.room.dao.FormationDao
 import es.iesnervion.gdebustamante.local.room.dao.PlayerDao
 import es.iesnervion.gdebustamante.local.room.dao.PositionDao
 import es.iesnervion.gdebustamante.local.room.dao.TeamDao
@@ -44,6 +47,10 @@ object LocalModule {
     @Provides
     fun positionDaoProvider(database: InaDraftDatabase) = database.getPositionDao()
 
+    @Singleton
+    @Provides
+    fun formationDaoProvider(database: InaDraftDatabase) = database.getFormationDao()
+
     //endregion
 
     //region datasources
@@ -57,5 +64,7 @@ object LocalModule {
     @Provides
     fun positionLocalDataSourceProvider(positionDao: PositionDao): PositionLocalDataSource = PositionLocalDataSourceImpl(positionDao)
 
+    @Provides
+    fun formationLocalDataSourceProvider(formationDao: FormationDao): FormationLocalDataSource = FormationLocalDataSourceImpl(formationDao)
     //endregion
 }
