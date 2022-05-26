@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentHomeBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
+import es.gdebustamante.inadraft.ui.view.bindingExtension.setListeners
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
@@ -18,6 +19,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
             setupDrawerWithFragmentToolbar(homeFragmentToolbarTop)
+            setListeners()
         }
         return binding?.root
     }

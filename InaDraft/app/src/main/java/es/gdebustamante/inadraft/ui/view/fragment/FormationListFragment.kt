@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentFormationListBinding
 import es.gdebustamante.inadraft.ui.adapter.FormationAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.onFormationListChanged
+import es.gdebustamante.inadraft.ui.view.bindingExtension.onFormationSelected
+import es.gdebustamante.inadraft.ui.view.bindingExtension.setupRecyclerView
 import es.gdebustamante.inadraft.ui.viewmodel.FormationListVM
 
+@AndroidEntryPoint
 class FormationListFragment : BaseFragment<FragmentFormationListBinding>() {
 
     //region class attributes
@@ -24,16 +28,19 @@ class FormationListFragment : BaseFragment<FragmentFormationListBinding>() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = inflateViewBinding(inflater, container)
 
         binding?.apply {
             setupDrawerWithFragmentToolbar(formationListFragmentToolbarTop)
-            adapter = FormationAdapter()
+            adapter = FormationAdapter { onFormationSelected(it) }.also {
+                setupRecyclerView(it)
+            }
         }
         return binding?.root
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -48,7 +55,7 @@ class FormationListFragment : BaseFragment<FragmentFormationListBinding>() {
 
     override fun inflateViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentFormationListBinding =
         FragmentFormationListBinding.inflate(inflater, container, false)
 

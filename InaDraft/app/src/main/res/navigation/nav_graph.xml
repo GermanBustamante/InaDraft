@@ -4,46 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
         android:label="@string/nav_graph__fragment_home__title"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_formationListFragment"
-            app:destination="@id/formationListFragment" />
+            app:destination="@id/formationListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
     <fragment
         android:id="@+id/infoTeamFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragment"
         android:label="@string/nav_graph__fragment_team_info_list__title"
-        tools:layout="@layout/fragment_team_info_list" >
+        tools:layout="@layout/fragment_team_info_list">
         <action
             android:id="@+id/action_infoTeamFragment_to_playerListFragment"
-            app:destination="@id/playerListFragment" />
+            app:destination="@id/playerListFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
+
     <fragment
         android:id="@+id/playerListFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.PlayerInfoListFragment"
-        android:label="Players"
-        tools:layout="@layout/fragment_player_info_list" >
+        android:label="@string/nav_graph__fragment_player_info_list__title"
+        tools:layout="@layout/fragment_player_info_list">
         <argument
             android:name="teamId"
-            app:argType="integer"
-            android:defaultValue="-1" />
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
+
     <fragment
         android:id="@+id/rankingFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.RankingFragment"
-        android:label="fragment_ranking"
+        android:label="@string/nav_graph__fragment_ranking__title"
         tools:layout="@layout/fragment_ranking" />
+
     <fragment
         android:id="@+id/aboutAppPreferenceFragment"
-        android:name="es.gdebustamante.inadraft.ui.view.preference.AboutAppPreferenceFragment"
-        android:label="AboutAppPreferenceFragment" />
+        android:name="es.gdebustamante.inadraft.ui.view.preference.AboutAppPreferenceFragment" />
+
     <fragment
         android:id="@+id/formationListFragment"
         android:name="es.gdebustamante.inadraft.ui.view.fragment.FormationListFragment"
-        android:label="fragment_formation_list"
-        tools:layout="@layout/fragment_formation_list" />
+        android:label=""
+        tools:layout="@layout/fragment_formation_list">
+        <action
+            android:id="@+id/action_formationListFragment_to_formation442Fragment"
+            app:destination="@id/formation442Fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/formation442Fragment"
+        android:name="es.gdebustamante.inadraft.ui.view.fragment.Formation442Fragment"
+        android:label=""
+        tools:layout="@layout/fragment_formation442">
+
+        <argument
+            android:name="formationId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_formation442Fragment_to_choosePlayerDialog"
+            app:destination="@id/choosePlayerDialog" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/choosePlayerDialog"
+        android:name="es.gdebustamante.inadraft.ui.view.dialog.ChoosePlayerDialog"
+        android:label="dialog_choose_player"
+        tools:layout="@layout/dialog_choose_player">
+
+        <argument
+            android:name="playerPositionId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+    </dialog>
+
+
 </navigation>

@@ -22,9 +22,10 @@
 
     <!--region nav_graph-->
     <string name="nav_graph__fragment_home__title">@string/menu_activity_main_drawer__action_home</string>
+    <string name="nav_graph__fragment_ranking__title">@string/menu_activity_main_drawer__action_ranking</string>
+    <string name="nav_graph__fragment_about_app__title">@string/menu_activity_main_drawer__action_about_app</string>
     <string name="nav_graph__fragment_team_info_list__title">Equipos</string>
     <string name="nav_graph__fragment_player_info_list__title">Jugadores</string>
-    <string name="nav_graph__fragment_about_app__title">@string/menu_activity_main_drawer__action_about_app</string>
     <!--endregion-->
 
     <!--region fragment_team_info_list-->

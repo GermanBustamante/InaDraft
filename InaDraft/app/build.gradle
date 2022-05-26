@@ -56,9 +56,15 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
     //Modules Clean Arquitechture
     implementation project(':usescases')
     implementation project(':domain')
+    implementation project(path: ':data:repository')
+    implementation project(path: ':data:datasource')
+    implementation project(path: ':data:remote')
+    implementation project(path: ':data:entity')
+    implementation project(path: ':data:local')
 
     //Coordinator layout
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
@@ -92,12 +98,6 @@ dependencies {
     //Dagger Hilt
     implementation 'com.google.dagger:hilt-android:2.41'
     kapt 'com.google.dagger:hilt-compiler:2.41'
-    // For instrumentation tests
-    androidTestImplementation  'com.google.dagger:hilt-android-testing:2.41'
-    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.41'
-    // For local unit tests
-    testImplementation 'com.google.dagger:hilt-android-testing:2.41'
-    kaptTest 'com.google.dagger:hilt-compiler:2.41'
 
     //Moshi + Retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"

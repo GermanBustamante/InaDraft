@@ -110,4 +110,10 @@
     <dimen name="row_formation__img__width">200dp</dimen>
     <!--endregion-->
 
+    <!--region row_player_mini_game-->
+    <dimen name="row_player_mini_game__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="row_player_mini_game__img__player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
+    <dimen name="row_player_mini_game__img__player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
+    <!--endregion-->
+
 </resources>

@@ -6,4 +6,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GameVM @Inject constructor(
-) : ViewModel(){}
+) : ViewModel(){
+
+    //region livedata
+
+
+
+    //endregion
+
+    //region public methods
+
+
+
+    //endregion
+}
