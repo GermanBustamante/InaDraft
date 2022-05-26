@@ -26,5 +26,5 @@ interface APIService {
     suspend fun getPositions() : Response<List<PositionDTO>>
 
     @GET("Formations")
-    abstract fun getFormations(): Response<List<FormationDTO>>
+    suspend fun getFormations(): Response<List<FormationDTO>>
 }
