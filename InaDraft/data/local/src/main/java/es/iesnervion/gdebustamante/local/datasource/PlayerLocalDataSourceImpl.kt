@@ -16,9 +16,17 @@ class PlayerLocalDataSourceImpl(
     override suspend fun getLocalPlayersFromTeam(teamId: Int): List<PlayerBO> =
         playerDao.getPlayersFromTeam(teamId).map { it.toPlayerBO() }
 
+    override suspend fun getRandomPlayersByPositon(positionId: Int): List<PlayerBO> =
+        playerDao.getRandomPlayersByPosition(positionId).map{ it.toPlayerBO() }
+
+    override suspend fun getLocalPlayer(playerId: Int): PlayerBO =
+        playerDao.getPlayer(playerId).toPlayerBO()
+
     override suspend fun insertPlayers(players: List<PlayerBO>) {
         playerDao.insertPlayers(players.map { it.toDBO() })
     }
+
+
 }
 
 

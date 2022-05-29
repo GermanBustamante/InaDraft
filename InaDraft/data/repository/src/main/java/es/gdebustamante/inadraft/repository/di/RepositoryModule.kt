@@ -34,12 +34,14 @@ object RepositoryModule {
         playerLocalDataSource: PlayerLocalDataSource,
         teamRepository: TeamRepository,
         positionRepository: PositionRepository,
+        formationRepository: FormationRepository
     ) =
         PlayerRepository(
             playerRemoteDataSource,
             playerLocalDataSource,
             teamRepository,
-            positionRepository
+            positionRepository,
+            formationRepository
         )
 
     @Provides

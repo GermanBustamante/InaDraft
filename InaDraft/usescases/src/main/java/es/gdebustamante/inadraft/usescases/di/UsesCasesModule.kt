@@ -37,4 +37,12 @@ object UsesCasesModule {
     @Provides
     fun getFormationsUseCaseProvider(formationRepository: FormationRepository) =
         GetFormationsUseCase(formationRepository)
+
+    @Provides
+    fun getRandomPlayersByPositionUseCaseProvider(repository: PlayerRepository) =
+        GetRandomPlayersByPositionUseCase(repository)
+
+    @Provides
+    fun getPlayerByIdUseCaseProvider(repository: PlayerRepository) =
+        GetPlayerByIdUseCase(repository)
 }

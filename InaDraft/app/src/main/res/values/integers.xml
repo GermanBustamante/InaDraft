@@ -8,6 +8,7 @@
     <integer name="fragment_team_info__list__span_count">@integer/common__list__span_count</integer>
     <integer name="fragment_player_info__list__span_count">@integer/common__list__span_count</integer>
     <integer name="fragment_formation_info__list__span_count">@integer/common__list__span_count</integer>
+    <integer name="dialog_choose_player__list__span_count">@integer/common__list__span_count</integer>
     <!--endregion-->
 
 </resources>

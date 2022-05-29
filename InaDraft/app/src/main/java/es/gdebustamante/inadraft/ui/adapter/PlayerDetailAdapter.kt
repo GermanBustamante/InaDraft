@@ -11,14 +11,13 @@ import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
-class PlayerDetailAdapter :
-    ListAdapter<PlayerBO, PlayerDetailAdapter.PlayerDetailViewHolder>(
-        PlayerBODiffCallback
-    ) {
+class PlayerDetailAdapter : ListAdapter<PlayerBO, PlayerDetailAdapter.PlayerDetailViewHolder>(
+    PlayerBODiffCallback
+) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
-        viewType: Int
+        viewType: Int,
     ): PlayerDetailAdapter.PlayerDetailViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_player_detail, parent, false)
@@ -27,7 +26,7 @@ class PlayerDetailAdapter :
 
     override fun onBindViewHolder(
         holder: PlayerDetailAdapter.PlayerDetailViewHolder,
-        position: Int
+        position: Int,
     ) {
         holder.binding.bind(getItem(position))
     }
@@ -42,19 +41,21 @@ class PlayerDetailAdapter :
 object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
     override fun areItemsTheSame(
         oldItem: PlayerBO,
-        newItem: PlayerBO
+        newItem: PlayerBO,
     ): Boolean =
         oldItem.id == newItem.id
 
     override fun areContentsTheSame(
         oldItem: PlayerBO,
-        newItem: PlayerBO
+        newItem: PlayerBO,
     ): Boolean =
         oldItem == newItem
 
 }
 
 //endregion
+
+//region private methods
 
 private fun RowPlayerDetailBinding.bind(player: PlayerBO) {
     rowPlayerDetailContent.apply {
@@ -72,3 +73,5 @@ private fun RowPlayerDetailBinding.bind(player: PlayerBO) {
 
     }
 }
+
+//endregion

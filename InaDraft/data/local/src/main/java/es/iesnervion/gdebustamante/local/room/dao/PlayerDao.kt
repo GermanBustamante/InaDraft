@@ -21,15 +21,18 @@ interface PlayerDao {
     @Query("SELECT * FROM players WHERE teamId = :teamId")
     suspend fun getPlayersFromTeam(teamId : Int) : List<PlayerWithTeamAndPosition>
 
-    //TODO VER COMO MEJORARLO
-    @Transaction
-    @Query("SELECT * FROM players WHERE ((kick + body + control + guard + speed + stamina + guts + photo)/7) >= 70")
-    suspend fun getPlayersWithHighAverage(): List<PlayersWithTeam>
+//    //TODO VER COMO MEJORARLO
+//    @Transaction
+//    @Query("SELECT * FROM players WHERE ((kick + body + control + guard + speed + stamina + guts + photo)/7) >= 70")
+//    suspend fun getPlayersWithHighAverage(): List<PlayersWithTeam>
 
     @Transaction
-    @Query("SELECT * FROM players WHERE positionId = :positionId")
-    suspend fun getPlayersFromPosition(positionId : Int) : List<PlayersWithTeam>
+    @Query("SELECT * FROM players WHERE positionId = :positionId ORDER BY RANDOM() LIMIT 6")
+    suspend fun getRandomPlayersByPosition(positionId : Int): List<PlayerWithTeamAndPosition>
 
+    @Transaction
+    @Query("SELECT * FROM players WHERE id = :playerId")
+    suspend fun getPlayer(playerId: Int): PlayerWithTeamAndPosition
     //endregion
 
     //region insert

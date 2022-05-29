@@ -77,7 +77,7 @@
     <!--region player_mini_card-->
     <dimen name="player_mini_card__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="player_mini_card__margin_min">@dimen/common__margin_min</dimen>
-    <dimen name="player_mini_card__card_view__player_card__height">105dp</dimen>
+    <dimen name="player_mini_card__card_view__player_card__height">90dp</dimen>
     <dimen name="player_mini_card__card_view__player_card__width">75dp</dimen>
     <dimen name="player_mini_card__font__label__player_position_preview">12sp</dimen>
     <dimen name="player_mini_card__font__label__player_media">12sp</dimen>
@@ -114,6 +114,8 @@
     <dimen name="row_player_mini_game__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="row_player_mini_game__img__player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
     <dimen name="row_player_mini_game__img__player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
+    <dimen name="row_player_mini_game__img__player_shield__width">@dimen/player_mini_card__img__player_shield__width</dimen>
+    <dimen name="row_player_mini_game__img__player_shield__height">@dimen/player_mini_card__img__player_shield__height</dimen>
     <!--endregion-->
 
 </resources>

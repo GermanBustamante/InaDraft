@@ -83,7 +83,11 @@
             app:argType="integer" />
         <action
             android:id="@+id/action_formation442Fragment_to_choosePlayerDialog"
-            app:destination="@id/choosePlayerDialog" />
+            app:destination="@id/choosePlayerDialog"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
     </fragment>
 
     <dialog
@@ -94,6 +98,11 @@
 
         <argument
             android:name="playerPositionId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <argument
+            android:name="playerCardId"
             android:defaultValue="-1"
             app:argType="integer" />
     </dialog>

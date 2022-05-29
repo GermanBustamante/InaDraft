@@ -5,22 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <include
-        android:id="@+id/rowPlayerMiniGameCardViewPlayerMiniCard"
-        layout="@layout/player_mini_card"
-        android:layout_width="@dimen/row_player_mini_game__img__player_card__width"
-        android:layout_height="@dimen/row_player_mini_game__img__player_card__height"
-        android:layout_marginTop="@dimen/row_player_mini_game__margin_default"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/rowPlayerMiniGameCardViewPlayerMiniCards"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:="rowPlayerMiniGameCardViewOfPlayer"
+        android:layout_height="100dp"
+        android:layout_marginStart="@dimen/row_player_mini_game__margin_default"
+        android:layout_marginEnd="@dimen/row_player_mini_game__margin_default"
+        android:layout_marginBottom="@dimen/row_player_mini_game__margin_default"
+        style="@style/CardView.CommonRoundedAndElevated"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,31 +22,62 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <ImageView
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
 
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <ImageView
+                android:layout_marginStart="@dimen/row_player_mini_game__margin_default"
+                android:id="@+id/rowPlayerMiniGameImgPlayerShield"
+                android:layout_width="@dimen/row_player_mini_game__img__player_shield__width"
+                android:layout_height="@dimen/row_player_mini_game__img__player_shield__height"
+                app:layout_constraintBottom_toTopOf="@id/rowPlayerMiniGameLabelPlayerPosition"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintVertical_bias="1"
+                android:layout_marginBottom="@dimen/row_player_mini_game__margin_default"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/img__prueba_raimon_shield" />
+
+            <TextView
+                android:id="@+id/rowPlayerMiniGameLabelPlayerShield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/rowPlayerMiniGameImgPlayerShield"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/rowPlayerMiniGameImgPlayerShield"
+                app:layout_constraintTop_toTopOf="@id/rowPlayerMiniGameImgPlayerShield"
                 tools:text="Raimon" />
 
             <TextView
+                android:id="@+id/rowPlayerMiniGameLabelPlayerPosition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/rowPlayerMiniGameLabelPlayerShield"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@id/rowPlayerMiniGameImgPlayerShield"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1"
                 tools:text="Goalkeeper" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
+        android:id="@+id/layoutContainerCardPlayer"
+        android:layout_width="@dimen/row_player_mini_game__img__player_card__width"
+        android:layout_height="@dimen/row_player_mini_game__img__player_card__height"
+        android:elevation="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include
+            android:id="@+id/rowPlayerMiniGameCardViewPlayerMiniCard"
+            layout="@layout/player_mini_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

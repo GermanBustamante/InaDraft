@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     tools:context=".ui.view.fragment.Formation442Fragment">
 
     <!--region base-->
 
-    <include android:id="@+id/contentFormationBase"
-        layout="@layout/formation_base"/>
+    <include
+        android:id="@+id/contentFormationBase"
+        layout="@layout/formation_base" />
 
     <!--endregion-->
 
@@ -25,6 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.79" />
+
 
     <include
         android:id="@+id/formation442Defender1"
@@ -87,7 +89,7 @@
         app:layout_constraintVertical_bias="0.7" />
 
     <include
-        android:id="@+id/formationMidfielder2"
+        android:id="@+id/formation442Midfielder2"
         layout="@layout/player_mini_card"
         android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
         android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
@@ -95,10 +97,10 @@
         app:layout_constraintEnd_toEndOf="@id/formation442Defender2"
         app:layout_constraintStart_toStartOf="@id/formation442Defender2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <include
-        android:id="@+id/formationMidfielder3"
+        android:id="@+id/formation442Midfielder3"
         layout="@layout/player_mini_card"
         android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
         android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
@@ -106,7 +108,7 @@
         app:layout_constraintEnd_toEndOf="@id/formation442Defender3"
         app:layout_constraintStart_toStartOf="@id/formation442Defender3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.8" />
 
     <include
         android:id="@+id/formation442Midfielder4"
@@ -124,22 +126,22 @@
         layout="@layout/player_mini_card"
         android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
         android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
-        app:layout_constraintVertical_bias="0.7"
-        app:layout_constraintBottom_toTopOf="@id/formationMidfielder2"
-        app:layout_constraintEnd_toEndOf="@id/formationMidfielder2"
-        app:layout_constraintStart_toStartOf="@id/formationMidfielder2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/formation442Midfielder2"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder2"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
     <include
         android:id="@+id/formation442Forward2"
         layout="@layout/player_mini_card"
         android:layout_width="@dimen/formation_4_4_2__common_player_card__width"
         android:layout_height="@dimen/formation_4_4_2__common_player_card__height"
-        app:layout_constraintVertical_bias="0.7"
-        app:layout_constraintBottom_toTopOf="@id/formationMidfielder3"
-        app:layout_constraintEnd_toEndOf="@id/formationMidfielder3"
-        app:layout_constraintStart_toStartOf="@id/formationMidfielder3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/formation442Midfielder3"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder3"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
 
     <!--endregion-->
 
@@ -151,6 +153,131 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <!--endregion-->
+
+    <!--region textViews positions previews-->
+
+    <include
+        android:id="@+id/PositionPreviewLabelGoalkeeper"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/formation442Goalkeeper"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelDefender1"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Defender1"
+        app:layout_constraintStart_toStartOf="@id/formation442Defender1"
+        app:layout_constraintTop_toBottomOf="@id/formation442Defender1"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelDefender2"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Defender2"
+        app:layout_constraintStart_toStartOf="@id/formation442Defender2"
+        app:layout_constraintTop_toBottomOf="@id/formation442Defender2"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelDefender3"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Defender3"
+        app:layout_constraintStart_toStartOf="@id/formation442Defender3"
+        app:layout_constraintTop_toBottomOf="@id/formation442Defender3"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelDefender4"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Defender4"
+        app:layout_constraintStart_toStartOf="@id/formation442Defender4"
+        app:layout_constraintTop_toBottomOf="@id/formation442Defender4"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelMidfielder1"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder1"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder1"
+        app:layout_constraintTop_toBottomOf="@id/formation442Midfielder1"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelMidfielder2"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder2"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder2"
+        app:layout_constraintTop_toBottomOf="@id/formation442Midfielder2"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelMidfielder3"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder3"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder3"
+        app:layout_constraintTop_toBottomOf="@id/formation442Midfielder3"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelMidfielder4"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Midfielder4"
+        app:layout_constraintStart_toStartOf="@id/formation442Midfielder4"
+        app:layout_constraintTop_toBottomOf="@id/formation442Midfielder4"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelForward1"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Forward1"
+        app:layout_constraintStart_toStartOf="@id/formation442Forward1"
+        app:layout_constraintTop_toBottomOf="@id/formation442Forward1"
+        app:layout_constraintVertical_bias="0" />
+
+    <include
+        android:id="@+id/PositionPreviewLabelForward2"
+        layout="@layout/content_formation_position_preview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/formation442Forward2"
+        app:layout_constraintStart_toStartOf="@id/formation442Forward2"
+        app:layout_constraintTop_toBottomOf="@id/formation442Forward2"
+        app:layout_constraintVertical_bias="0" />
 
     <!--endregion-->
 

@@ -4,17 +4,24 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.navArgs
+import androidx.fragment.app.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
+import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayersDraftChanged
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupCardsPositions
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupListeners
+import es.gdebustamante.inadraft.ui.view.dialog.ChoosePlayerListener
+import es.gdebustamante.inadraft.ui.viewmodel.GameVM
 
-class Formation442Fragment : BaseFragment<FragmentFormation442Binding>() {
+@AndroidEntryPoint
+class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), ChoosePlayerListener {
 
     //region class attributes
 
-    private val args: Formation442FragmentArgs  by navArgs()
+//    private val args: Formation442FragmentArgs  by navArgs()
+    private val viewModel : GameVM by viewModels()
+    private var playerCardId : Int? = null
 
     //endregion
 
@@ -37,12 +44,31 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>() {
         return binding?.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupVMObservers()
+    }
 
     override fun inflateViewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?,
     ): FragmentFormation442Binding =
         FragmentFormation442Binding.inflate(inflater, container, false)
+
+    override fun putPlayerInCard(playerId: Int, playerCardId: Int) {
+        this.playerCardId = playerCardId
+        viewModel.loadPlayer(playerId)
+    }
+
+    //endregion
+
+    //region private methods
+
+    private fun setupVMObservers(){
+        viewModel.playersDraft.observe(viewLifecycleOwner){
+            binding?.onPlayersDraftChanged(it, playerCardId)
+        }
+    }
 
     //endregion
 

@@ -5,7 +5,7 @@
     android:layout_width="@dimen/player_mini_card__card_view__player_card__width"
     android:layout_height="@dimen/player_mini_card__card_view__player_card__height">
 
-    <!--region base imageView + textView position preview-->
+    <!--region base imageView -->
 
     <ImageView
         android:id="@+id/playerMiniCardImgPlayerCard"
@@ -21,26 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0" />
-
-    <TextView
-        android:id="@+id/playerMiniCardLabelPlayerPositionPreview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape__label__player_position_preview"
-        android:elevation="48dp"
-        android:paddingHorizontal="4dp"
-        android:shadowColor="@color/black"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="2"
-        android:textColor="@color/playerMiniCardLabelPositionPreview"
-        android:textSize="@dimen/player_mini_card__font__label__player_position_preview"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/playerMiniCardImgPlayerCard"
-        app:layout_constraintVertical_bias="1"
-        tools:text="CM" />
 
     <!--endregion-->
 
@@ -141,7 +121,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.62" />
+            app:layout_constraintGuide_percent="0.72" />
 
         <!--endregion-->
 

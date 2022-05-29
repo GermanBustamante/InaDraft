@@ -11,12 +11,14 @@ class PlayerRepository(
     private val playerRemoteDataSource: PlayerRemoteDataSource,
     private val playerLocalDataSource: PlayerLocalDataSource,
     private val teamRepository: TeamRepository,
-    private val positionRepository: PositionRepository
+    private val positionRepository: PositionRepository,
+    private val formationRepository: FormationRepository
 ) {
 
     suspend fun getPlayers(): List<PlayerBO> {
         var players = playerLocalDataSource.getLocalPlayers()
         if (players.isEmpty()) {
+            formationRepository.getFormations()
             players = combineLists(playerRemoteDataSource.getRemotePlayers())
             playerLocalDataSource.insertPlayers(players)
         }
@@ -36,6 +38,12 @@ class PlayerRepository(
                 positions.first { position -> position.id == it.position.id })
         }
     }
+
+    suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO> =
+        playerLocalDataSource.getRandomPlayersByPositon(positionId)
+
+    suspend fun getPlayer(playerId: Int): PlayerBO =
+        playerLocalDataSource.getLocalPlayer(playerId)
 
 
 }

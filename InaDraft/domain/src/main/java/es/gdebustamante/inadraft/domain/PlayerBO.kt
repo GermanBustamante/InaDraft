@@ -18,6 +18,8 @@ data class PlayerBO(
     val average: Int
         get() = (kick + body + control + guard + speed + stamina + guts) / 7
 
+    val firstName : String = name.split(" ").first()
+
 
 }
 
