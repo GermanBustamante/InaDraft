@@ -28,6 +28,7 @@
         android:orientation="vertical"
         android:clickable="true"
         android:focusable="true"
+        android:layoutAnimation="@anim/layout_animation"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
