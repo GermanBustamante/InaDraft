@@ -10,18 +10,22 @@ namespace InaDraft_Entities
     {
         #region propiedades publicas
         public int Id{ get; set; }
+
+        public string UserNick{ get; set; }
+        
         public Double Score{ get; set; }
         public DateTime Date { get; set; }
-        public int UserId { get; set; }
+        public int FormationId { get; set; }
         #endregion
 
         #region constructores
-        public clsGame(int id, double score, DateTime date, int userId)
+        public clsGame(int id,string userNick, double score, DateTime date, int userId)
         {
             Id = id;
+            UserNick = userNick;
             Score = score;
             Date = date;
-            UserId = userId;
+            FormationId = userId;
         }
 
         public clsGame()
