@@ -56,8 +56,7 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
         FragmentFormation442Binding.inflate(inflater, container, false)
 
     override fun putPlayerInCard(playerId: Int, playerCardId: Int) {
-        this.playerCardId = playerCardId
-        viewModel.loadPlayer(playerId)
+        viewModel.loadPlayer(playerCardId,playerId)
     }
 
     //endregion
@@ -66,7 +65,7 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
 
     private fun setupVMObservers(){
         viewModel.playersDraft.observe(viewLifecycleOwner){
-            binding?.onPlayersDraftChanged(it, playerCardId)
+            binding?.onPlayersDraftChanged(it)
         }
     }
 

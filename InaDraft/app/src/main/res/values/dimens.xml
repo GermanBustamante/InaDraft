@@ -99,9 +99,15 @@
 
     <!--region formation_4_4_2-->
     <dimen name="formation_4_4_2__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="formation_4_4_2__margin_max">@dimen/common__margin_default</dimen>
     <dimen name="formation_4_4_2__margin_min">@dimen/common__margin_min</dimen>
     <dimen name="formation_4_4_2__common_player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
     <dimen name="formation_4_4_2__common_player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
+    <!--endregion-->
+
+    <!--region formation_4_4_2 LandScape-->
+    <dimen name="formation_4_4_2_land__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="formation_4_4_2_land__margin_over">40dp</dimen>
     <!--endregion-->
 
     <!--region row_formation-->

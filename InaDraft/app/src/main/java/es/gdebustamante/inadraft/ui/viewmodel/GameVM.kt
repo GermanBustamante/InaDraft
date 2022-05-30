@@ -18,17 +18,17 @@ class GameVM @Inject constructor(
 
     //region livedata
 
-    private val _playersDraft : MutableLiveData<MutableList<PlayerBO>> = MutableLiveData(mutableListOf())
-    val playersDraft: LiveData<MutableList<PlayerBO>> get() = _playersDraft
+    private val _playersDraft : MutableLiveData<MutableMap<Int,PlayerBO>> = MutableLiveData(mutableMapOf())
+    val playersDraft: LiveData<MutableMap<Int,PlayerBO>> get() = _playersDraft
     //endregion
 
     //region public methods
 
-    fun loadPlayer(playerId : Int){
+    fun loadPlayer(playerCardId: Int, playerId: Int){
         viewModelScope.launch(Dispatchers.IO) {
-            val playersListDraft = _playersDraft.value
-            playersListDraft?.add(getPlayerByIdUseCase.invoke(playerId))
-            _playersDraft.postValue(playersListDraft ?: mutableListOf())
+            val playersMapDraft = _playersDraft.value
+            playersMapDraft?.put(playerCardId, getPlayerByIdUseCase.invoke(playerId))
+            _playersDraft.postValue(playersMapDraft ?: mutableMapOf())
         }
     }
 

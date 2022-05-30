@@ -3,6 +3,7 @@ package es.gdebustamante.inadraft.ui.view.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -24,9 +25,15 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen().apply {
+
+            setKeepOnScreenCondition{
+                viewModel.isLoading.value == false
+            }
+
+        }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        viewModel.init()
     }
 
     override fun onSupportNavigateUp(): Boolean {

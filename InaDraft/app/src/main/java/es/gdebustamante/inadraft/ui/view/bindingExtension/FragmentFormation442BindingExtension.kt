@@ -8,6 +8,7 @@ import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
+import es.gdebustamante.inadraft.util.showSnackbar
 
 //region public methods
 
@@ -54,13 +55,17 @@ fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
             playerCard.id))
 }
 
-fun FragmentFormation442Binding.onPlayersDraftChanged(it: MutableList<PlayerBO>, playerCardId: Int?) {
-    val lastPlayerAdded = it.lastOrNull()
-    lastPlayerAdded?.let { player ->
-        drawPlayerInCard(player, playerCardId)
+fun FragmentFormation442Binding.onPlayersDraftChanged(playersMap: MutableMap<Int, PlayerBO>) {
+//    val lastPlayerAdded = playersMap.values.lastOrNull()
+//    val lastCard = playersMap.keys.lastOrNull()
+//    lastPlayerAdded?.let { player ->
+//        drawPlayerInCard(player, lastCard)
+//    } TODO MEJORAR AUNQUE NO CAUSA NINGUN PROBLEMA DE RENDIMIENTO
+    playersMap.forEach {
+        drawPlayerInCard(it.value, it.key)
     }
-    if (it.size == 11){
-
+    if (playersMap.size == 11){
+        root.showSnackbar("DSKAMDASMDA")
     }
 }
 
