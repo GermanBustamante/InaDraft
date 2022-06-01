@@ -19,7 +19,7 @@ namespace InaDraft_Entities
         #endregion
 
         #region constructores
-        public clsGame(int id,string userNick, double score, DateTime date, int userId)
+        public clsGame(int id,string userNick, int score, DateTime date, int userId)
         {
             Id = id;
             UserNick = userNick;
