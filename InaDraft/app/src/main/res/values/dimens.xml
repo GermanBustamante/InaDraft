@@ -105,9 +105,8 @@
     <dimen name="formation_4_4_2__common_player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
     <!--endregion-->
 
-    <!--region formation_4_4_2 LandScape-->
-    <dimen name="formation_4_4_2_land__margin_default">@dimen/common__margin_default</dimen>
-    <dimen name="formation_4_4_2_land__margin_over">40dp</dimen>
+    <!--region formation_base-->
+    <dimen name="formation_base__margin_default">@dimen/common__margin_default</dimen>
     <!--endregion-->
 
     <!--region row_formation-->
