@@ -12,7 +12,7 @@ import es.gdebustamante.inadraft.util.showSnackbar
 
 //region public methods
 
-fun FragmentFormation442Binding.setupCardsPositions() {
+fun FragmentFormation442Binding.setupInitialViews() {
     PositionPreviewLabelGoalkeeper.root.text = "GK"
     PositionPreviewLabelDefender1.root.text = "DF"
     PositionPreviewLabelDefender2.root.text = "DF"
@@ -24,6 +24,7 @@ fun FragmentFormation442Binding.setupCardsPositions() {
     PositionPreviewLabelMidfielder4.root.text = "MF"
     PositionPreviewLabelForward1.root.text = "FW"
     PositionPreviewLabelForward2.root.text = "FW"
+    contentFormationBase.formationFragmentToolbarTittle.text = "4-4-2"
 }
 
 fun FragmentFormation442Binding.setupListeners() {
@@ -56,14 +57,12 @@ fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
 }
 
 fun FragmentFormation442Binding.onPlayersDraftChanged(playersMap: MutableMap<Int, PlayerBO>) {
-//    val lastPlayerAdded = playersMap.values.lastOrNull()
-//    val lastCard = playersMap.keys.lastOrNull()
-//    lastPlayerAdded?.let { player ->
-//        drawPlayerInCard(player, lastCard)
-//    } TODO MEJORAR AUNQUE NO CAUSA NINGUN PROBLEMA DE RENDIMIENTO
+// TODO MEJORAR AUNQUE NO CAUSA NINGUN PROBLEMA DE RENDIMIENTO
+    drawAverageTeam(playersMap.values.toList())
     playersMap.forEach {
         drawPlayerInCard(it.value, it.key)
     }
+
     if (playersMap.size == 11){
         root.showSnackbar("DSKAMDASMDA")
     }
@@ -100,6 +99,14 @@ private fun FragmentFormation442Binding.drawPlayerInCard(player: PlayerBO, playe
         R.id.formation442Midfielder4 -> drawPlayer(formation442Midfielder4, player)
         R.id.formation442Forward1 -> drawPlayer(formation442Forward1, player)
         R.id.formation442Forward2 -> drawPlayer(formation442Forward2, player)
+    }
+}
+
+private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>){
+    val averageTeamDraft = (players.sumOf { it.average } / 11).toFloat()
+    contentFormationBase.apply {
+        formationFragmentToolbarRatingNumber.text =  averageTeamDraft.toInt().toString()
+        formationFragmentToolbarRatingBar.rating = averageTeamDraft
     }
 }
 

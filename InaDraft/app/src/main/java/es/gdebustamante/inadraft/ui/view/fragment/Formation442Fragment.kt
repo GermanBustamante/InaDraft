@@ -9,7 +9,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayersDraftChanged
-import es.gdebustamante.inadraft.ui.view.bindingExtension.setupCardsPositions
+import es.gdebustamante.inadraft.ui.view.bindingExtension.setupInitialViews
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupListeners
 import es.gdebustamante.inadraft.ui.view.dialog.ChoosePlayerListener
 import es.gdebustamante.inadraft.ui.viewmodel.GameVM
@@ -38,7 +38,7 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
             setupDrawerWithFragmentToolbar(contentFormationBase.formationFragmentToolbarTop)
-            setupCardsPositions()
+            setupInitialViews()
             setupListeners()
         }
         return binding?.root

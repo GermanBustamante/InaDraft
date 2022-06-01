@@ -74,14 +74,14 @@
                     android:text="0" />
 
                 <RatingBar
-                    android:id="@+id/ratingBar"
+                    android:id="@+id/formationFragmentToolbarRatingBar"
                     style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:stepSize="0.1" />
+                    android:stepSize="200" />
 
             </LinearLayout>
 
