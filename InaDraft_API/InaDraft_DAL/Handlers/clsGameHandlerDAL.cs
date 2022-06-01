@@ -11,7 +11,7 @@ namespace InaDraft_DAL.Handlers
     public class clsGameHandlerDAL: clsUtilityDMLDAL
     {
         #region constants
-        public const String INSERT_INSTRUCTION_GAME = "INSERT INTO Games VALUES (@Id, @UserNick, @Date, @Score, @FormationId)";
+        public const String INSERT_INSTRUCTION_GAME = "INSERT INTO Games VALUES (@Date, @Score, @FormationId, @UserNick)";
         #endregion
 
         #region public methods
@@ -30,11 +30,10 @@ namespace InaDraft_DAL.Handlers
         #region private methods
         private void createCommand(clsGame game)
         {
-            MyCommand.Parameters.Add("@Id", System.Data.SqlDbType.Int).Value = game.Id;
-            MyCommand.Parameters.Add("@UserNick", System.Data.SqlDbType.NVarChar).Value = game.UserNick;
             MyCommand.Parameters.Add("@Date", System.Data.SqlDbType.Date).Value = game.Date;
-            MyCommand.Parameters.Add("@Score", System.Data.SqlDbType.Float).Value = game.Score;
+            MyCommand.Parameters.Add("@Score", System.Data.SqlDbType.Int).Value = game.Score;
             MyCommand.Parameters.Add("@FormationId", System.Data.SqlDbType.Int).Value = game.FormationId;
+            MyCommand.Parameters.Add("@UserNick", System.Data.SqlDbType.NVarChar).Value = game.UserNick;
         }
         #endregion
 

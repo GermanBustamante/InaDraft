@@ -13,7 +13,7 @@ namespace InaDraft_Entities
 
         public string UserNick{ get; set; }
         
-        public Double Score{ get; set; }
+        public int Score{ get; set; }
         public DateTime Date { get; set; }
         public int FormationId { get; set; }
         #endregion

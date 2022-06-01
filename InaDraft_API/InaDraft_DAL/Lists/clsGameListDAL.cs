@@ -39,7 +39,7 @@ namespace InaDraft_DAL.Lists
         {
             return new clsGame((int)MyReader["Id"],
                                         (string)MyReader["UserNick"],
-                                        (double)MyReader["Score"],
+                                        (int)MyReader["Score"],
                                         (DateTime)MyReader["Date"], 
                                         (int)MyReader["FormationId"]);
         }
