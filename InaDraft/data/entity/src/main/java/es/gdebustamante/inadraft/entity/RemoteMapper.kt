@@ -2,7 +2,8 @@ package es.gdebustamante.inadraft.entity
 
 import es.gdebustamante.inadraft.domain.*
 import es.gdebustamante.inadraft.entity.dto.*
-import java.time.LocalDate
+import java.util.Date
+import java.text.DateFormat.getDateInstance
 
 fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     id ?: -1,
@@ -36,11 +37,10 @@ fun FormationDTO.toBO(): FormationBO = FormationBO(
     photo ?: ""
 )
 
-@Suppress("NewApi")
 fun GameDTO.toBO() = GameBO(
     id ?: -1,
     score ?: -1,
-    date ?: LocalDate.parse("0000/00/00"),
+    ((date ?: getDateInstance()) as Date),
     userNick ?: "",
     FormationBO(formationId ?: -1, "", "")
 )

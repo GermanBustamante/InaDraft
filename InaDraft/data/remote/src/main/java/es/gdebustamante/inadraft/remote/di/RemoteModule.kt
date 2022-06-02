@@ -1,5 +1,6 @@
 package es.gdebustamante.inadraft.remote.di
 
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,19 +46,25 @@ object RemoteModule {
 
     //endregion
 
-    //region retrofit
+    //region retrofit + moshi
+
+    @Provides
+    fun moshiProvider(): Moshi =
+        Moshi.Builder()
+            .add(DateAdapter())
+            .build()
+
+    @Singleton
+    @Provides
+    fun retrofitProvider(moshi: Moshi): Retrofit = Retrofit.Builder()
+        .baseUrl(RETROFIT_PRODUCTS_API_BASE_URL)
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .build()
 
     @Singleton
     @Provides
     fun apiServiceProvider(retrofit: Retrofit): APIService =
         retrofit.create(APIService::class.java)
-
-    @Singleton
-    @Provides
-    fun retrofitProvider(): Retrofit = Retrofit.Builder()
-        .baseUrl(RETROFIT_PRODUCTS_API_BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create())
-        .build()
 
     //endregion
 }
