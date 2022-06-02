@@ -5,13 +5,11 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.formation.FormationRemoteDataSource
+import es.gdebustamante.inadraft.game.GameRemoteDataSource
 import es.gdebustamante.inadraft.player.PlayerRemoteDataSource
 import es.gdebustamante.inadraft.position.PositionRemoteDataSource
 import es.gdebustamante.inadraft.remote.api.APIService
-import es.gdebustamante.inadraft.remote.datasource.FormationRemoteDataSourceImpl
-import es.gdebustamante.inadraft.remote.datasource.PlayerRemoteDataSourceImpl
-import es.gdebustamante.inadraft.remote.datasource.PositionRemoteDataSourceImpl
-import es.gdebustamante.inadraft.remote.datasource.TeamRemoteDataSourceImpl
+import es.gdebustamante.inadraft.remote.datasource.*
 import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -40,6 +38,10 @@ object RemoteModule {
     @Provides
     fun formationRemoteDataSourceProvider(apiService: APIService): FormationRemoteDataSource =
         FormationRemoteDataSourceImpl(apiService)
+
+    @Provides
+    fun gameRemoteDataSourceProvider(apiService: APIService): GameRemoteDataSource =
+        GameRemoteDataSourceImpl(apiService)
 
     //endregion
 

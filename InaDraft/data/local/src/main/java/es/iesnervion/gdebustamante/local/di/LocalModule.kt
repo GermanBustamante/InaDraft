@@ -8,17 +8,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.formation.FormationLocalDataSource
+import es.gdebustamante.inadraft.game.GameLocalDataSource
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.gdebustamante.inadraft.position.PositionLocalDataSource
 import es.gdebustamante.inadraft.team.TeamLocalDataSource
-import es.iesnervion.gdebustamante.local.datasource.FormationLocalDataSourceImpl
-import es.iesnervion.gdebustamante.local.datasource.PlayerLocalDataSourceImpl
-import es.iesnervion.gdebustamante.local.datasource.PositionLocalDataSourceImpl
-import es.iesnervion.gdebustamante.local.datasource.TeamLocalDataSourceImpl
-import es.iesnervion.gdebustamante.local.room.dao.FormationDao
-import es.iesnervion.gdebustamante.local.room.dao.PlayerDao
-import es.iesnervion.gdebustamante.local.room.dao.PositionDao
-import es.iesnervion.gdebustamante.local.room.dao.TeamDao
+import es.iesnervion.gdebustamante.local.datasource.*
+import es.iesnervion.gdebustamante.local.room.dao.*
 import es.iesnervion.gdebustamante.local.room.database.InaDraftDatabase
 import javax.inject.Singleton
 
@@ -33,7 +28,9 @@ object LocalModule {
     @Singleton
     @Provides
     fun roomDatabaseProvider(@ApplicationContext context: Context) =
-        Room.databaseBuilder(context, InaDraftDatabase::class.java, INADRAFT_DATABASE_NAME).build()
+        Room.databaseBuilder(context, InaDraftDatabase::class.java, INADRAFT_DATABASE_NAME)
+            .fallbackToDestructiveMigration()
+            .build()
 
 
     @Singleton
@@ -51,6 +48,10 @@ object LocalModule {
     @Provides
     fun formationDaoProvider(database: InaDraftDatabase) = database.getFormationDao()
 
+    @Singleton
+    @Provides
+    fun gameDaoProvider(database: InaDraftDatabase) = database.getGameDao()
+
     //endregion
 
     //region datasources
@@ -66,5 +67,9 @@ object LocalModule {
 
     @Provides
     fun formationLocalDataSourceProvider(formationDao: FormationDao): FormationLocalDataSource = FormationLocalDataSourceImpl(formationDao)
+
+    @Provides
+    fun gameLocalDataSourceProvider(gameDao: GameDao): GameLocalDataSource = GameLocalDataSourceImpl(gameDao)
+
     //endregion
 }

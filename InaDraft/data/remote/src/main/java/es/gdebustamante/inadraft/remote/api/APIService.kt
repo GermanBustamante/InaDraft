@@ -1,9 +1,7 @@
 package es.gdebustamante.inadraft.remote.api
 
-import es.gdebustamante.inadraft.entity.dto.FormationDTO
-import es.gdebustamante.inadraft.entity.dto.PlayerDTO
-import es.gdebustamante.inadraft.entity.dto.PositionDTO
-import es.gdebustamante.inadraft.entity.dto.TeamDTO
+import es.gdebustamante.inadraft.domain.GameBO
+import es.gdebustamante.inadraft.entity.dto.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -27,4 +25,8 @@ interface APIService {
 
     @GET("Formations")
     suspend fun getFormations(): Response<List<FormationDTO>>
+
+    @GET("Games")
+    suspend fun getGames(): List<GameDTO>
+
 }

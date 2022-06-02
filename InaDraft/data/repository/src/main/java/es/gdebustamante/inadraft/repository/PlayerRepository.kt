@@ -1,8 +1,6 @@
 package es.gdebustamante.inadraft.repository
 
 import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.domain.PositionBO
-import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.domain.combine
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.gdebustamante.inadraft.player.PlayerRemoteDataSource
@@ -12,13 +10,15 @@ class PlayerRepository(
     private val playerLocalDataSource: PlayerLocalDataSource,
     private val teamRepository: TeamRepository,
     private val positionRepository: PositionRepository,
-    private val formationRepository: FormationRepository
+    private val formationRepository: FormationRepository,
+    private val gameRepository: GameRepository,
 ) {
 
     suspend fun getPlayers(): List<PlayerBO> {
         var players = playerLocalDataSource.getLocalPlayers()
         if (players.isEmpty()) {
             formationRepository.getFormations()
+            gameRepository.getGames()
             players = combineLists(playerRemoteDataSource.getRemotePlayers())
             playerLocalDataSource.insertPlayers(players)
         }
@@ -28,9 +28,17 @@ class PlayerRepository(
     suspend fun getPlayerListByTeam(teamId: Int): List<PlayerBO> =
         playerLocalDataSource.getLocalPlayersFromTeam(teamId)
 
+    suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO> =
+        playerLocalDataSource.getRandomPlayersByPositon(positionId)
+
+    suspend fun getPlayer(playerId: Int): PlayerBO =
+        playerLocalDataSource.getLocalPlayer(playerId)
+
+    //region private methods
+
     private suspend fun combineLists(
         players: List<PlayerBO>,
-    ): List<PlayerBO>{
+    ): List<PlayerBO> {
         val teams = teamRepository.getTeams()
         val positions = positionRepository.getPositions()
         return players.map {
@@ -39,11 +47,5 @@ class PlayerRepository(
         }
     }
 
-    suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO> =
-        playerLocalDataSource.getRandomPlayersByPositon(positionId)
-
-    suspend fun getPlayer(playerId: Int): PlayerBO =
-        playerLocalDataSource.getLocalPlayer(playerId)
-
-
+    //endregion
 }

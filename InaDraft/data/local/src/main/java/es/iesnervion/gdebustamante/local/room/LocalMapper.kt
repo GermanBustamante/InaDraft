@@ -1,14 +1,13 @@
 package es.iesnervion.gdebustamante.local.room
 
-import es.gdebustamante.inadraft.domain.FormationBO
-import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.domain.PositionBO
-import es.gdebustamante.inadraft.domain.TeamBO
-import es.iesnervion.gdebustamante.local.room.dbo.entity.FormationDBO
-import es.iesnervion.gdebustamante.local.room.dbo.entity.PlayerDBO
-import es.iesnervion.gdebustamante.local.room.dbo.entity.PositionDBO
-import es.iesnervion.gdebustamante.local.room.dbo.entity.TeamDBO
+import android.annotation.SuppressLint
+import android.os.Build
+import androidx.annotation.RequiresApi
+import es.gdebustamante.inadraft.domain.*
+import es.iesnervion.gdebustamante.local.room.dbo.entity.*
+import es.iesnervion.gdebustamante.local.room.dbo.relation.GameWithFormation
 import es.iesnervion.gdebustamante.local.room.dbo.relation.PlayerWithTeamAndPosition
+import java.time.LocalDate
 
 fun PlayerWithTeamAndPosition.toPlayerBO() =
     PlayerBO(
@@ -73,6 +72,32 @@ fun FormationBO.toDBO() = FormationDBO(
     id,
     name,
     photo
+)
+
+fun GameBO.toDBO() = GameDBO(
+    id,
+    date,
+    score,
+    userNick,
+    formation.id
+)
+
+@SuppressLint("NewApi")
+fun GameDBO.toBO() = GameBO(
+    id,
+    score ?: -1,
+    date ?: LocalDate.parse("0000/00/00"),
+    userNick ?: "",
+    FormationBO(formationId ?: -1, "", "")
+)
+
+@RequiresApi(Build.VERSION_CODES.O)
+fun GameWithFormation.toGameBO() = GameBO(
+    game.id,
+    game.score ?: -1,
+    game.date ?: LocalDate.parse("0000/00/00"),
+    game.userNick ?: "",
+    formationDBO.toBO()
 )
 
 //fun PlayersWithTeam.toPlayerListBO(positions: List<PositionBO>): List<PlayerBO> {

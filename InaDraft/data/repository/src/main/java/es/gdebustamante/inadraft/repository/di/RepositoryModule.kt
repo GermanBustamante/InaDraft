@@ -6,14 +6,13 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.formation.FormationLocalDataSource
 import es.gdebustamante.inadraft.formation.FormationRemoteDataSource
+import es.gdebustamante.inadraft.game.GameLocalDataSource
+import es.gdebustamante.inadraft.game.GameRemoteDataSource
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.gdebustamante.inadraft.player.PlayerRemoteDataSource
 import es.gdebustamante.inadraft.position.PositionLocalDataSource
 import es.gdebustamante.inadraft.position.PositionRemoteDataSource
-import es.gdebustamante.inadraft.repository.FormationRepository
-import es.gdebustamante.inadraft.repository.PlayerRepository
-import es.gdebustamante.inadraft.repository.PositionRepository
-import es.gdebustamante.inadraft.repository.TeamRepository
+import es.gdebustamante.inadraft.repository.*
 import es.gdebustamante.inadraft.team.TeamLocalDataSource
 import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 
@@ -34,14 +33,16 @@ object RepositoryModule {
         playerLocalDataSource: PlayerLocalDataSource,
         teamRepository: TeamRepository,
         positionRepository: PositionRepository,
-        formationRepository: FormationRepository
+        formationRepository: FormationRepository,
+        gameRepository: GameRepository
     ) =
         PlayerRepository(
             playerRemoteDataSource,
             playerLocalDataSource,
             teamRepository,
             positionRepository,
-            formationRepository
+            formationRepository,
+            gameRepository
         )
 
     @Provides
@@ -57,4 +58,12 @@ object RepositoryModule {
         formationLocalDataSource: FormationLocalDataSource,
     ) =
         FormationRepository(formationRemoteDataSource, formationLocalDataSource)
+
+    @Provides
+    fun gameRepositoryProvider(
+        gameRemoteDataSource: GameRemoteDataSource,
+        gameLocalDataSource: GameLocalDataSource,
+        formationRepository: FormationRepository
+    ) =
+        GameRepository(gameLocalDataSource, gameRemoteDataSource, formationRepository)
 }

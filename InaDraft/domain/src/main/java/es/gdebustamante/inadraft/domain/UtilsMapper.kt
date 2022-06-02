@@ -14,3 +14,11 @@ fun PlayerBO.combine(team : TeamBO, position : PositionBO) = PlayerBO(
     team,
     position
 )
+
+fun GameBO.combineWithFormation(formation: FormationBO) = GameBO(
+    id,
+    score,
+    date,
+    userNick,
+    formation
+)

@@ -1,13 +1,8 @@
 package es.gdebustamante.inadraft.entity
 
-import es.gdebustamante.inadraft.domain.FormationBO
-import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.domain.PositionBO
-import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.entity.dto.FormationDTO
-import es.gdebustamante.inadraft.entity.dto.PlayerDTO
-import es.gdebustamante.inadraft.entity.dto.PositionDTO
-import es.gdebustamante.inadraft.entity.dto.TeamDTO
+import es.gdebustamante.inadraft.domain.*
+import es.gdebustamante.inadraft.entity.dto.*
+import java.time.LocalDate
 
 fun PlayerDTO.toBO(): PlayerBO = PlayerBO(
     id ?: -1,
@@ -39,6 +34,15 @@ fun FormationDTO.toBO(): FormationBO = FormationBO(
     id ?: -1,
     name ?: "",
     photo ?: ""
+)
+
+@Suppress("NewApi")
+fun GameDTO.toBO() = GameBO(
+    id ?: -1,
+    score ?: -1,
+    date ?: LocalDate.parse("0000/00/00"),
+    userNick ?: "",
+    FormationBO(formationId ?: -1, "", "")
 )
 
 
