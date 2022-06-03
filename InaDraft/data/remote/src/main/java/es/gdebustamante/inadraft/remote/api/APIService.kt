@@ -3,10 +3,14 @@ package es.gdebustamante.inadraft.remote.api
 import es.gdebustamante.inadraft.domain.GameBO
 import es.gdebustamante.inadraft.entity.dto.*
 import retrofit2.Response
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
 
 interface APIService {
+
+    //region gets
 
     @GET("Players")
     suspend fun getPlayers(): Response<List<PlayerDTO>>
@@ -28,5 +32,14 @@ interface APIService {
 
     @GET("Games")
     suspend fun getGames(): List<GameDTO>
+
+    //endregion
+
+    //region post
+
+    @POST("Games")
+    suspend fun insertGame(@Body game: GameDTO): Response<Any>
+
+    //endregion
 
 }

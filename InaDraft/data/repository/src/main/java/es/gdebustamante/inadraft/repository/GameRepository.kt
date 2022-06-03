@@ -24,6 +24,12 @@ class GameRepository(
         gameLocalDataSource.insertLocalGames(games)
     }
 
+    suspend fun insertGame(game: GameBO): Boolean {
+        val localInserted = gameLocalDataSource.insertLocalGame(game)
+        val remoteInserted = gameRemoteDataSource.insertRemoteGame(game)
+        return localInserted && remoteInserted
+    }
+
     //region private methods
 
     private suspend fun combineGameWithFormation(remoteGames: List<GameBO>): List<GameBO> {

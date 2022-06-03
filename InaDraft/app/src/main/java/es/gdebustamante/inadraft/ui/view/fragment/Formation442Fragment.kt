@@ -5,21 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayersDraftChanged
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupInitialViews
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupListeners
-import es.gdebustamante.inadraft.ui.view.dialog.ChoosePlayerListener
+import es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerListener
+import es.gdebustamante.inadraft.ui.view.dialog.scoreGame.ScoreGameListener
 import es.gdebustamante.inadraft.ui.viewmodel.GameVM
 
 @AndroidEntryPoint
-class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), ChoosePlayerListener {
+class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), ChoosePlayerListener, ScoreGameListener {
 
     //region class attributes
 
-//    private val args: Formation442FragmentArgs  by navArgs()
+    private val args: Formation442FragmentArgs  by navArgs()
     private val viewModel : GameVM by viewModels()
     private var playerCardId : Int? = null
 
@@ -59,13 +61,18 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
         viewModel.loadPlayer(playerCardId,playerId)
     }
 
+    override fun finishDraft() {
+        requireActivity().onBackPressed()
+        requireActivity().onBackPressed()
+    }
+
     //endregion
 
     //region private methods
 
     private fun setupVMObservers(){
         viewModel.playersDraft.observe(viewLifecycleOwner){
-            binding?.onPlayersDraftChanged(it)
+            binding?.onPlayersDraftChanged(it, args.formationId)
         }
     }
 

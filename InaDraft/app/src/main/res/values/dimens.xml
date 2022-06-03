@@ -45,7 +45,9 @@
     <!--region player_detail_card-->
     <dimen name="player_detail_card__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="player_detail_card__margin_min">@dimen/common__margin_min</dimen>
-    <dimen name="player_detail_card__card_view__player_card__elevation">@dimen/common__cardview__elevation</dimen>
+    <dimen name="player_detail_card__card_view__player_card__elevation">
+        @dimen/common__cardview__elevation
+    </dimen>
     <dimen name="player_detail_card__card_view__player_card__width">180dp</dimen>
     <dimen name="player_detail_card__card_view__player_card__height">220dp</dimen>
     <dimen name="player_detail_card__img__player_shield__width">24dp</dimen>
@@ -54,23 +56,48 @@
     <dimen name="player_detail_card__font__label__player_position">16sp</dimen>
     <dimen name="player_detail_card__font__label__player_name">12sp</dimen>
     <dimen name="player_detail_card__font__label__player_media">22sp</dimen>
-    <dimen name="player_detail_card__font__label__player_kick_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_body_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_control_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_guard_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_speed_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_guts_punctuation">@dimen/common__font__label__player_puntuation</dimen>
-    <dimen name="player_detail_card__font__label__player_kick_description">@dimen/common__font__label__player_description</dimen>
-    <dimen name="player_detail_card__font__label__player_body_description">@dimen/common__font__label__player_description</dimen>
-    <dimen name="player_detail_card__font__label__player_control_description">@dimen/common__font__label__player_description</dimen>
-    <dimen name="player_detail_card__font__label__player_guard_description">@dimen/common__font__label__player_description</dimen>
-    <dimen name="player_detail_card__font__label__player_speed_description">@dimen/common__font__label__player_description</dimen>
-    <dimen name="player_detail_card__font__label__player_guts_description">@dimen/common__font__label__player_description</dimen>
+    <dimen name="player_detail_card__font__label__player_kick_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_body_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_control_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_guard_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_speed_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_guts_punctuation">
+        @dimen/common__font__label__player_puntuation
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_kick_description">
+        @dimen/common__font__label__player_description
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_body_description">
+        @dimen/common__font__label__player_description
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_control_description">
+        @dimen/common__font__label__player_description
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_guard_description">
+        @dimen/common__font__label__player_description
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_speed_description">
+        @dimen/common__font__label__player_description
+    </dimen>
+    <dimen name="player_detail_card__font__label__player_guts_description">
+        @dimen/common__font__label__player_description
+    </dimen>
     <!--endregion-->
 
     <!--region row_player_detail_loading-->
     <dimen name="row_player_detail_loading__frame_layout__loading__player_name__width">60dp</dimen>
-    <dimen name="row_player_detail_loading__frame_layout__loading__descriptive_stat__width">18dp</dimen>
+    <dimen name="row_player_detail_loading__frame_layout__loading__descriptive_stat__width">18dp
+    </dimen>
     <dimen name="row_player_detail_loading__margin_min">2dp</dimen>
     <!--endregion-->
 
@@ -101,8 +128,12 @@
     <dimen name="formation_4_4_2__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="formation_4_4_2__margin_max">@dimen/common__margin_default</dimen>
     <dimen name="formation_4_4_2__margin_min">@dimen/common__margin_min</dimen>
-    <dimen name="formation_4_4_2__common_player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
-    <dimen name="formation_4_4_2__common_player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
+    <dimen name="formation_4_4_2__common_player_card__width">
+        @dimen/player_mini_card__card_view__player_card__width
+    </dimen>
+    <dimen name="formation_4_4_2__common_player_card__height">
+        @dimen/player_mini_card__card_view__player_card__height
+    </dimen>
     <!--endregion-->
 
     <!--region formation_base-->
@@ -117,10 +148,28 @@
 
     <!--region row_player_mini_game-->
     <dimen name="row_player_mini_game__margin_default">@dimen/common__margin_default</dimen>
-    <dimen name="row_player_mini_game__img__player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
-    <dimen name="row_player_mini_game__img__player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
-    <dimen name="row_player_mini_game__img__player_shield__width">@dimen/player_mini_card__img__player_shield__width</dimen>
-    <dimen name="row_player_mini_game__img__player_shield__height">@dimen/player_mini_card__img__player_shield__height</dimen>
+    <dimen name="row_player_mini_game__img__player_card__height">
+        @dimen/player_mini_card__card_view__player_card__height
+    </dimen>
+    <dimen name="row_player_mini_game__img__player_card__width">
+        @dimen/player_mini_card__card_view__player_card__width
+    </dimen>
+    <dimen name="row_player_mini_game__img__player_shield__width">
+        @dimen/player_mini_card__img__player_shield__width
+    </dimen>
+    <dimen name="row_player_mini_game__img__player_shield__height">
+        @dimen/player_mini_card__img__player_shield__height
+    </dimen>
+    <!--endregion-->
+
+    <!--region dialog_score_game-->
+    <dimen name="dialog_score_game__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="dialog_score_game__font__label__dialog_title">28sp</dimen>
+    <dimen name="dialog_score_game__font__label__total_puntuation">28sp</dimen>
+    <dimen name="dialog_score_game__font__label__team_media">28sp</dimen>
+    <dimen name="dialog_score_game__progress_indicator__total_puntuation_height">160dp</dimen>
+    <dimen name="dialog_score_game__progress_indicator__total_puntuation_width">160dp</dimen>
+
     <!--endregion-->
 
 </resources>

@@ -2,13 +2,14 @@ package es.gdebustamante.inadraft.ui.view.bindingExtension
 
 import android.view.View
 import androidx.navigation.findNavController
+import com.google.android.material.snackbar.BaseTransientBottomBar
+import com.google.android.material.snackbar.Snackbar
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
-import es.gdebustamante.inadraft.util.showSnackbar
 
 //region public methods
 
@@ -56,19 +57,36 @@ fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
             playerCard.id))
 }
 
-fun FragmentFormation442Binding.onPlayersDraftChanged(playersMap: MutableMap<Int, PlayerBO>) {
+fun FragmentFormation442Binding.onPlayersDraftChanged(
+    playersMap: MutableMap<Int, PlayerBO>,
+    formationId: Int,
+) {
 // TODO MEJORAR AUNQUE NO CAUSA NINGUN PROBLEMA DE RENDIMIENTO
     drawAverageTeam(playersMap.values.toList())
     playersMap.forEach {
         drawPlayerInCard(it.value, it.key)
     }
 
-    if (playersMap.size == 11){
-        root.showSnackbar("DSKAMDASMDA")
+    if (playersMap.size == 11) {
+        root.apply { //TODO VER COMO MEJORAR PARA NO TENER QUE MOSTRAR SNACKBAR
+            Snackbar.make(
+                root,
+                context.getString(R.string.fragment_formation442__snackbar__draft_finished),
+                Snackbar.LENGTH_SHORT
+            ).addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
+                override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
+                    val totalPuntuation = playersMap.values.sumOf { it.average }
+                    root.findNavController()
+                        .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
+                            totalPuntuation,
+                            contentFormationBase.formationFragmentToolbarRatingBar.rating,
+                            formationId))
+                }
+            }).show()
+        }
+
     }
 }
-
-
 
 
 //endregion
@@ -102,10 +120,10 @@ private fun FragmentFormation442Binding.drawPlayerInCard(player: PlayerBO, playe
     }
 }
 
-private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>){
+private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>) {
     val averageTeamDraft = (players.sumOf { it.average } / 11).toFloat()
     contentFormationBase.apply {
-        formationFragmentToolbarRatingNumber.text =  averageTeamDraft.toInt().toString()
+        formationFragmentToolbarRatingNumber.text = averageTeamDraft.toInt().toString()
         formationFragmentToolbarRatingBar.rating = averageTeamDraft
     }
 }

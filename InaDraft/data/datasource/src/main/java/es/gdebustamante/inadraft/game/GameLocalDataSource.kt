@@ -8,4 +8,8 @@ interface GameLocalDataSource {
 
     suspend fun insertLocalGames(games : List<GameBO>)
 
+    suspend fun insertLocalGame(gameBO: GameBO) : Boolean
+
+    suspend fun getLastGameInserted() : GameBO
+
 }

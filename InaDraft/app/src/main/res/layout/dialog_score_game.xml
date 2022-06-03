@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.view.dialog.scoreGame.ScoreGameDialog">
+
+    <TextView
+        android:id="@+id/scoreGameDialogLabelDialogTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_score_game__margin_default"
+        android:text="@string/dialog_score_game__label__dialog_title"
+        android:textColor="@color/dialogScoreGameLabelDialogTitle"
+        android:textSize="@dimen/dialog_score_game__font__label__dialog_title"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
+
+    <ProgressBar
+        android:id="@+id/scoreGameDialogProgressIndicatorTotalScore"
+        style="@style/CircularDeterminateProgressBar"
+        android:layout_width="@dimen/dialog_score_game__progress_indicator__total_puntuation_width"
+        android:layout_height="@dimen/dialog_score_game__progress_indicator__total_puntuation_height"
+        android:layout_marginTop="@dimen/dialog_score_game__margin_default"
+        android:indeterminateOnly="false"
+        android:progress="60"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogLabelDialogTitle"
+        app:layout_constraintVertical_bias="0"
+        tools:progress="60" />
+
+    <TextView
+        android:id="@+id/scoreGameDialogLabelTotalScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_score_game__margin_default"
+        android:textSize="@dimen/dialog_score_game__font__label__total_puntuation"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintEnd_toEndOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintStart_toStartOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintTop_toTopOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        tools:text="142" />
+
+    <TextView
+        android:id="@+id/scoreGameDialogLabelTeamMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
+        android:textSize="@dimen/dialog_score_game__font__label__team_media"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineVerticalMedium"
+        app:layout_constraintTop_toTopOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        tools:text="87" />
+
+    <TextView
+        android:id="@+id/scoreGameDialogLabelTeamMediaDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
+        android:text="@string/dialog_score_game__label__team_media"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/scoreGameDialogLabelTeamMedia"
+        app:layout_constraintTop_toTopOf="@id/scoreGameDialogProgressIndicatorTotalScore" />
+
+    <RatingBar
+        android:id="@+id/scoreGameDialogRatingBarTeamMedia"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dialog_score_game__margin_default"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:stepSize="200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/scoreGameDialogLabelTeamMedia"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogLabelTeamMedia"
+        app:layout_constraintVertical_bias="0"
+        tools:rating="3" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/scoreGameDialogTxtInputLayUserNick"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dialog_score_game__margin_default"
+        android:hint="@string/dialog_score_game__input__hint_user_nick"
+        app:counterMaxLength="20"
+        app:errorEnabled="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintVertical_bias="0">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/scoreGameDialogInputLayUserNick"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/scoreGameDialogBtnAddGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ThemeOverlay.Material3.Button.ElevatedButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogTxtInputLayUserNick"
+        android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
+        android:text="@string/dialog_score_game__btn__add_game"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineVerticalMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

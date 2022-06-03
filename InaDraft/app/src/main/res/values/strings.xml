@@ -1,4 +1,5 @@
 <resources>
+
     <!--region common-->
     <string name="app_name">InaDraft</string>
     <string name="common__card_kick_description">KCK</string>
@@ -87,12 +88,23 @@
     <string name="email_contact_summary" translatable="false">germanbustamante.trabajo@gmail.com</string>
     <!--  Texto que aparece en el footer de las preferencias  -->
     <string name="developer_copyright" translatable="false">Developer by Germán De Bustamante Conde</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!--endregion-->
 
     <!--region fragment_formation_list-->
     <string name="fragment_formation_list__label__choose_formation">ELIGE UNA ALINEACIÓN</string>
     <!--endregion-->
+
+    <!--region dialog_score_game-->
+    <string name="dialog_score_game__label__dialog_title">DRAFT</string>
+    <string name="dialog_score_game__label__team_media">MEDIA</string>
+    <string name="dialog_score_game__label__score">TOTAL</string>
+    <string name="dialog_score_game__input__hint_user_nick">Nick</string>
+    <string name="dialog_score_game__btn__add_game">Añadir</string>
+    <!--endregion-->
+
+    <!--region fragment_formation442-->
+    <string name="fragment_formation442__snackbar__draft_finished">Terminado :D</string>
+    <!--endregion-->
+
+
 </resources>

@@ -81,6 +81,7 @@
             android:name="formationId"
             android:defaultValue="-1"
             app:argType="integer" />
+
         <action
             android:id="@+id/action_formation442Fragment_to_choosePlayerDialog"
             app:destination="@id/choosePlayerDialog"
@@ -88,11 +89,20 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action
+            android:id="@+id/action_formation442Fragment_to_scoreGameDialog"
+            app:destination="@id/scoreGameDialog"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
     </fragment>
 
     <dialog
         android:id="@+id/choosePlayerDialog"
-        android:name="es.gdebustamante.inadraft.ui.view.dialog.ChoosePlayerDialog"
+        android:name="es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerDialog"
         android:label="dialog_choose_player"
         tools:layout="@layout/dialog_choose_player">
 
@@ -105,6 +115,29 @@
             android:name="playerCardId"
             android:defaultValue="-1"
             app:argType="integer" />
+    </dialog>
+
+    <dialog
+        android:id="@+id/scoreGameDialog"
+        android:name="es.gdebustamante.inadraft.ui.view.dialog.scoreGame.ScoreGameDialog"
+        android:label="scoreGameDialog"
+        tools:layout="@layout/dialog_score_game" >
+
+        <argument
+            android:name="totalPunctuation"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
+        <argument
+            android:name="teamAverage"
+            android:defaultValue="-1"
+            app:argType="float" />
+
+        <argument
+            android:name="formationId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+
     </dialog>
 
 

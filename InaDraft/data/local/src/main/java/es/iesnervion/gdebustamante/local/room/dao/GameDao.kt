@@ -13,12 +13,18 @@ interface GameDao {
     @Query("SELECT * FROM games")
     suspend fun getGames(): List<GameWithFormation>
 
+    @Query("SELECT id FROM games ORDER BY id DESC LIMIT 1")
+    suspend fun getLastGame(): GameWithFormation
+
     //endregion
 
     //region insert
 
     @Insert (onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertGames(map: List<GameDBO>)
+
+    @Insert (onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertGame(toDBO: GameDBO): Long
 
     //endregion
 }

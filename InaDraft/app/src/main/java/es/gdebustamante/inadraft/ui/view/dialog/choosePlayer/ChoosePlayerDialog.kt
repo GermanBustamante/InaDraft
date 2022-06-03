@@ -1,4 +1,4 @@
-package es.gdebustamante.inadraft.ui.view.dialog
+package es.gdebustamante.inadraft.ui.view.dialog.choosePlayer
 
 import android.app.Dialog
 import android.os.Bundle

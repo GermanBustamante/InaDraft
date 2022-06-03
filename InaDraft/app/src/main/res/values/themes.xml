@@ -42,6 +42,13 @@
     </style>
     <!--endregion-->
 
+    <!--region progressBar -->
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false </item>
+        <item name="android:progressDrawable">@drawable/circle</item>
+    </style>
+    <!--endregion-->
+
     <!--region common button and hamburguer icon drawer-->
     <style name="MyActionButtonOverflow" parent="Widget.AppCompat.Light.ActionButton.Overflow">
         <item name="color">@color/white</item>

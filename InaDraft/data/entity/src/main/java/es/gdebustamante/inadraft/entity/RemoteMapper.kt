@@ -45,4 +45,12 @@ fun GameDTO.toBO() = GameBO(
     FormationBO(formationId ?: -1, "", "")
 )
 
+fun GameBO.toDTO() = GameDTO(
+    id,
+    score,
+    date,
+    userNick,
+    formation.id
+)
+
 

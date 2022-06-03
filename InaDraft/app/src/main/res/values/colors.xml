@@ -81,4 +81,8 @@
     <!--region row_player_details-->
     <color name="rowPlayerDetailsCardViewBackground">@color/bluishBlue</color>
     <!--endregion-->
+
+    <!--region dialog_score_game-->
+    <color name="dialogScoreGameLabelDialogTitle">@color/black</color>
+    <!--endregion-->
 </resources>
