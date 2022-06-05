@@ -34,6 +34,7 @@
             android:layout_margin="@dimen/row_team__margin_default"
             android:textSize="@dimen/row_team__font__label__team_name"
             android:textStyle="bold"
+            android:textColor="@color/rowTeamLabelTeamName"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

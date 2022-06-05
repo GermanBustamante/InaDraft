@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -69,14 +70,17 @@ class ScoreGameDialog : DialogFragment() {
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun DialogScoreGameBinding.setupViews(
-        totalPuntuation: Int,
+        totalPunctuation: Int,
         teamAverage: Float,
         formationId: Int,
     ) {
         scoreGameDialogRatingBarTeamMedia.rating = teamAverage
-        scoreGameDialogLabelTotalScore.text = totalPuntuation.toString()
+        scoreGameDialogLabelTotalScore.text = totalPunctuation.toString()
         scoreGameDialogLabelTeamMedia.text = teamAverage.toInt().toString()
+
         scoreGameDialogBtnAddGame.setOnClickListener {
+            it.isEnabled = false
+            scoreGameDialogProgressIndicatorLoadingAddGame.isVisible = true
             val inputUserNick = if (scoreGameDialogInputLayUserNick.text != null) scoreGameDialogInputLayUserNick.text.toString() else "Anónimo"
             viewModel.insertGame(
                 GameBO(

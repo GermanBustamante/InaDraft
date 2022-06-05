@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.ViewBinding
@@ -31,8 +32,13 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
         val navControler = findNavController()
         (requireActivity() as BaseActivity).apply {
             setSupportActionBar(toolbar)
+            val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment,
+                R.id.rankingFragment,
+                R.id.aboutAppPreferenceFragment,
+                R.id.infoTeamFragment), getDrawerLayout())
             getNavDrawer()?.setupWithNavController(navControler)
-            NavigationUI.setupActionBarWithNavController(this, navControler, getDrawerLayout())
+            NavigationUI.setupActionBarWithNavController(this, navControler,
+                appBarConfiguration)
         }
     }
 }

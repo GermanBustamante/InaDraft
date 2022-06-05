@@ -18,7 +18,7 @@ class PlayerRepository(
         var players = playerLocalDataSource.getLocalPlayers()
         if (players.isEmpty()) {
             formationRepository.getFormations()
-            gameRepository.getGames()
+            gameRepository.getBestGames()
             players = combineLists(playerRemoteDataSource.getRemotePlayers())
             playerLocalDataSource.insertPlayers(players)
         }

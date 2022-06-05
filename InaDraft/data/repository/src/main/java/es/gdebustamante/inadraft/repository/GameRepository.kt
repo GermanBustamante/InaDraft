@@ -11,11 +11,11 @@ class GameRepository(
     private val formationRepository: FormationRepository,
 ) {
 
-    suspend fun getGames(): List<GameBO> {
-        var games = gameLocalDataSource.getLocalGames()
+    suspend fun getBestGames(): List<GameBO> {
+        var games = gameLocalDataSource.getLocalBestGames()
         if (games.isEmpty()) {
             games = combineGameWithFormation(gameRemoteDataSource.getRemoteGames())
-            insertGames(games)
+            insertGames(games.sortedBy { it.score })
         }
         return games
     }

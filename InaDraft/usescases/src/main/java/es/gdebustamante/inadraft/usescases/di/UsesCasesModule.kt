@@ -45,7 +45,7 @@ object UsesCasesModule {
 
     @Provides
     fun getGamesUseCaseProvider(repository: GameRepository) =
-        GetGamesUseCase(repository)
+        GetBestGamesUseCase(repository)
 
     @Provides
     fun insertFinishedGameUseCaseProvider(repository: GameRepository) =

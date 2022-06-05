@@ -29,8 +29,17 @@
 
     <!--region header_navigation_drawer-->
     <dimen name="header_navigation_drawer__margin_default">20dp</dimen>
+    <dimen name="header_navigation_drawer__margin_min">8dp</dimen>
     <dimen name="header_navigation_drawer__root__height">180dp</dimen>
+    <dimen name="header_navigation_drawer__img__app_logo__height">68dp</dimen>
+    <dimen name="header_navigation_drawer__app_logo__width">68dp</dimen>
     <dimen name="header_navigation_drawer__label__app_title__size">20sp</dimen>
+    <!--endregion-->
+
+    <!--region fragment_home-->
+    <dimen name="fragment_home__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="fragment_home__btn__play_draft__height">160dp</dimen>
+    <dimen name="fragment_home__label__btn_play_draft">45sp</dimen>
     <!--endregion-->
 
     <!--region row_team-->
@@ -138,28 +147,26 @@
 
     <!--region formation_base-->
     <dimen name="formation_base__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="formation_base__font__label__formation_name_toolbar">22sp</dimen>
+    <dimen name="formation_base__font__label__team_media_toolbar">22sp</dimen>
+
     <!--endregion-->
 
     <!--region row_formation-->
     <dimen name="row_formation__margin_default">@dimen/common__margin_default</dimen>
     <dimen name="row_formation__img__height">200dp</dimen>
     <dimen name="row_formation__img__width">200dp</dimen>
+    <dimen name="row_formation__font__label__formation_name">22sp</dimen>
     <!--endregion-->
 
     <!--region row_player_mini_game-->
     <dimen name="row_player_mini_game__margin_default">@dimen/common__margin_default</dimen>
-    <dimen name="row_player_mini_game__img__player_card__height">
-        @dimen/player_mini_card__card_view__player_card__height
-    </dimen>
-    <dimen name="row_player_mini_game__img__player_card__width">
-        @dimen/player_mini_card__card_view__player_card__width
-    </dimen>
-    <dimen name="row_player_mini_game__img__player_shield__width">
-        @dimen/player_mini_card__img__player_shield__width
-    </dimen>
-    <dimen name="row_player_mini_game__img__player_shield__height">
-        @dimen/player_mini_card__img__player_shield__height
-    </dimen>
+    <dimen name="row_player_mini_game__margin_min">4dp</dimen>
+    <dimen name="row_player_mini_game__font__label__player_team">14sp</dimen>
+    <dimen name="row_player_mini_game__img__player_card__height">@dimen/player_mini_card__card_view__player_card__height</dimen>
+    <dimen name="row_player_mini_game__img__player_card__width">@dimen/player_mini_card__card_view__player_card__width</dimen>
+    <dimen name="row_player_mini_game__img__player_shield__width">@dimen/player_mini_card__img__player_shield__width</dimen>
+    <dimen name="row_player_mini_game__img__player_shield__height">@dimen/player_mini_card__img__player_shield__height</dimen>
     <!--endregion-->
 
     <!--region dialog_score_game-->
@@ -169,7 +176,24 @@
     <dimen name="dialog_score_game__font__label__team_media">28sp</dimen>
     <dimen name="dialog_score_game__progress_indicator__total_puntuation_height">160dp</dimen>
     <dimen name="dialog_score_game__progress_indicator__total_puntuation_width">160dp</dimen>
+    <!--endregion-->
 
+    <!--region row_game-->
+    <dimen name="row_game__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="row_game__font__label__common">18sp</dimen>
+    <dimen name="row_game__font__label__game_position">@dimen/row_game__font__label__common</dimen>
+    <dimen name="row_game__font__label__game_user_nick">@dimen/row_game__font__label__common</dimen>
+    <dimen name="row_game__img_game_user_icon__height">32sp</dimen>
+    <dimen name="row_game__img_game_user_icon__width">32sp</dimen>
+    <dimen name="row_game__font__label__game_team_score">26sp</dimen>
+    <!--endregion-->
+
+    <!--region content_formation_position_preview-->
+    <dimen name="content_formation_position_preview__label__padding_horizontal">4dp</dimen>
+    <!--endregion-->
+
+    <!--region formation_list-->
+    <dimen name="formation_list__font__label__choose_formation_toolbar">22sp</dimen>
     <!--endregion-->
 
 </resources>

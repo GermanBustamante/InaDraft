@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/formation_base__margin_default"
                 android:textColor="@color/white"
-                android:textSize="22sp"
+                android:textSize="@dimen/formation_base__font__label__formation_name_toolbar"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/formationFragmentToolbarDivider"
@@ -64,14 +64,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/formation_base__margin_default"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/formation_base__font__label__team_media_toolbar"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/formationFragmentToolbarDivider"
                     app:layout_constraintHorizontal_bias="1"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="0" />
+                    android:text="@string/formation_base__label__team_media_init" />
 
                 <RatingBar
                     android:id="@+id/formationFragmentToolbarRatingBar"

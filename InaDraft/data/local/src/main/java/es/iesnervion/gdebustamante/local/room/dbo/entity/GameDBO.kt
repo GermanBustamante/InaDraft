@@ -7,8 +7,8 @@ import java.util.Date
 @Entity(tableName = "games")
 data class GameDBO(
     @PrimaryKey(autoGenerate = true) val id : Int,
-    val date : Date = Date(),
+    val date : Date? = Date(),
     val score : Int?,
     val userNick : String?,
-    val formationId : Int?
+    val formationId : Int
 )

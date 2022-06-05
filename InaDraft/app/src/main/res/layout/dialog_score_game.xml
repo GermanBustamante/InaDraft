@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dialog_score_game__margin_default"
+        android:fontFamily="@font/facon_font"
         android:text="@string/dialog_score_game__label__dialog_title"
         android:textColor="@color/dialogScoreGameLabelDialogTitle"
         android:textSize="@dimen/dialog_score_game__font__label__dialog_title"
@@ -29,7 +30,6 @@
         android:layout_height="@dimen/dialog_score_game__progress_indicator__total_puntuation_height"
         android:layout_marginTop="@dimen/dialog_score_game__margin_default"
         android:indeterminateOnly="false"
-        android:progress="60"
         android:progressDrawable="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
@@ -56,12 +56,14 @@
         android:id="@+id/scoreGameDialogLabelTeamMedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dialog_score_game__margin_default"
         android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
         android:textSize="@dimen/dialog_score_game__font__label__team_media"
         android:textStyle="bold"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/scoreGameDialogLabelTeamMediaDescription"
+        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="@id/guidelineVerticalMedium"
         app:layout_constraintTop_toTopOf="@id/scoreGameDialogProgressIndicatorTotalScore"
         tools:text="87" />
@@ -71,13 +73,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
+        android:fontFamily="@font/facon_font"
         android:text="@string/dialog_score_game__label__team_media"
         android:textStyle="bold"
         app:layout_constrainedWidth="true"
-        app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintBaseline_toBaselineOf="@id/scoreGameDialogLabelTeamMedia"
+        app:layout_constraintBottom_toBottomOf="@id/scoreGameDialogLabelTeamMedia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/scoreGameDialogLabelTeamMedia"
-        app:layout_constraintTop_toTopOf="@id/scoreGameDialogProgressIndicatorTotalScore" />
+        app:layout_constraintTop_toTopOf="@id/scoreGameDialogLabelTeamMediaDescription" />
 
     <RatingBar
         android:id="@+id/scoreGameDialogRatingBarTeamMedia"
@@ -103,7 +107,6 @@
         android:layout_margin="@dimen/dialog_score_game__margin_default"
         android:hint="@string/dialog_score_game__input__hint_user_nick"
         app:counterMaxLength="20"
-        app:errorEnabled="true"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,21 +117,33 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/scoreGameDialogInputLayUserNick"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:maxLength="20" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/scoreGameDialogBtnAddGame"
+        style="@style/ThemeOverlay.Material3.Button.ElevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/ThemeOverlay.Material3.Button.ElevatedButton"
+        android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
+        android:text="@string/dialog_score_game__btn__add_game"
+        android:fontFamily="@font/facon_font"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogTxtInputLayUserNick"
-        android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
-        android:text="@string/dialog_score_game__btn__add_game"/>
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogTxtInputLayUserNick" />
+
+    <ProgressBar
+        android:id="@+id/scoreGameDialogProgressIndicatorLoadingAddGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVerticalMedium"

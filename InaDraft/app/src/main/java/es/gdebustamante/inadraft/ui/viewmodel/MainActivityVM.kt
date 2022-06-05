@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class MainAcvitiyVM @Inject constructor(
+class MainActivityVM @Inject constructor(
     private val populateDatabaseUseCase: PopulateDatabaseUseCase,
 ) : ViewModel() {
 
@@ -22,9 +22,9 @@ class MainAcvitiyVM @Inject constructor(
 
     //endregion
 
-    //region constructor
+    //region public methods
 
-    init {
+    fun init() {
         viewModelScope.launch(Dispatchers.IO) {
             populateDatabaseUseCase.invoke()
             _isLoading.postValue(false)

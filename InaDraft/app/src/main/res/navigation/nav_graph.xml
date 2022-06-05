@@ -10,6 +10,7 @@
         android:name="es.gdebustamante.inadraft.ui.view.fragment.HomeFragment"
         android:label="@string/nav_graph__fragment_home__title"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_homeFragment_to_formationListFragment"
             app:destination="@id/formationListFragment"

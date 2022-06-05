@@ -1,6 +1,7 @@
 package es.gdebustamante.inadraft.ui.view.activity
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -14,14 +15,15 @@ import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.ActivityMainBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseActivity
-import es.gdebustamante.inadraft.ui.viewmodel.MainAcvitiyVM
+import es.gdebustamante.inadraft.ui.viewmodel.MainActivityVM
+import java.lang.Exception
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
-    private val viewModel : MainAcvitiyVM by viewModels()
+    private val viewModel : MainActivityVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +36,11 @@ class MainActivity : BaseActivity() {
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        try {
+            viewModel.init()
+        }catch (e: Exception){
+            Log.e("EEEE", e.toString())
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

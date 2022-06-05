@@ -4,6 +4,7 @@ import es.gdebustamante.inadraft.domain.*
 import es.iesnervion.gdebustamante.local.room.dbo.entity.*
 import es.iesnervion.gdebustamante.local.room.dbo.relation.GameWithFormation
 import es.iesnervion.gdebustamante.local.room.dbo.relation.PlayerWithTeamAndPosition
+import java.util.*
 
 fun PlayerWithTeamAndPosition.toPlayerBO() =
     PlayerBO(
@@ -81,15 +82,15 @@ fun GameBO.toDBO() = GameDBO(
 fun GameDBO.toBO() = GameBO(
     id,
     score ?: -1,
-    date,
+    date ?: Date(),
     userNick ?: "",
     FormationBO(formationId ?: -1, "", "")
 )
 
 fun GameWithFormation.toGameBO() = GameBO(
-    game.id,
-    game.score ?: -1,
-    game.date,
-    game.userNick ?: "",
-    formationDBO.toBO()
+    game?.id ?: -1,
+    game?.score ?: -1,
+    game?.date ?: Date(),
+    game?.userNick ?: "",
+    formation ?.toBO() ?: FormationBO( -1, "", "")
 )

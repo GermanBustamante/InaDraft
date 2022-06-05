@@ -6,9 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import es.gdebustamante.inadraft.domain.GameBO
-import es.gdebustamante.inadraft.usescases.GetGamesUseCase
 import es.gdebustamante.inadraft.usescases.InsertFinishedGameUseCase
-import es.gdebustamante.inadraft.usescases.InsertGamesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject

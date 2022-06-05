@@ -7,11 +7,11 @@ import es.iesnervion.gdebustamante.local.room.dbo.entity.GameDBO
 
 data class GameWithFormation(
     @Embedded
-    val formationDBO: FormationDBO,
+    val game: GameDBO,
 
     @Relation(
-        parentColumn = "id",
-        entityColumn = "formationId"
+        parentColumn = "formationId",
+        entityColumn = "id"
     )
-    val game: GameDBO,
+    val formation: FormationDBO,
 )

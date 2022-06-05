@@ -10,6 +10,7 @@ import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
+import java.lang.IllegalStateException
 
 //region public methods
 
@@ -68,23 +69,13 @@ fun FragmentFormation442Binding.onPlayersDraftChanged(
     }
 
     if (playersMap.size == 11) {
-        root.apply { //TODO VER COMO MEJORAR PARA NO TENER QUE MOSTRAR SNACKBAR
-            Snackbar.make(
-                root,
-                context.getString(R.string.fragment_formation442__snackbar__draft_finished),
-                Snackbar.LENGTH_SHORT
-            ).addCallback(object : BaseTransientBottomBar.BaseCallback<Snackbar>() {
-                override fun onDismissed(transientBottomBar: Snackbar?, event: Int) {
-                    val totalPuntuation = playersMap.values.sumOf { it.average }
-                    root.findNavController()
-                        .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
-                            totalPuntuation,
-                            contentFormationBase.formationFragmentToolbarRatingBar.rating,
-                            formationId))
-                }
-            }).show()
+        formation442BtnAddGame.isEnabled = true
+        formation442BtnAddGame.setOnClickListener {
+            val totalPunctuation = playersMap.values.sumOf { it.average }
+                root.findNavController()
+                    .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
+                        totalPunctuation, (totalPunctuation / 11).toFloat(), formationId))
         }
-
     }
 }
 

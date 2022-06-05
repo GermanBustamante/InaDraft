@@ -27,7 +27,7 @@
             android:layout_gravity="center_horizontal"
             android:text="@string/fragment_formation_list__label__choose_formation"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="@dimen/formation_list__font__label__choose_formation_toolbar"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -42,6 +42,10 @@
     <color name="navDrawerBackground">@color/darkBlue2</color>
     <!--endregion-->
 
+    <!--region fragment_home-->
+    <color name="homeFragmentLabelWelcomeToApp">#4C7E12</color>
+    <!--endregion-->
+
     <!--region player_details_card-->
     <color name="playerDetailsLabelPlayerMedia">@color/commonPlayerCardText</color>
     <color name="playerDetailsLabelPlayerPosition">@color/commonPlayerCardText</color>
@@ -84,5 +88,26 @@
 
     <!--region dialog_score_game-->
     <color name="dialogScoreGameLabelDialogTitle">@color/black</color>
+    <!--endregion-->
+
+    <!--region row_formation-->
+    <color name="rowFormationLabelFormationName">@color/black</color>
+    <!--endregion-->
+
+    <!--region fragment_formation442-->
+    <color name="formation442FragmentBtnFinishDraftTextColor">@color/black</color>
+    <!--endregion-->
+
+    <!--region row_game-->
+    <color name="rowGameLabelTeamScore">@color/black</color>
+    <!--endregion-->
+
+    <!--region row_player_mini_game-->
+    <color name="rowPlayerMiniGameLabelTeamName">@color/black</color>
+    <color name="rowPlayerMiniGameLabelPositionName">@color/black</color>
+    <!--endregion-->
+
+    <!--region row_team-->
+    <color name="rowTeamLabelTeamName">@color/black</color>
     <!--endregion-->
 </resources>

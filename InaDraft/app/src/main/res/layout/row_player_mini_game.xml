@@ -41,9 +41,12 @@
                 android:id="@+id/rowPlayerMiniGameLabelPlayerShield"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/row_player_mini_game__font__label__player_team"
+                android:textColor="@color/rowPlayerMiniGameLabelTeamName"
                 app:layout_constraintBottom_toBottomOf="@id/rowPlayerMiniGameImgPlayerShield"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
+                android:layout_marginStart="@dimen/row_player_mini_game__margin_default"
                 app:layout_constraintStart_toEndOf="@id/rowPlayerMiniGameImgPlayerShield"
                 app:layout_constraintTop_toTopOf="@id/rowPlayerMiniGameImgPlayerShield"
                 tools:text="Raimon" />
@@ -52,6 +55,9 @@
                 android:id="@+id/rowPlayerMiniGameLabelPlayerPosition"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="@dimen/row_player_mini_game__font__label__player_team"
+                android:paddingBottom="@dimen/row_player_mini_game__margin_min"
+                android:textColor="@color/rowPlayerMiniGameLabelPositionName"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/rowPlayerMiniGameLabelPlayerShield"
                 app:layout_constraintHorizontal_bias="0"
@@ -78,6 +84,7 @@
             layout="@layout/player_mini_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
