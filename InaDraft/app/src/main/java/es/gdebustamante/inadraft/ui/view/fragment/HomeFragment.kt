@@ -12,6 +12,8 @@ import es.gdebustamante.inadraft.ui.view.bindingExtension.setListeners
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
+    //region override methods
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,4 +30,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         inflater: LayoutInflater,
         container: ViewGroup?
     ): FragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false)
+
+    //endregion
 }

@@ -2,30 +2,33 @@ package es.gdebustamante.inadraft.ui.view.bindingExtension
 
 import android.view.View
 import androidx.navigation.findNavController
-import com.google.android.material.snackbar.BaseTransientBottomBar
-import com.google.android.material.snackbar.Snackbar
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
-import java.lang.IllegalStateException
+
+private const val NUMBER_OF_PLAYERS = 11
+private const val GOALKEEPER_ABBREVIATED = "GK"
+private const val DEFENSE_ABBREVIATED = "DF"
+private const val MIDFIELD_ABBREVIATED = "MF"
+private const val FORWARD_ABBREVIATED = "FW"
 
 //region public methods
 
 fun FragmentFormation442Binding.setupInitialViews() {
-    PositionPreviewLabelGoalkeeper.root.text = "GK"
-    PositionPreviewLabelDefender1.root.text = "DF"
-    PositionPreviewLabelDefender2.root.text = "DF"
-    PositionPreviewLabelDefender3.root.text = "DF"
-    PositionPreviewLabelDefender4.root.text = "DF"
-    PositionPreviewLabelMidfielder1.root.text = "MF"
-    PositionPreviewLabelMidfielder2.root.text = "MF"
-    PositionPreviewLabelMidfielder3.root.text = "MF"
-    PositionPreviewLabelMidfielder4.root.text = "MF"
-    PositionPreviewLabelForward1.root.text = "FW"
-    PositionPreviewLabelForward2.root.text = "FW"
+    PositionPreviewLabelGoalkeeper.root.text = GOALKEEPER_ABBREVIATED
+    PositionPreviewLabelDefender1.root.text = DEFENSE_ABBREVIATED
+    PositionPreviewLabelDefender2.root.text = DEFENSE_ABBREVIATED
+    PositionPreviewLabelDefender3.root.text = DEFENSE_ABBREVIATED
+    PositionPreviewLabelDefender4.root.text = DEFENSE_ABBREVIATED
+    PositionPreviewLabelMidfielder1.root.text = MIDFIELD_ABBREVIATED
+    PositionPreviewLabelMidfielder2.root.text = MIDFIELD_ABBREVIATED
+    PositionPreviewLabelMidfielder3.root.text = MIDFIELD_ABBREVIATED
+    PositionPreviewLabelMidfielder4.root.text = MIDFIELD_ABBREVIATED
+    PositionPreviewLabelForward1.root.text = FORWARD_ABBREVIATED
+    PositionPreviewLabelForward2.root.text = FORWARD_ABBREVIATED
     contentFormationBase.formationFragmentToolbarTittle.text = "4-4-2"
 }
 
@@ -62,23 +65,23 @@ fun FragmentFormation442Binding.onPlayersDraftChanged(
     playersMap: MutableMap<Int, PlayerBO>,
     formationId: Int,
 ) {
-// TODO MEJORAR AUNQUE NO CAUSA NINGUN PROBLEMA DE RENDIMIENTO
     drawAverageTeam(playersMap.values.toList())
     playersMap.forEach {
         drawPlayerInCard(it.value, it.key)
     }
 
-    if (playersMap.size == 11) {
+    if (playersMap.size == NUMBER_OF_PLAYERS) {
         formation442BtnAddGame.isEnabled = true
         formation442BtnAddGame.setOnClickListener {
             val totalPunctuation = playersMap.values.sumOf { it.average }
-                root.findNavController()
-                    .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
-                        totalPunctuation, (totalPunctuation / 11).toFloat(), formationId))
+            root.findNavController()
+                .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
+                    totalPunctuation,
+                    (totalPunctuation / NUMBER_OF_PLAYERS).toFloat(),
+                    formationId))
         }
     }
 }
-
 
 //endregion
 
@@ -112,7 +115,7 @@ private fun FragmentFormation442Binding.drawPlayerInCard(player: PlayerBO, playe
 }
 
 private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>) {
-    val averageTeamDraft = (players.sumOf { it.average } / 11).toFloat()
+    val averageTeamDraft = (players.sumOf { it.average } / NUMBER_OF_PLAYERS).toFloat()
     contentFormationBase.apply {
         formationFragmentToolbarRatingNumber.text = averageTeamDraft.toInt().toString()
         formationFragmentToolbarRatingBar.rating = averageTeamDraft

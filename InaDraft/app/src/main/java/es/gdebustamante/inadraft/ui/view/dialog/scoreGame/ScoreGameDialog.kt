@@ -22,6 +22,9 @@ import es.gdebustamante.inadraft.util.showToast
 import java.time.Instant
 import java.util.*
 
+
+private const val GENERIC_USER_NICK = "Invitado"
+
 @AndroidEntryPoint
 class ScoreGameDialog : DialogFragment() {
 
@@ -41,7 +44,10 @@ class ScoreGameDialog : DialogFragment() {
         savedInstanceState: Bundle?,
     ): View? {
         isCancelable = false
-        binding?.setupViews(args.totalPunctuation, args.teamAverage, args.formationId)
+        binding?.apply {
+            setupViews(args.totalPunctuation, args.teamAverage)
+            setupListeners(args.teamAverage, args.formationId)
+        }
         return binding?.root
     }
 
@@ -72,22 +78,26 @@ class ScoreGameDialog : DialogFragment() {
     private fun DialogScoreGameBinding.setupViews(
         totalPunctuation: Int,
         teamAverage: Float,
-        formationId: Int,
     ) {
         scoreGameDialogRatingBarTeamMedia.rating = teamAverage
         scoreGameDialogLabelTotalScore.text = totalPunctuation.toString()
         scoreGameDialogLabelTeamMedia.text = teamAverage.toInt().toString()
+    }
 
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun DialogScoreGameBinding.setupListeners(teamAverage: Float, formationId: Int) {
         scoreGameDialogBtnAddGame.setOnClickListener {
+
             it.isEnabled = false
             scoreGameDialogProgressIndicatorLoadingAddGame.isVisible = true
-            val inputUserNick = if (scoreGameDialogInputLayUserNick.text != null) scoreGameDialogInputLayUserNick.text.toString() else "Anónimo"
+
             viewModel.insertGame(
                 GameBO(
                     0, teamAverage.toInt(),
                     Date.from(Instant.now()),
-                    inputUserNick,
-                    FormationBO(formationId, "", ""))
+                    scoreGameDialogInputLayUserNick.text.toString().ifBlank { GENERIC_USER_NICK },
+                    FormationBO(id = formationId)
+                )
             )
 
         }
@@ -105,12 +115,12 @@ class ScoreGameDialog : DialogFragment() {
     }
 
     private fun setupVMObservers() {
-        viewModel.operationSuccess.observe(viewLifecycleOwner){
-            if (it){
+        viewModel.operationSuccess.observe(viewLifecycleOwner) {
+            if (it) {
+                showToast("Partida añadida correctamente")
                 getListener()?.finishDraft()
-                dismiss()
-            }else{
-                showToast("ERROR :(")
+            } else {
+                TODO()
             }
         }
     }

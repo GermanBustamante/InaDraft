@@ -21,9 +21,15 @@ import java.lang.Exception
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 
+    //region class attributes
+
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
     private val viewModel : MainActivityVM by viewModels()
+
+    //endregion
+
+    //region override methods
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +42,6 @@ class MainActivity : BaseActivity() {
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
-        try {
-            viewModel.init()
-        }catch (e: Exception){
-            Log.e("EEEE", e.toString())
-        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -64,6 +65,12 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    //endregion
+
+    //region private methods
+
     private fun getActivityNavController(): NavController =
         (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
+
+    //endregion
 }

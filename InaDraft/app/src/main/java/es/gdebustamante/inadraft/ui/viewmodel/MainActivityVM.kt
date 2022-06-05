@@ -24,7 +24,7 @@ class MainActivityVM @Inject constructor(
 
     //region public methods
 
-    fun init() {
+    init {
         viewModelScope.launch(Dispatchers.IO) {
             populateDatabaseUseCase.invoke()
             _isLoading.postValue(false)

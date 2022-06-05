@@ -96,6 +96,7 @@
 
     <!--region fragment_formation442-->
     <color name="formation442FragmentBtnFinishDraftTextColor">@color/black</color>
+    <color name="formation442FragmentBtnFinishDraftBackground">#628353</color>
     <!--endregion-->
 
     <!--region row_game-->

@@ -11,30 +11,36 @@ import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
-class PlayerDetailAdapter : ListAdapter<PlayerBO, PlayerDetailAdapter.PlayerDetailViewHolder>(
+class PlayerDetailAdapter : ListAdapter<PlayerBO, PlayerDetailViewHolder>(
     PlayerBODiffCallback
 ) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int,
-    ): PlayerDetailAdapter.PlayerDetailViewHolder {
+    ): PlayerDetailViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.row_player_detail, parent, false)
         return PlayerDetailViewHolder(view)
     }
 
     override fun onBindViewHolder(
-        holder: PlayerDetailAdapter.PlayerDetailViewHolder,
+        holder: PlayerDetailViewHolder,
         position: Int,
     ) {
         holder.binding.bind(getItem(position))
     }
 
-    inner class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val binding = RowPlayerDetailBinding.bind(view)
-    }
+
 }
+
+//region viewholder
+
+class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val binding = RowPlayerDetailBinding.bind(view)
+}
+
+//endregion
 
 //region diffCallback
 

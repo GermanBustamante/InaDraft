@@ -16,9 +16,15 @@ import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListVM
 @AndroidEntryPoint
 class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
+    //region class attributes
+
     private val viewModel: PlayerInfoListVM by viewModels()
     private val adapter = PlayerDetailAdapter()
     private val args: PlayerInfoListFragmentArgs by navArgs()
+
+    //endregion
+
+    //region override methods
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,8 +57,9 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
             binding?.onPlayerListChanged(it, adapter)
         }
         viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
-
     }
+
+    //endregion
 }
 
 

@@ -8,6 +8,8 @@ import es.gdebustamante.inadraft.ui.adapter.TeamAdapter
 import es.gdebustamante.inadraft.ui.view.fragment.TeamInfoListFragmentDirections
 import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
 
+//region public methods
+
 fun FragmentTeamInfoListBinding.setupRecyclerView(adapter: TeamAdapter) {
     infoTeamFragmentListOfTeams.adapter = adapter
 }
@@ -41,6 +43,12 @@ fun FragmentTeamInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {
     infoTeamFragmentListOfTeams.isVisible = !visibility
 }
 
+//endregion
+
+//region private methods
+
 private fun FragmentTeamInfoListBinding.onTeamInfoListRefreshed(viewModel : TeamInfoListVM) {
     viewModel.loadTeamList()
 }
+
+//endregion

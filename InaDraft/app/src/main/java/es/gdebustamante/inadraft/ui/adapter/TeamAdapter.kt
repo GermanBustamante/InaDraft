@@ -11,7 +11,7 @@ import es.gdebustamante.inadraft.databinding.RowTeamBinding
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
-class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAdapter<TeamBO, TeamAdapter.TeamViewHolder>(TeamDiffCallback){
+class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAdapter<TeamBO, TeamViewHolder>(TeamDiffCallback){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_team, parent, false)
@@ -28,10 +28,17 @@ class TeamAdapter(private val onTeamClickedListener : (TeamBO) -> Unit) : ListAd
         root.setOnClickListener { onTeamClickedListener(team) }
     }
 
-    inner class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
-        val binding = RowTeamBinding.bind(view)
-    }
 }
+
+//region viewholder
+
+class TeamViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
+    val binding = RowTeamBinding.bind(view)
+}
+
+//endregion
+
+//region diffcallback
 
 object TeamDiffCallback: DiffUtil.ItemCallback<TeamBO>() {
     override fun areItemsTheSame(oldItem: TeamBO, newItem: TeamBO): Boolean =
@@ -41,5 +48,7 @@ object TeamDiffCallback: DiffUtil.ItemCallback<TeamBO>() {
         oldItem == newItem
 
 }
+
+//endregion
 
 

@@ -287,7 +287,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/formation_4_4_2__margin_default"
         android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
-        android:backgroundTint="#628353"
+        android:backgroundTint="@color/formation442FragmentBtnFinishDraftBackground"
         android:enabled="false"
         android:fontFamily="@font/facon_font"
         android:text="Listo"

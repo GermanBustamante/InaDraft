@@ -17,8 +17,10 @@ class ScoreGameVM @Inject constructor(
 ): ViewModel() {
 
     //region livedata
+
     private val _operationSuccess = MutableLiveData<Boolean>()
     val operationSuccess: LiveData<Boolean> get() = _operationSuccess
+
     //endregion
 
     //region public metods

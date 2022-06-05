@@ -107,10 +107,6 @@
     <string name="dialog_score_game__btn__add_game">Añadir</string>
     <!--endregion-->
 
-    <!--region fragment_formation442-->
-    <string name="fragment_formation442__snackbar__draft_finished">Terminado :D</string>
-    <!--endregion-->
-
     <!--region formation_base-->
     <string name="formation_base__label__team_media_init">0</string>
     <!--endregion-->

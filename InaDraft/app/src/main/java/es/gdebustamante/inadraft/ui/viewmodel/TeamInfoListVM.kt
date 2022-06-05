@@ -32,10 +32,10 @@ class TeamInfoListVM @Inject constructor(
     //region public functions
 
     fun loadTeamList() {
-        viewModelScope.launch(Dispatchers.Main) {
-            _progressVisible.value = true
-            _teamList.value = getTeamsUseCase.invoke() // TODO VER SI PUEDO MEJORAR ESTO
-            _progressVisible.value = false
+        viewModelScope.launch(Dispatchers.IO) {
+            _progressVisible.postValue(true)
+            _teamList.postValue(getTeamsUseCase.invoke())
+            _progressVisible.postValue(false)
         }
     }
 

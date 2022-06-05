@@ -18,10 +18,6 @@ import es.gdebustamante.inadraft.util.findPreferenceByKey
 @AndroidEntryPoint
 class AboutAppPreferenceFragment : PreferenceFragmentCompat() {
 
-    companion object {
-        fun newInstance() = AboutAppPreferenceFragment()
-    }
-
     //region override methods
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
@@ -39,27 +35,6 @@ class AboutAppPreferenceFragment : PreferenceFragmentCompat() {
         inflater.inflate(R.menu.about_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
-
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        return when (item.itemId) {
-//            R.id.action_app_info -> {
-//                activity?.openDetailAppSettings()
-//                true
-//            }
-//            R.id.action_share -> {
-//                val marketUri = GOOGLE_PLAY_ENDPOINT + context?.packageName
-//                context?.shareLink(
-//                    getString(
-//                        R.string.share_app_content,
-//                        context?.getAppName(),
-//                        marketUri
-//                    )
-//                )
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
 
     //endregion
 

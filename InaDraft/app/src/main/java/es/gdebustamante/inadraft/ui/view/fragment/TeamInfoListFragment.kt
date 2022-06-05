@@ -15,8 +15,14 @@ import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
 @AndroidEntryPoint
 class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
+    //region class attributes
+
     private val viewModel: TeamInfoListVM by viewModels()
     private val adapter = TeamAdapter { binding?.onTeamClicked(it) }
+
+    //endregion
+
+    //region override methods
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,8 +49,14 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
         container: ViewGroup?
     ): FragmentTeamInfoListBinding = FragmentTeamInfoListBinding.inflate(inflater, container, false)
 
+    //endregion
+
+    //region private override methods
+
     private fun setupVMObservers(){
         viewModel.teamList.observe(viewLifecycleOwner) { binding?.onTeamListChanged(it, adapter) }
         viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
     }
+
+    //endregion
 }

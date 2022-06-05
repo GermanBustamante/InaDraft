@@ -6,6 +6,8 @@ import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.ui.adapter.PlayerDetailAdapter
 import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListVM
 
+//region public methods
+
 fun FragmentPlayerInfoListBinding.setupRecyclerView(adapter: PlayerDetailAdapter) {
     playerInfoListFragmentSlideListOfPlayers.adapter = adapter
 }
@@ -23,7 +25,7 @@ fun FragmentPlayerInfoListBinding.setupListeners(viewModel: PlayerInfoListVM, te
 }
 
 fun onPlayerInfoListRefreshed(viewModel: PlayerInfoListVM, teamId: Int) {
-viewModel.loadPlayerByTeam(teamId)
+    viewModel.loadPlayerByTeam(teamId)
 }
 
 fun FragmentPlayerInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {
@@ -35,4 +37,6 @@ fun FragmentPlayerInfoListBinding.onProgressVisibleChanged(visibility: Boolean) 
     playerInfoListFragmentLoading.root.isVisible = visibility
     playerInfoListFragmentSlideListOfPlayers.isVisible = !visibility
 }
+
+//endregion
 
