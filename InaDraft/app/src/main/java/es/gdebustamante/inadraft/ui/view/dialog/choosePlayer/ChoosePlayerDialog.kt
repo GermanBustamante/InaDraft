@@ -47,7 +47,6 @@ class ChoosePlayerDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = DialogChoosePlayerBinding.inflate(layoutInflater)
         return MaterialAlertDialogBuilder(requireActivity())
-            .setTitle("Choose a player")
             .setView(binding?.root)
             .setCancelable(false)
             .create()

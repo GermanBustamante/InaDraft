@@ -6,10 +6,10 @@ import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
+import es.gdebustamante.inadraft.ui.NUMBER_OF_PLAYERS
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
-private const val NUMBER_OF_PLAYERS = 11
 private const val GOALKEEPER_ABBREVIATED = "GK"
 private const val DEFENSE_ABBREVIATED = "DF"
 private const val MIDFIELD_ABBREVIATED = "MF"
@@ -118,7 +118,7 @@ private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>)
     val averageTeamDraft = (players.sumOf { it.average } / NUMBER_OF_PLAYERS).toFloat()
     contentFormationBase.apply {
         formationFragmentToolbarRatingNumber.text = averageTeamDraft.toInt().toString()
-        formationFragmentToolbarRatingBar.rating = averageTeamDraft
+        formationFragmentToolbarRatingBar.rating = (averageTeamDraft / NUMBER_OF_PLAYERS / 1.5).toFloat()
     }
 }
 

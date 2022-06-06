@@ -81,7 +81,7 @@
                     android:layout_gravity="center"
                     android:isIndicator="true"
                     android:numStars="5"
-                    android:stepSize="200" />
+                    android:stepSize="200000000000" />
 
             </LinearLayout>
 

@@ -22,6 +22,7 @@
     <color name="yellowOrange">#d9b346</color>
     <color name="darkBlue2">#1e2d3e</color>
     <color name="loadingGray">#C8C8C9</color>
+    <color name="loadingGrayTransparent">#66C8C8C9</color>
     <!--endregion-->
 
     <!-- region COMMON -->

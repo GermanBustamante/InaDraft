@@ -10,7 +10,7 @@ interface GameDao {
     //region gets
 
     @Transaction
-    @Query("SELECT * FROM games ORDER BY score DESC")
+    @Query("SELECT * FROM games ORDER BY score DESC, date DESC")
     suspend fun getBestGames(): List<GameWithFormation>
 
     //endregion

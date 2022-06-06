@@ -7,21 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
+import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.DialogScoreGameBinding
 import es.gdebustamante.inadraft.domain.FormationBO
 import es.gdebustamante.inadraft.domain.GameBO
+import es.gdebustamante.inadraft.ui.NUMBER_OF_PLAYERS
 import es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerListener
 import es.gdebustamante.inadraft.ui.viewmodel.ScoreGameVM
 import es.gdebustamante.inadraft.util.showToast
 import java.time.Instant
 import java.util.*
-
 
 private const val GENERIC_USER_NICK = "Invitado"
 
@@ -79,7 +81,7 @@ class ScoreGameDialog : DialogFragment() {
         totalPunctuation: Int,
         teamAverage: Float,
     ) {
-        scoreGameDialogRatingBarTeamMedia.rating = teamAverage
+        scoreGameDialogRatingBarTeamMedia.rating = (teamAverage / NUMBER_OF_PLAYERS / 1.5).toFloat()
         scoreGameDialogLabelTotalScore.text = totalPunctuation.toString()
         scoreGameDialogLabelTeamMedia.text = teamAverage.toInt().toString()
     }
@@ -88,6 +90,7 @@ class ScoreGameDialog : DialogFragment() {
     private fun DialogScoreGameBinding.setupListeners(teamAverage: Float, formationId: Int) {
         scoreGameDialogBtnAddGame.setOnClickListener {
 
+            root.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.loadingGrayTransparent))
             it.isEnabled = false
             scoreGameDialogProgressIndicatorLoadingAddGame.isVisible = true
 

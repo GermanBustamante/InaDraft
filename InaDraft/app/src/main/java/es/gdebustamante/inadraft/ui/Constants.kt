@@ -10,3 +10,5 @@ const val PREF_OPEN_POLICY = "pref_open_policy"
 const val PREF_FOOTER_COPYRIGHT = "footer_copyright"
 
 const val EMPTY_STRING = ""
+
+const val NUMBER_OF_PLAYERS = 11

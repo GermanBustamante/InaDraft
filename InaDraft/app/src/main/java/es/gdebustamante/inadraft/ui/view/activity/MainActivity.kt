@@ -1,7 +1,9 @@
 package es.gdebustamante.inadraft.ui.view.activity
 
+import android.animation.AnimatorSet
+import android.animation.ValueAnimator
 import android.os.Bundle
-import android.util.Log
+import android.view.animation.AnticipateInterpolator
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -16,7 +18,6 @@ import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.ActivityMainBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseActivity
 import es.gdebustamante.inadraft.ui.viewmodel.MainActivityVM
-import java.lang.Exception
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
@@ -25,7 +26,7 @@ class MainActivity : BaseActivity() {
 
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
-    private val viewModel : MainActivityVM by viewModels()
+    private val viewModel: MainActivityVM by viewModels()
 
     //endregion
 
@@ -34,11 +35,9 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen().apply {
-
-            setKeepOnScreenCondition{
+            setKeepOnScreenCondition {
                 viewModel.isLoading.value == false
             }
-
         }
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
@@ -51,9 +50,9 @@ class MainActivity : BaseActivity() {
 
     override fun getActionBarBase(): ActionBar? = supportActionBar
 
-    override fun getNavDrawer() : NavigationView? = binding?.activityMainDrawerStart
+    override fun getNavDrawer(): NavigationView? = binding?.activityMainDrawerStart
 
-    override fun getDrawerLayout() : DrawerLayout? = binding?.root
+    override fun getDrawerLayout(): DrawerLayout? = binding?.root
 
     override fun onBackPressed() {
         binding?.apply {

@@ -53,6 +53,21 @@
         tools:text="142" />
 
     <TextView
+        android:id="@+id/scoreGameDialogLabelTotalScoreDescriptor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/facon_font"
+        android:text="Puntuación total"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintStart_toStartOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintVertical_bias="0" />
+
+    <TextView
         android:id="@+id/scoreGameDialogLabelTeamMedia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -106,12 +121,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dialog_score_game__margin_default"
         android:hint="@string/dialog_score_game__input__hint_user_nick"
+        app:counterEnabled="true"
         app:counterMaxLength="20"
         app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogProgressIndicatorTotalScore"
+        app:layout_constraintTop_toBottomOf="@id/scoreGameDialogLabelTotalScoreDescriptor"
         app:layout_constraintVertical_bias="0">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -128,22 +144,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dialog_score_game__margin_default"
-        android:text="@string/dialog_score_game__btn__add_game"
         android:fontFamily="@font/facon_font"
+        android:text="@string/dialog_score_game__btn__add_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/scoreGameDialogTxtInputLayUserNick" />
 
-    <ProgressBar
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/scoreGameDialogProgressIndicatorLoadingAddGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_football" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVerticalMedium"

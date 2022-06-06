@@ -55,6 +55,7 @@
         android:fontFamily="@font/facon_font"
         android:text="@string/fragment_home__play_draft"
         android:textSize="@dimen/fragment_home__label__btn_play_draft"
+        android:background="@drawable/rounded_corner_primary_color"
         app:icon="@drawable/ic__sports_soccer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
