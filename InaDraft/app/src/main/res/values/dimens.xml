@@ -38,7 +38,7 @@
 
     <!--region fragment_home-->
     <dimen name="fragment_home__margin_default">@dimen/common__margin_default</dimen>
-    <dimen name="fragment_home__btn__play_draft__height">160dp</dimen>
+    <dimen name="fragment_home__btn__play_draft__height">120dp</dimen>
     <dimen name="fragment_home__label__btn_play_draft">45sp</dimen>
     <!--endregion-->
 

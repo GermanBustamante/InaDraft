@@ -13,12 +13,12 @@
     <!--region manifest-->
     <string name="title_activity_main">InaDraft</string>
     <!--endregion-->
-    
+
     <!--region fragment_home-->
-    <string name="fragment_home__welcome_app">¡Bienvenido a InaDraft! Una app basada en la modalidad FutDraft con personajes de Inazuma Eleven, para empezar, pulsa el botón de jugar o mira nuestras otras modalidades</string>
+    <string name="fragment_home__welcome_app">INADRAFT</string>
     <string name="fragment_home__play_draft">Play</string>
     <!--endregion-->
-    
+
     <!--region menu_activity_main_drawer-->
     <string name="menu_activity_main_drawer__action_home">Inicio</string>
     <string name="menu_activity_main_drawer__action_info">Info</string>

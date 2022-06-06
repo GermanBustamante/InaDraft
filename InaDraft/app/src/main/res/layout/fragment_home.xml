@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.view.fragment.HomeFragment">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/axel_gif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/homeFragmentToolbarTop"
+        style="@style/BaseToolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        style="@style/BaseToolbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,32 +32,34 @@
         android:id="@+id/homeFragmentLabelWelcomeApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constrainedWidth="true"
         android:fontFamily="@font/facon_font"
-        android:textColor="@color/homeFragmentLabelWelcomeToApp"
-        android:textSize="28sp"
+        android:padding="@dimen/fragment_home__margin_default"
+        android:text="@string/fragment_home__welcome_app"
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:background="@drawable/rounded_corner"
+        android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/homeFragmentToolbarTop"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/homeFragmentBtnPlay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        android:padding="@dimen/fragment_home__margin_default"
-        android:text="@string/fragment_home__welcome_app" />
+        app:layout_constraintTop_toBottomOf="@id/homeFragmentToolbarTop"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/homeFragmentBtnPlay"
         android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/fragment_home__margin_default"
         android:layout_height="@dimen/fragment_home__btn__play_draft__height"
-        android:textSize="@dimen/fragment_home__label__btn_play_draft"
         android:fontFamily="@font/facon_font"
-        app:icon="@drawable/ic__sports_soccer"
-        android:padding="@dimen/fragment_home__margin_default"
         android:text="@string/fragment_home__play_draft"
+        android:textSize="@dimen/fragment_home__label__btn_play_draft"
+        app:icon="@drawable/ic__sports_soccer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/homeFragmentLabelWelcomeApp"/>
+        app:layout_constraintTop_toBottomOf="@id/homeFragmentLabelWelcomeApp"
+        app:layout_constraintVertical_bias="0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
