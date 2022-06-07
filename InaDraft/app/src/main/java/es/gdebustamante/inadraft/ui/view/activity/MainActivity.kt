@@ -1,9 +1,6 @@
 package es.gdebustamante.inadraft.ui.view.activity
 
-import android.animation.AnimatorSet
-import android.animation.ValueAnimator
 import android.os.Bundle
-import android.view.animation.AnticipateInterpolator
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -27,7 +24,6 @@ class MainActivity : BaseActivity() {
     private var binding: ActivityMainBinding? = null
     private val navController by lazy { getActivityNavController() }
     private val viewModel: MainActivityVM by viewModels()
-
     //endregion
 
     //region override methods
@@ -36,7 +32,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         installSplashScreen().apply {
             setKeepOnScreenCondition {
-                viewModel.isLoading.value == false
+                viewModel.isLoading.value
             }
         }
         binding = ActivityMainBinding.inflate(layoutInflater)

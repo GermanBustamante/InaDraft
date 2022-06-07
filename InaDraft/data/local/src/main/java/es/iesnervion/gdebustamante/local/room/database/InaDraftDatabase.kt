@@ -8,9 +8,9 @@ import es.iesnervion.gdebustamante.local.room.dbo.entity.*
 
 @Database(
     entities = [PlayerDBO::class, TeamDBO::class, PositionDBO::class, FormationDBO::class, GameDBO::class],
-    version = 2
+    version = 1
 )
-@TypeConverters(DateConverter::class)
+@TypeConverters(DateLocalConverter::class)
 abstract class InaDraftDatabase : RoomDatabase() {
 
     abstract fun getPlayerDao(): PlayerDao

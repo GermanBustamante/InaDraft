@@ -19,7 +19,7 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
     //region class attributes
 
     private val viewModel: PlayerInfoListVM by viewModels()
-    private val adapter = PlayerDetailAdapter()
+    private var adapter : PlayerDetailAdapter? = null
     private val args: PlayerInfoListFragmentArgs by navArgs()
 
     //endregion
@@ -34,7 +34,9 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
         binding?.apply {
             playerInfoListFragmentLoading.root.startShimmer()
             setupDrawerWithFragmentToolbar(playerInfoListFragmentToolbarTop)
-            setupRecyclerView(adapter)
+            adapter = PlayerDetailAdapter().also {
+                setupRecyclerView(it)
+            }
             setupListeners(viewModel, args.teamId)
         }
         return binding?.root
@@ -52,9 +54,18 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
     ): FragmentPlayerInfoListBinding =
         FragmentPlayerInfoListBinding.inflate(inflater, container, false)
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        adapter = null
+        binding = null
+    }
+    //endregion
+
+    //region private methods
+
     private fun setupVMObservers(){
         viewModel.playerList.observe(viewLifecycleOwner) {
-            binding?.onPlayerListChanged(it, adapter)
+            adapter?.let { adapter -> binding?.onPlayerListChanged(it, adapter) }
         }
         viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
     }

@@ -1,4 +1,4 @@
-package es.gdebustamante.inadraft.remote.di
+package es.gdebustamante.inadraft.remote
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-internal class DateAdapter {
+internal class DateRemoteAdapter {
 
     private val df = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 

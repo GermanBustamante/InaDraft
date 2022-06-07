@@ -6,7 +6,8 @@ import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.ui.NUMBER_OF_PLAYERS
+import es.gdebustamante.inadraft.util.NUMBER_OF_PLAYERS
+import es.gdebustamante.inadraft.ui.view.fragment.Formation442Fragment.Companion.FORMATION_4_4_2
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
@@ -14,6 +15,7 @@ private const val GOALKEEPER_ABBREVIATED = "GK"
 private const val DEFENSE_ABBREVIATED = "DF"
 private const val MIDFIELD_ABBREVIATED = "MF"
 private const val FORWARD_ABBREVIATED = "FW"
+private const val FACTOR_RATING_BAR = 1.5
 
 //region public methods
 
@@ -29,7 +31,7 @@ fun FragmentFormation442Binding.setupInitialViews() {
     PositionPreviewLabelMidfielder4.root.text = MIDFIELD_ABBREVIATED
     PositionPreviewLabelForward1.root.text = FORWARD_ABBREVIATED
     PositionPreviewLabelForward2.root.text = FORWARD_ABBREVIATED
-    contentFormationBase.formationFragmentToolbarTittle.text = "4-4-2"
+    contentFormationBase.formationFragmentToolbarTittle.text = FORMATION_4_4_2
 }
 
 fun FragmentFormation442Binding.setupListeners() {
@@ -118,7 +120,7 @@ private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>)
     val averageTeamDraft = (players.sumOf { it.average } / NUMBER_OF_PLAYERS).toFloat()
     contentFormationBase.apply {
         formationFragmentToolbarRatingNumber.text = averageTeamDraft.toInt().toString()
-        formationFragmentToolbarRatingBar.rating = (averageTeamDraft / NUMBER_OF_PLAYERS / 1.5).toFloat()
+        formationFragmentToolbarRatingBar.rating = (averageTeamDraft / NUMBER_OF_PLAYERS / FACTOR_RATING_BAR).toFloat()
     }
 }
 

@@ -18,7 +18,7 @@ import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.DialogScoreGameBinding
 import es.gdebustamante.inadraft.domain.FormationBO
 import es.gdebustamante.inadraft.domain.GameBO
-import es.gdebustamante.inadraft.ui.NUMBER_OF_PLAYERS
+import es.gdebustamante.inadraft.util.NUMBER_OF_PLAYERS
 import es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerListener
 import es.gdebustamante.inadraft.ui.viewmodel.ScoreGameVM
 import es.gdebustamante.inadraft.util.showToast
@@ -120,10 +120,8 @@ class ScoreGameDialog : DialogFragment() {
     private fun setupVMObservers() {
         viewModel.operationSuccess.observe(viewLifecycleOwner) {
             if (it) {
-                showToast("Partida añadida correctamente")
+                showToast(getString(R.string.dialog_score_game__snackbar__game_added_success))
                 getListener()?.finishDraft()
-            } else {
-                TODO()
             }
         }
     }

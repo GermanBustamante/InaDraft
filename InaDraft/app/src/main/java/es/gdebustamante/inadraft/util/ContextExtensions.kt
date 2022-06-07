@@ -3,7 +3,6 @@ package es.gdebustamante.inadraft.util
 import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
-import es.gdebustamante.inadraft.ui.TYPE_INTENT_SHARE
 
 fun Context.isDarkThemeOn() = resources.configuration.uiMode and
         Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES

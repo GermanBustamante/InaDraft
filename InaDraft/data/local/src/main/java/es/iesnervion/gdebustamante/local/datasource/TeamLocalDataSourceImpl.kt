@@ -9,12 +9,9 @@ import es.iesnervion.gdebustamante.local.room.toDBO
 class TeamLocalDataSourceImpl(
     private val teamDao : TeamDao
 ): TeamLocalDataSource {
+
     override suspend fun getLocalTeams(): List<TeamBO> =
         teamDao.getTeams().map { it.toBO() }
-
-    override suspend fun getLocalTeam(teamId: Int): TeamBO {
-        return TeamBO(1, ",", "")
-    }
 
     override suspend fun insertLocalTeams(teams: List<TeamBO>){
         teamDao.insertTeams(teams.map { it.toDBO() })

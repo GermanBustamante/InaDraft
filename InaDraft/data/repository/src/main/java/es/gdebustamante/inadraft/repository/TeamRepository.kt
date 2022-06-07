@@ -6,7 +6,6 @@ import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 
 class TeamRepository(private val teamRemoteDataSource : TeamRemoteDataSource, private val teamLocalDataSource: TeamLocalDataSource) {
 
-    //Carga el listado de equipos y además mete los de la BBDD
     suspend fun getTeams(): List<TeamBO>{
         var teams = teamLocalDataSource.getLocalTeams()
         if (teams.isEmpty()){
@@ -16,5 +15,4 @@ class TeamRepository(private val teamRemoteDataSource : TeamRemoteDataSource, pr
         return teams
     }
 
-    suspend fun getTeam(teamId: Int): TeamBO = teamLocalDataSource.getLocalTeam(teamId)
 }

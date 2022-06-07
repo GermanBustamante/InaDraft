@@ -23,12 +23,14 @@ class ScoreGameVM @Inject constructor(
 
     //endregion
 
-    //region public metods
+    //region public methods
+
     fun insertGame(game : GameBO) {
         viewModelScope.launch(Dispatchers.IO) {
             _operationSuccess.postValue(insertFinishedGameUseCase.invoke(game))
         }
     }
+
     //endregion
 
 }

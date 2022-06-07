@@ -9,6 +9,7 @@ import es.iesnervion.gdebustamante.local.room.toPlayerBO
 class PlayerLocalDataSourceImpl(
     private val playerDao : PlayerDao,
 ) : PlayerLocalDataSource{
+
     override suspend fun getLocalPlayers(): List<PlayerBO> {
         return playerDao.getPlayers().map { it.toPlayerBO() }
     }
@@ -16,7 +17,7 @@ class PlayerLocalDataSourceImpl(
     override suspend fun getLocalPlayersFromTeam(teamId: Int): List<PlayerBO> =
         playerDao.getPlayersFromTeam(teamId).map { it.toPlayerBO() }
 
-    override suspend fun getRandomPlayersByPositon(positionId: Int): List<PlayerBO> =
+    override suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO> =
         playerDao.getRandomPlayersByPosition(positionId).map{ it.toPlayerBO() }
 
     override suspend fun getLocalPlayer(playerId: Int): PlayerBO =
@@ -25,7 +26,6 @@ class PlayerLocalDataSourceImpl(
     override suspend fun insertPlayers(players: List<PlayerBO>) {
         playerDao.insertPlayers(players.map { it.toDBO() })
     }
-
 
 }
 

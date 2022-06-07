@@ -24,10 +24,6 @@ object UsesCasesModule {
         GetPlayersByTeamUseCase(playerRepository)
 
     @Provides
-    fun getTeamByIdUseCaseProvider(teamRepository: TeamRepository) =
-        GetTeamByIdUseCase(teamRepository)
-
-    @Provides
     fun getPositionListUseCaseProvider(positionRepository: PositionRepository) =
         GetPositionsUseCase(positionRepository)
 

@@ -10,7 +10,7 @@ interface PlayerLocalDataSource {
 
     suspend fun insertPlayers(players: List<PlayerBO>)
 
-    suspend fun getRandomPlayersByPositon(positionId: Int): List<PlayerBO>
+    suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO>
 
     suspend fun getLocalPlayer(playerId: Int): PlayerBO
 

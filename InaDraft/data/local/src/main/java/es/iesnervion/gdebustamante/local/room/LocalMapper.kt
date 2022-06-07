@@ -84,13 +84,13 @@ fun GameDBO.toBO() = GameBO(
     score ?: -1,
     date ?: Date(),
     userNick ?: "",
-    FormationBO(formationId ?: -1, "", "")
+    FormationBO(id = formationId)
 )
 
 fun GameWithFormation.toGameBO() = GameBO(
-    game?.id ?: -1,
-    game?.score ?: -1,
-    game?.date ?: Date(),
-    game?.userNick ?: "",
-    formation ?.toBO() ?: FormationBO( -1, "", "")
+    game.id,
+    game.score ?: -1,
+    game.date ?: Date(),
+    game.userNick ?: "",
+    formation.toBO()
 )

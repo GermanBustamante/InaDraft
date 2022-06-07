@@ -29,7 +29,7 @@ class PlayerRepository(
         playerLocalDataSource.getLocalPlayersFromTeam(teamId)
 
     suspend fun getRandomPlayersByPosition(positionId: Int): List<PlayerBO> =
-        playerLocalDataSource.getRandomPlayersByPositon(positionId)
+        playerLocalDataSource.getRandomPlayersByPosition(positionId)
 
     suspend fun getPlayer(playerId: Int): PlayerBO =
         playerLocalDataSource.getLocalPlayer(playerId)

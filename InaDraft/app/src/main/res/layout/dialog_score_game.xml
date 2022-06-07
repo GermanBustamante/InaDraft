@@ -30,7 +30,7 @@
         android:layout_height="@dimen/dialog_score_game__progress_indicator__total_puntuation_height"
         android:layout_marginTop="@dimen/dialog_score_game__margin_default"
         android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
+        android:progressDrawable="@drawable/progress_indicator_custom_circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineVerticalMedium"
         app:layout_constraintStart_toStartOf="parent"

@@ -45,7 +45,7 @@
     <!--region progressBar -->
     <style name="CircularDeterminateProgressBar">
         <item name="android:indeterminateOnly">false </item>
-        <item name="android:progressDrawable">@drawable/circle</item>
+        <item name="android:progressDrawable">@drawable/progress_indicator_custom_circle</item>
     </style>
     <!--endregion-->
 

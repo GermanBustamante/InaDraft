@@ -18,7 +18,7 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
     //region class attributes
 
     private val viewModel: TeamInfoListVM by viewModels()
-    private val adapter = TeamAdapter { binding?.onTeamClicked(it) }
+    private var adapter: TeamAdapter? = null
 
     //endregion
 
@@ -26,12 +26,14 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = inflateViewBinding(inflater, container)
         binding?.apply {
             teamInfoListFragmentLoading.root.startShimmer()
-            setupRecyclerView(adapter)
+            adapter = TeamAdapter { binding?.onTeamClicked(it) }.also {
+                setupRecyclerView(it)
+            }
             setupDrawerWithFragmentToolbar(infoTeamFragmentToolbarTop)
             setupListeners(viewModel)
         }
@@ -46,15 +48,19 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
     override fun inflateViewBinding(
         inflater: LayoutInflater,
-        container: ViewGroup?
+        container: ViewGroup?,
     ): FragmentTeamInfoListBinding = FragmentTeamInfoListBinding.inflate(inflater, container, false)
 
     //endregion
 
     //region private override methods
 
-    private fun setupVMObservers(){
-        viewModel.teamList.observe(viewLifecycleOwner) { binding?.onTeamListChanged(it, adapter) }
+    private fun setupVMObservers() {
+        viewModel.teamList.observe(viewLifecycleOwner) {
+            adapter?.let { adapter ->
+                binding?.onTeamListChanged(it, adapter)
+            }
+        }
         viewModel.progressVisible.observe(viewLifecycleOwner) { binding?.onProgressVisibleChanged(it) }
     }
 

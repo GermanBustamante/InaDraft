@@ -16,22 +16,23 @@ import es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerListene
 import es.gdebustamante.inadraft.ui.view.dialog.scoreGame.ScoreGameListener
 import es.gdebustamante.inadraft.ui.viewmodel.GameVM
 
+
+
 @AndroidEntryPoint
 class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), ChoosePlayerListener, ScoreGameListener {
 
     //region class attributes
 
+    companion object{
+        const val FORMATION_4_4_2 = "4-4-2"
+    }
+
     private val args: Formation442FragmentArgs  by navArgs()
     private val viewModel : GameVM by viewModels()
-    private var playerCardId : Int? = null
 
     //endregion
 
     //region override methods
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

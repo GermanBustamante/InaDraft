@@ -3,7 +3,6 @@ package es.gdebustamante.inadraft.ui.view.base
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -17,7 +16,10 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
 
     protected var binding: TypeBinding? = null
 
-    protected abstract fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?): TypeBinding
+    protected abstract fun inflateViewBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+    ): TypeBinding
 
     override fun onDestroyView() {
         binding = null
@@ -28,16 +30,17 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
         return (requireActivity() as? BaseActivity)?.getActionBarBase()
     }
 
-    protected fun setupDrawerWithFragmentToolbar(toolbar: Toolbar?){
-        val navControler = findNavController()
+    protected fun setupDrawerWithFragmentToolbar(toolbar: Toolbar?) {
+        val navController = findNavController()
         (requireActivity() as BaseActivity).apply {
             setSupportActionBar(toolbar)
             val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment,
                 R.id.rankingFragment,
                 R.id.aboutAppPreferenceFragment,
-                R.id.infoTeamFragment), getDrawerLayout())
-            getNavDrawer()?.setupWithNavController(navControler)
-            NavigationUI.setupActionBarWithNavController(this, navControler,
+                R.id.infoTeamFragment),
+                getDrawerLayout())
+            getNavDrawer()?.setupWithNavController(navController)
+            NavigationUI.setupActionBarWithNavController(this, navController,
                 appBarConfiguration)
         }
     }

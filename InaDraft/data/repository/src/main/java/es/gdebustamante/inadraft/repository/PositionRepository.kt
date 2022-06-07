@@ -7,12 +7,12 @@ import es.gdebustamante.inadraft.position.PositionRemoteDataSource
 class PositionRepository(private val positionRemoteDataSource: PositionRemoteDataSource, private val positionLocalDataSource: PositionLocalDataSource) {
 
     suspend fun getPositions(): List<PositionBO> {
-        var positons = positionLocalDataSource.getLocalPositions()
-        if (positons.isEmpty()){
-            positons = positionRemoteDataSource.getRemotePositions()
-            positionLocalDataSource.insertPositions(positons)
+        var positions = positionLocalDataSource.getLocalPositions()
+        if (positions.isEmpty()){
+            positions = positionRemoteDataSource.getRemotePositions()
+            positionLocalDataSource.insertPositions(positions)
         }
-        return positons
+        return positions
     }
 
 }

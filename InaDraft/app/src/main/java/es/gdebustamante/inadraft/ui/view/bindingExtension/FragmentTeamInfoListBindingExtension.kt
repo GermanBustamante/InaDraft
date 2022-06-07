@@ -29,8 +29,7 @@ fun FragmentTeamInfoListBinding.onTeamListChanged(
     adapter: TeamAdapter
 ) {
     infoTeamFragmentSwipeRefreshLayout.isRefreshing = false
-    adapter.submitList(teamList) //TODO COMPROBAR SI ES VACIO MOSTRAR MENSAJE CORRESPONDIENTE, O TIPO DE ERROR CUANDO VEA KBP
-
+    adapter.submitList(teamList)
 }
 
 fun FragmentTeamInfoListBinding.onProgressVisibleChanged(visibility: Boolean) {

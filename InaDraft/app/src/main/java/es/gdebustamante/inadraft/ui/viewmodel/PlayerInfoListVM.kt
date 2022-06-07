@@ -6,11 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.domain.PositionBO
-import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.usescases.GetPlayersByTeamUseCase
-import es.gdebustamante.inadraft.usescases.GetPositionsUseCase
-import es.gdebustamante.inadraft.usescases.GetTeamByIdUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject

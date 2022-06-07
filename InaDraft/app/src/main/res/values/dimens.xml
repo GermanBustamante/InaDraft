@@ -171,6 +171,8 @@
 
     <!--region dialog_score_game-->
     <dimen name="dialog_score_game__margin_default">@dimen/common__margin_default</dimen>
+    <dimen name="dialog_score_game__card_view__card_details__height">100dp</dimen>
+    <dimen name="dialog_score_game__card_view__card_details__margin_top">40dp</dimen>
     <dimen name="dialog_score_game__font__label__dialog_title">28sp</dimen>
     <dimen name="dialog_score_game__font__label__total_puntuation">28sp</dimen>
     <dimen name="dialog_score_game__font__label__team_media">28sp</dimen>

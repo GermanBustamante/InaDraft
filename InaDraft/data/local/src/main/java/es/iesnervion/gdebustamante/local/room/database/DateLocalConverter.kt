@@ -3,7 +3,7 @@ package es.iesnervion.gdebustamante.local.room.database
 import androidx.room.TypeConverter
 import java.util.*
 
-class DateConverter {
+class DateLocalConverter {
 
     @TypeConverter
     fun fromTimestamp(value: Long?): Date? {

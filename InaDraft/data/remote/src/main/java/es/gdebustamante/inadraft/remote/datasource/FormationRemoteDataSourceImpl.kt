@@ -3,10 +3,10 @@ package es.gdebustamante.inadraft.remote.datasource
 import es.gdebustamante.inadraft.domain.FormationBO
 import es.gdebustamante.inadraft.entity.toBO
 import es.gdebustamante.inadraft.formation.FormationRemoteDataSource
-import es.gdebustamante.inadraft.remote.api.APIService
+import es.gdebustamante.inadraft.remote.api.InaDraftApiService
 
 class FormationRemoteDataSourceImpl(
-    private val apiService: APIService,
+    private val apiService: InaDraftApiService,
 ) :
     FormationRemoteDataSource {
 

@@ -105,6 +105,7 @@
     <string name="dialog_score_game__label__score">TOTAL</string>
     <string name="dialog_score_game__input__hint_user_nick">Nick</string>
     <string name="dialog_score_game__btn__add_game">Añadir</string>
+    <string name="dialog_score_game__snackbar__game_added_success">Partida añadida correctamente</string>
     <!--endregion-->
 
     <!--region formation_base-->

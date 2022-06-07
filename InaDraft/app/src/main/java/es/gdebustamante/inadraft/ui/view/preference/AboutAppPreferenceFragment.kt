@@ -9,10 +9,10 @@ import android.view.View
 import androidx.preference.PreferenceFragmentCompat
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.R
-import es.gdebustamante.inadraft.ui.GOOGLE_PLAY_ENDPOINT
-import es.gdebustamante.inadraft.ui.PREF_OPEN_POLICY
-import es.gdebustamante.inadraft.ui.PREF_RATE_APP
-import es.gdebustamante.inadraft.ui.SEND_EMAIL_TO_DEV
+import es.gdebustamante.inadraft.util.GOOGLE_PLAY_ENDPOINT
+import es.gdebustamante.inadraft.util.PREF_OPEN_POLICY
+import es.gdebustamante.inadraft.util.PREF_RATE_APP
+import es.gdebustamante.inadraft.util.SEND_EMAIL_TO_DEV
 import es.gdebustamante.inadraft.util.findPreferenceByKey
 
 @AndroidEntryPoint

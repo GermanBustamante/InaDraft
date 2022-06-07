@@ -2,10 +2,10 @@ package es.gdebustamante.inadraft.remote.datasource
 
 import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 import es.gdebustamante.inadraft.domain.TeamBO
-import es.gdebustamante.inadraft.remote.api.APIService
+import es.gdebustamante.inadraft.remote.api.InaDraftApiService
 import es.gdebustamante.inadraft.entity.toBO
 
-class TeamRemoteDataSourceImpl(private val apiService: APIService): TeamRemoteDataSource {
+class TeamRemoteDataSourceImpl(private val apiService: InaDraftApiService): TeamRemoteDataSource {
 
     private val teamNotSuccessful = TeamBO(-1, "null", "null")
 

@@ -9,7 +9,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceViewHolder
 import com.bumptech.glide.Glide
 import es.gdebustamante.inadraft.R
-import es.gdebustamante.inadraft.ui.EMPTY_STRING
+import es.gdebustamante.inadraft.util.EMPTY_STRING
 import es.gdebustamante.inadraft.util.getAppName
 import es.gdebustamante.inadraft.util.isDarkThemeOn
 
@@ -68,5 +68,7 @@ class CustomHeaderAboutAppPreference @JvmOverloads constructor(
                 .into(mainBackground)
         }
     }
+
+    //endregion
 
 }
