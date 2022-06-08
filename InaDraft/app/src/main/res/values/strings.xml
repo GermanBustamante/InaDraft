@@ -113,5 +113,8 @@
     <string name="formation_base__label__team_media_init">0</string>
     <!--endregion-->
 
+    <!--fragment_442-->
+    <string name="fragment_442__btn__draft_finished">Listo</string>
+    <!--endregion-->
 
 </resources>

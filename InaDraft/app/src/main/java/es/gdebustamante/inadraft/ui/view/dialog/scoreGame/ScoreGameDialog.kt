@@ -84,6 +84,7 @@ class ScoreGameDialog : DialogFragment() {
         scoreGameDialogRatingBarTeamMedia.rating = (teamAverage / NUMBER_OF_PLAYERS / 1.5).toFloat()
         scoreGameDialogLabelTotalScore.text = totalPunctuation.toString()
         scoreGameDialogLabelTeamMedia.text = teamAverage.toInt().toString()
+        scoreGameDialogProgressIndicatorTotalScore.progress = totalPunctuation/10
     }
 
     @RequiresApi(Build.VERSION_CODES.O)

@@ -1,14 +1,16 @@
 package es.gdebustamante.inadraft.ui.view.bindingExtension
 
+import android.content.res.ColorStateList
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
 import es.gdebustamante.inadraft.R
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.databinding.PlayerMiniCardBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
-import es.gdebustamante.inadraft.util.NUMBER_OF_PLAYERS
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442Fragment.Companion.FORMATION_4_4_2
 import es.gdebustamante.inadraft.ui.view.fragment.Formation442FragmentDirections
+import es.gdebustamante.inadraft.util.NUMBER_OF_PLAYERS
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
 private const val GOALKEEPER_ABBREVIATED = "GK"
@@ -20,6 +22,8 @@ private const val FACTOR_RATING_BAR = 1.5
 //region public methods
 
 fun FragmentFormation442Binding.setupInitialViews() {
+    formation442BtnAddGame.iconTint =
+        ColorStateList.valueOf(ContextCompat.getColor(root.context, R.color.white))
     PositionPreviewLabelGoalkeeper.root.text = GOALKEEPER_ABBREVIATED
     PositionPreviewLabelDefender1.root.text = DEFENSE_ABBREVIATED
     PositionPreviewLabelDefender2.root.text = DEFENSE_ABBREVIATED
@@ -58,9 +62,12 @@ fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
         else -> -1
     }
     root.findNavController()
-        .navigate(Formation442FragmentDirections.actionFormation442FragmentToChoosePlayerDialog(
-            playerPositionId,
-            playerCard.id))
+        .navigate(
+            Formation442FragmentDirections.actionFormation442FragmentToChoosePlayerDialog(
+                playerPositionId,
+                playerCard.id
+            )
+        )
 }
 
 fun FragmentFormation442Binding.onPlayersDraftChanged(
@@ -73,14 +80,20 @@ fun FragmentFormation442Binding.onPlayersDraftChanged(
     }
 
     if (playersMap.size == NUMBER_OF_PLAYERS) {
-        formation442BtnAddGame.isEnabled = true
-        formation442BtnAddGame.setOnClickListener {
-            val totalPunctuation = playersMap.values.sumOf { it.average }
-            root.findNavController()
-                .navigate(Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
-                    totalPunctuation,
-                    (totalPunctuation / NUMBER_OF_PLAYERS).toFloat(),
-                    formationId))
+        formation442BtnAddGame.apply {
+            isEnabled = true
+            setBackgroundColor((ContextCompat.getColor(root.context, R.color.colorPrimary)))
+            setOnClickListener {
+                val totalPunctuation = playersMap.values.sumOf { it.average }
+                root.findNavController()
+                    .navigate(
+                        Formation442FragmentDirections.actionFormation442FragmentToScoreGameDialog(
+                            totalPunctuation,
+                            (totalPunctuation / NUMBER_OF_PLAYERS).toFloat(),
+                            formationId
+                        )
+                    )
+            }
         }
     }
 }
@@ -120,7 +133,8 @@ private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>)
     val averageTeamDraft = (players.sumOf { it.average } / NUMBER_OF_PLAYERS).toFloat()
     contentFormationBase.apply {
         formationFragmentToolbarRatingNumber.text = averageTeamDraft.toInt().toString()
-        formationFragmentToolbarRatingBar.rating = (averageTeamDraft / NUMBER_OF_PLAYERS / FACTOR_RATING_BAR).toFloat()
+        formationFragmentToolbarRatingBar.rating =
+            (averageTeamDraft / NUMBER_OF_PLAYERS / FACTOR_RATING_BAR).toFloat()
     }
 }
 
