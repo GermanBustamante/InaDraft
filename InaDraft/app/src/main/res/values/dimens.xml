@@ -176,8 +176,8 @@
     <dimen name="dialog_score_game__font__label__dialog_title">28sp</dimen>
     <dimen name="dialog_score_game__font__label__total_puntuation">28sp</dimen>
     <dimen name="dialog_score_game__font__label__team_media">28sp</dimen>
-    <dimen name="dialog_score_game__progress_indicator__total_puntuation_height">160dp</dimen>
-    <dimen name="dialog_score_game__progress_indicator__total_puntuation_width">160dp</dimen>
+    <dimen name="dialog_score_game__progress_indicator__total_puntuation_height">150dp</dimen>
+    <dimen name="dialog_score_game__progress_indicator__total_puntuation_width">150dp</dimen>
     <!--endregion-->
 
     <!--region row_game-->

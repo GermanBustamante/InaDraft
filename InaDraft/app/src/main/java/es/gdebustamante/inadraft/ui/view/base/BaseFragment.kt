@@ -34,14 +34,8 @@ abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
         val navController = findNavController()
         (requireActivity() as BaseActivity).apply {
             setSupportActionBar(toolbar)
-            val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment,
-                R.id.rankingFragment,
-                R.id.aboutAppPreferenceFragment,
-                R.id.infoTeamFragment),
-                getDrawerLayout())
             getNavDrawer()?.setupWithNavController(navController)
-            NavigationUI.setupActionBarWithNavController(this, navController,
-                appBarConfiguration)
+            NavigationUI.setupActionBarWithNavController(this, navController, getAppBarConfigurationActivity())
         }
     }
 }
