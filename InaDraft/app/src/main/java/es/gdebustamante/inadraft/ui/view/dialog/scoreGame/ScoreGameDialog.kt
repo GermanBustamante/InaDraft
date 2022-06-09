@@ -48,7 +48,7 @@ class ScoreGameDialog : DialogFragment() {
         isCancelable = false
         binding?.apply {
             setupViews(args.totalPunctuation, args.teamAverage)
-            setupListeners(args.teamAverage, args.formationId)
+            setupListeners(args.totalPunctuation, args.formationId)
         }
         return binding?.root
     }
@@ -88,7 +88,7 @@ class ScoreGameDialog : DialogFragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun DialogScoreGameBinding.setupListeners(teamAverage: Float, formationId: Int) {
+    private fun DialogScoreGameBinding.setupListeners(score: Int, formationId: Int) {
         scoreGameDialogBtnAddGame.setOnClickListener {
 
             root.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.loadingGrayTransparent))
@@ -97,10 +97,10 @@ class ScoreGameDialog : DialogFragment() {
 
             viewModel.insertGame(
                 GameBO(
-                    0, teamAverage.toInt(),
-                    Date.from(Instant.now()),
-                    scoreGameDialogInputLayUserNick.text.toString().ifBlank { GENERIC_USER_NICK },
-                    FormationBO(id = formationId)
+                    score =  score,
+                    date = Date.from(Instant.now()),
+                    userNick = scoreGameDialogInputLayUserNick.text.toString().ifBlank { GENERIC_USER_NICK },
+                    formation = FormationBO(id = formationId)
                 )
             )
 
