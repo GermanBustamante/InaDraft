@@ -12,6 +12,13 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos publicos
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsTeam) getTeamListDAL()<br/>
+        /// <b>Commentaries:</b>Returns a list of teams from the DB<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with teams from the Teams DB table
+        /// </summary>
+        /// <returns> List(clsTeam) representing the list of teams from the DB</returns>
         public List<clsTeam> getTeamListDAL()
         {
             clsTeam oTeam;

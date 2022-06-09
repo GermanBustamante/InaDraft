@@ -12,7 +12,16 @@ namespace InaDraft_API.Controllers
     [ApiController]
     public class PositionsController : ControllerBase
     {
-        // GET: api/<PositionsController>
+        /// <summary>
+        /// <b>GET: api/*PositionsController*</b><br/>
+        /// <b>Prototype:</b> public IEnumerable(clsPosition) Get()<br/>
+        /// <b>Commentaries:</b> Execute an API call with the GET verb, asking for a list of positions and 
+        /// returning it<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> It makes a call to its corresponding method in the DB to collect a list of positions,
+        /// if an error occurs during the execution, it throws a Exception and the return null
+        /// </summary>
+        /// <returns>IEnumerable(clsPosition) list of positions or null</returns>
         [HttpGet]
         public List<clsPosition> Get()
         {

@@ -10,14 +10,16 @@ namespace InaDraft_BL.Lists
 {
     public class clsTeamListBL
     {
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPosition) getPositionListBL()<br/>
+        /// <b>Commentaries:</b>Returns a list of positions from the DAL<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with all the positions from the positions table
+        /// </summary>
+        /// <returns> List(clsPosition) positions representing the list of positions from the DAL</returns>
         public List<clsTeam> getTeamListBL()
         {
             return new clsTeamListDAL().getTeamListDAL();
-        }
-
-        public clsTeam getTeamBL(int id)
-        {
-            return new clsTeamListDAL().getTeamDAL(id);
         }
     }
 }

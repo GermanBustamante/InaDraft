@@ -15,6 +15,14 @@ namespace InaDraft_DAL.Handlers
         #endregion
 
         #region public methods
+        /// <summary>
+        /// <b>Prototype:</b> public int insertGameDAL(clsGame oGame)<br/>
+        /// <b>Commentaries:</b>Connects to the DB to add a game in table Games<br/>
+        /// <b>Preconditions:</b> game is valid<br/>
+        /// <b>Postconditions:</b> Returns int indicating how many rows were changed (added)
+        /// </summary>
+        /// <param name="oGame">clsGame</param>
+        /// <returns>int rowsChanged</returns>
         public int insertGameDAL(clsGame oGame)
         {
             openConection();
@@ -28,6 +36,13 @@ namespace InaDraft_DAL.Handlers
         #endregion
 
         #region private methods
+        /// <summary>
+        /// <b>Prototype:</b> private void createCommand(clsGame game) <br/>
+        /// <b>Commentaries:</b>Create a command with clsGame atributes<br/>
+        /// <b>Preconditions:</b> game not null<br/>
+        /// <b>Postconditions:</b> Add Parameters to MyCommand to add a game successfully
+        /// </summary>
+        /// <param name="game"></param>
         private void createCommand(clsGame game)
         {
             MyCommand.Parameters.Add("@Date", System.Data.SqlDbType.Date).Value = game.Date;

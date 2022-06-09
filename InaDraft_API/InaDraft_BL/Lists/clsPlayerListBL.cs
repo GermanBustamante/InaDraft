@@ -10,19 +10,29 @@ namespace InaDraft_BL.Lists
 {
     public class clsPlayerListBL
     {
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPlayer) getPlayerListBL()<br/>
+        /// <b>Commentaries:</b>Returns a list of players from the DAL<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with all the players from the Players table
+        /// </summary>
+        /// <returns> List(clsPlayer) players representing the list of players from the DAL</returns>
         public List<clsPlayer> getPlayerListBL()
         {
             return new clsPlayerListDAL().getPlayerListDAL();
         }
 
-        public clsPlayer getPlayerBL(int id)
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPlayer) getPlayerListFromTeamBL()<br/>
+        /// <b>Commentaries:</b>Returns a list of players of a team from the DAL<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with all the players of a team from the Players table
+        /// </summary>
+        /// <param name="teamId"></param>
+        /// <returns> List(clsPlayer) players representing the list of players of a team from the DAL</returns>
+        public List<clsPlayer> getPlayerListFromTeamBL(int teamId)
         {
-            return new clsPlayerListDAL().getPlayerDAL(id);
-        }
-
-        public List<clsPlayer> getPlayerListFromTeamBL(int monumentId)
-        {
-            return new clsPlayerListDAL().getPlayerListFromTeamDAL(monumentId);
+            return new clsPlayerListDAL().getPlayerListFromTeamDAL(teamId);
         }
     }
 }

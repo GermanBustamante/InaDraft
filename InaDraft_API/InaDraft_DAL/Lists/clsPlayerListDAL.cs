@@ -17,6 +17,13 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos publicos
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPlayer) getPlayerListDAL()<br/>
+        /// <b>Commentaries:</b>Returns a list of players from the DB<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with players from the Players DB table
+        /// </summary>
+        /// <returns> List(clsPlayer) representing the list of players from the DB</returns>
         public List<clsPlayer> getPlayerListDAL()
         {
             clsPlayer oPlayer;
@@ -35,25 +42,20 @@ namespace InaDraft_DAL.Lists
             return playerList;
         }
 
-        public clsPlayer getPlayerDAL(int id)
-        {
-            clsPlayer oPlayer = new();
-            openConection();
-            MyReader = executeSelectCondition(QUERY_PLAYER_BY_ID, id);
-            if (MyReader.HasRows)
-            {
-                oPlayer = rebuildPlayer();
-            }
-            closeFlow();
-            return oPlayer;
-        }
-
-        public List<clsPlayer> getPlayerListFromTeamDAL(int monumentId)
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPlayer) getPlayerListFromTeamDAL(int teamId)<br/>
+        /// <b>Commentaries:</b>Returns a list of players by a team from the DB<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with players from the Players DB table by a specific team
+        /// </summary>
+        /// <param name="teamId"></param>
+        /// <returns> List(clsPlayer) representing the list of players from the DB</returns>
+        public List<clsPlayer> getPlayerListFromTeamDAL(int teamId)
         {
             clsPlayer oPlayer;
             List<clsPlayer> playerList = new();
             openConection();
-            MyReader = executeSelectCondition(QUERY_PLAYERS_BY_TEAMID, monumentId);
+            MyReader = executeSelectCondition(QUERY_PLAYERS_BY_TEAMID, teamId);
             if (MyReader.HasRows)
             {
                 while (MyReader.Read())
@@ -69,6 +71,10 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos privados
+        /// <summary>
+        /// Build a clsPlayer from MyReader and return it
+        /// </summary>
+        /// <returns></returns>
         private clsPlayer rebuildPlayer()
         {
             return new clsPlayer((int)MyReader["Id"],

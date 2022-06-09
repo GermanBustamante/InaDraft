@@ -13,7 +13,16 @@ namespace InaDraft_API.Controllers
     [ApiController]
     public class TeamsController : ControllerBase
     {
-        // GET: api/<TeamsController>
+        /// <summary>
+        /// <b>GET: api/*TeamsController*</b><br/>
+        /// <b>Prototype:</b> public IEnumerable(clsTeam) Get()<br/>
+        /// <b>Commentaries:</b> Execute an API call with the GET verb, asking for a list of teams and 
+        /// returning it<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> It makes a call to its corresponding method in the DB to collect a list of teams,
+        /// if an error occurs during the execution, it throws a Exception and the return null
+        /// </summary>
+        /// <returns>IEnumerable(clsTeam) list of teams or null</returns>
         [HttpGet]
         public IEnumerable<clsTeam> Get()
         {
@@ -27,22 +36,6 @@ namespace InaDraft_API.Controllers
                 throw;
             }
             return oTeamsList;
-        }
-
-        // GET api/<TeamsController>/5
-        [HttpGet("{id}")]
-        public clsTeam Get(int id)
-        {
-            clsTeam oTeam = new();
-            try
-            {
-                oTeam = new clsTeamListBL().getTeamBL(id);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return oTeam;
         }
     }
 }

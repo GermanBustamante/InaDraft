@@ -15,6 +15,13 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos publicos
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsPosition) getPositionListDAL()<br/>
+        /// <b>Commentaries:</b>Returns a list of positions from the DB<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with positions from the Positions DB table
+        /// </summary>
+        /// <returns> List(clsPosition) representing the list of positions from the DB</returns>
         public List<clsPosition> getPositionListDAL()
         {
             clsPosition oPosition;
@@ -37,6 +44,10 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos privados
+        /// <summary>
+        /// Build a clsPosition from MyReader and return it
+        /// </summary>
+        /// <returns></returns>
         private clsPosition rebuildPosition()
         {
             return new clsPosition((int)MyReader["Id"],

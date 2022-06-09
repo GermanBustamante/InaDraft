@@ -16,6 +16,13 @@ namespace InaDraft_DAL.Lists
         #endregion
 
         #region metodos publicos
+        /// <summary>
+        /// <b>Prototype:</b> public List(clsFormation) getFormationListDAL()<br/>
+        /// <b>Commentaries:</b>Returns a list of formations from the DB<br/>
+        /// <b>Preconditions:</b> none<br/>
+        /// <b>Postconditions:</b> Returns a list with formations from the Formations DB table
+        /// </summary>
+        /// <returns> List(clsFormation) representing the list of formations from the DB</returns>
         public List<clsFormation> getFormationListDAL()
         {
             List<clsFormation> formationList= new();
@@ -31,24 +38,14 @@ namespace InaDraft_DAL.Lists
             closeFlow();
             return formationList;
         }
-/*
-        public clsFormation getPlayerDAL(int id)
-        {
-            clsFormation oFormation = new();
-            openConection();
-            MyReader = executeSelectCondition(QUERY_FORMATION_BY_ID, id);
-            if (MyReader.HasRows)
-            {
-                oFormation = buildFormation();
-            }
-            closeFlow();
-            return oFormation;
-        }
-*/
         #endregion
 
         #region metodos privados 
 
+        /// <summary>
+        /// Rebuild a formation from MyReader
+        /// </summary>
+        /// <returns> clsFormation </returns>
         private clsFormation buildFormation()
         {
             return new clsFormation((int)MyReader["Id"],
