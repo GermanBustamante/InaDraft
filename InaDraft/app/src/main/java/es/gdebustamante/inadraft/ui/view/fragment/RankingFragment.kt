@@ -61,7 +61,10 @@ class RankingFragment : BaseFragment<FragmentRankingBinding>() {
     //region private methods
 
     private fun setupVMObservers() {
-        viewModel.games.observe(viewLifecycleOwner){ adapter?.submitList(it) }
+        viewModel.games.observe(viewLifecycleOwner){
+            binding?.rankingFragmentProgressIndicatorLoadingBestGames?.visibility = View.GONE
+            adapter?.submitList(it)
+        }
     }
 
     //endregion

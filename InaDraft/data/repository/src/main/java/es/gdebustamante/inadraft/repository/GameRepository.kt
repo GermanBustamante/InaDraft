@@ -11,14 +11,9 @@ class GameRepository(
     private val formationRepository: FormationRepository,
 ) {
 
-    suspend fun getBestGames(): List<GameBO> {
-        var games = gameLocalDataSource.getLocalBestGames()
-        if (games.isEmpty()) {
-            games = combineGameWithFormation(gameRemoteDataSource.getRemoteGames())
-            insertGames(games.sortedBy { it.score })
-        }
-        return games
-    }
+    suspend fun getBestGames(): List<GameBO> =
+        combineGameWithFormation(gameRemoteDataSource.getRemoteGames())
+
 
     suspend fun insertGames(games: List<GameBO>) {
         gameLocalDataSource.insertLocalGames(games)

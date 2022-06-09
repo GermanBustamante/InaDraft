@@ -61,7 +61,7 @@
     <dimen name="player_detail_card__card_view__player_card__height">220dp</dimen>
     <dimen name="player_detail_card__img__player_shield__width">24dp</dimen>
     <dimen name="player_detail_card__img__player_shield__height">24dp</dimen>
-    <dimen name="player_detail_card__img__player_photo__height">54dp</dimen>
+    <dimen name="player_detail_card__img__player_photo__height">64dp</dimen>
     <dimen name="player_detail_card__font__label__player_position">16sp</dimen>
     <dimen name="player_detail_card__font__label__player_name">12sp</dimen>
     <dimen name="player_detail_card__font__label__player_media">22sp</dimen>
