@@ -9,6 +9,7 @@ import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import es.gdebustamante.inadraft.databinding.FragmentFormation442Binding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
+import es.gdebustamante.inadraft.ui.view.bindingExtension.changeCardsClickable
 import es.gdebustamante.inadraft.ui.view.bindingExtension.onPlayersDraftChanged
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupInitialViews
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupListeners
@@ -60,6 +61,7 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
 
     override fun putPlayerInCard(playerId: Int, playerCardId: Int) {
         viewModel.loadPlayer(playerCardId,playerId)
+        binding?.changeCardsClickable(true) // Como el loadPlayer deja su carta no clickable restringe a este metodo
     }
 
     override fun finishDraft() {

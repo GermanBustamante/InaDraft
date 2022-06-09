@@ -18,6 +18,7 @@ private const val DEFENSE_ABBREVIATED = "DF"
 private const val MIDFIELD_ABBREVIATED = "MF"
 private const val FORWARD_ABBREVIATED = "FW"
 private const val FACTOR_RATING_BAR = 1.5
+private const val COUNTER = 1
 
 //region public methods
 
@@ -50,10 +51,24 @@ fun FragmentFormation442Binding.setupListeners() {
     formation442Midfielder4.root.setOnClickListener { onPlayerCardClicked(it) }
     formation442Forward1.root.setOnClickListener { onPlayerCardClicked(it) }
     formation442Forward2.root.setOnClickListener { onPlayerCardClicked(it) }
+}
 
+fun FragmentFormation442Binding.changeCardsClickable(isClickable : Boolean){
+    formation442Goalkeeper.root.isClickable = isClickable
+    formation442Defender1.root.isClickable = isClickable
+    formation442Defender2.root.isClickable = isClickable
+    formation442Defender3.root.isClickable = isClickable
+    formation442Defender4.root.isClickable = isClickable
+    formation442Midfielder1.root.isClickable = isClickable
+    formation442Midfielder2.root.isClickable = isClickable
+    formation442Midfielder3.root.isClickable = isClickable
+    formation442Midfielder4.root.isClickable = isClickable
+    formation442Forward1.root.isClickable = isClickable
+    formation442Forward2.root.isClickable = isClickable
 }
 
 fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
+    changeCardsClickable(false)
     val playerPositionId = when (playerCard.id) {
         R.id.formation442Goalkeeper -> 1
         R.id.formation442Defender1, R.id.formation442Defender2, R.id.formation442Defender3, R.id.formation442Defender4 -> 2
