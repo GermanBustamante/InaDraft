@@ -11,6 +11,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel del dialog de elegir jugador
+ * @property _games LiveData observable con el listado de partidas a mostrar
+ */
 @HiltViewModel
 class RankingVM @Inject constructor(
     private val getBestGamesUseCase: GetBestGamesUseCase,

@@ -6,6 +6,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.ui.AppBarConfiguration
 import com.google.android.material.navigation.NavigationView
 
+/**
+ * Clase base para actividades útil para la navegación lateral
+ */
 abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun getActionBarBase() : ActionBar?

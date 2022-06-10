@@ -13,6 +13,9 @@ import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.*
 import es.gdebustamante.inadraft.ui.viewmodel.PlayerInfoListVM
 
+/**
+ * Pantalla en la que se muestran un listado de jugadores con sus estadísticas
+ */
 @AndroidEntryPoint
 class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
@@ -63,6 +66,9 @@ class PlayerInfoListFragment : BaseFragment<FragmentPlayerInfoListBinding>() {
 
     //region private methods
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers(){
         viewModel.playerList.observe(viewLifecycleOwner) {
             adapter?.let { adapter -> binding?.onPlayerListChanged(it, adapter) }

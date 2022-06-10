@@ -11,6 +11,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel del dialog de elegir jugador
+ * @property _operationSuccess LiveData observable booleano informando de si se ha añadido correctamente la partida
+ */
 @HiltViewModel
 class ScoreGameVM @Inject constructor(
     private val insertFinishedGameUseCase: InsertFinishedGameUseCase

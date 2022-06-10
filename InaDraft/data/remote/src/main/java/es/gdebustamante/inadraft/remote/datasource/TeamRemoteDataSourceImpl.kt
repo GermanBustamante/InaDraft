@@ -4,7 +4,11 @@ import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 import es.gdebustamante.inadraft.domain.TeamBO
 import es.gdebustamante.inadraft.remote.api.InaDraftApiService
 import es.gdebustamante.inadraft.entity.toBO
+import es.gdebustamante.inadraft.game.GameRemoteDataSource
 
+/**
+ * Implementación de [TeamRemoteDataSource] que usa una BBDD para operaciones CRUD sobre formaciones
+ */
 class TeamRemoteDataSourceImpl(private val apiService: InaDraftApiService): TeamRemoteDataSource {
 
     private val teamNotSuccessful = TeamBO(-1, "null", "null")

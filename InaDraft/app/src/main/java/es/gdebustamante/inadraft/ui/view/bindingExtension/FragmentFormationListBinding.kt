@@ -9,6 +9,9 @@ import es.gdebustamante.inadraft.ui.view.fragment.FormationListFragmentDirection
 
 //region public methods
 
+/**
+ * Dado una lista de formaciones y un adapter, actualiza un recyclerView linkeado a ese adapter con esa lista
+ */
 fun FragmentFormationListBinding.onFormationListChanged(
     formations: List<FormationBO>,
     adapter: FormationAdapter,
@@ -16,11 +19,16 @@ fun FragmentFormationListBinding.onFormationListChanged(
     adapter.submitList(formations)
 }
 
+/**
+ * Linkea el listado de formaciones con el adapter pasado por parámetro
+ */
 fun FragmentFormationListBinding.setupRecyclerView(adapter: FormationAdapter) {
     formationListFragmentListOfFormations.adapter = adapter
 }
 
-
+/**
+ * Dado una formación seleccionada de una lista, navega a un [Fragment] o otro en función del clickado
+ */
 fun FragmentFormationListBinding.onFormationSelected(formation: FormationBO) {
     root.findNavController().navigate(
         when (formation.name) {

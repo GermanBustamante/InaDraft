@@ -5,6 +5,11 @@ import es.gdebustamante.inadraft.domain.combineWithFormation
 import es.gdebustamante.inadraft.game.GameLocalDataSource
 import es.gdebustamante.inadraft.game.GameRemoteDataSource
 
+/**
+ * Repositorio que será llamado desde los casos de uso para operaciones CRUD sobre partidas.
+ * En este repositorio se trabajaran con las interfaces de los DataSources, no conociendo este las implementaciones de este y abstrayendo,
+ * aplicacando inversión de dependencias y Clean Arquitechture
+ */
 class GameRepository(
     private val gameLocalDataSource: GameLocalDataSource,
     private val gameRemoteDataSource: GameRemoteDataSource,

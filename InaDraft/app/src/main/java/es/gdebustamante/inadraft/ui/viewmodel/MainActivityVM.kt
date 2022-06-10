@@ -11,6 +11,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
+/**
+ * ViewModel del dialog de elegir jugador
+ * @property _isLoading LiveData observable para mostrar la Splash Screen hasta que se pueble la BBDD
+ */
 @HiltViewModel
 class MainActivityVM @Inject constructor(
     private val populateDatabaseUseCase: PopulateDatabaseUseCase,

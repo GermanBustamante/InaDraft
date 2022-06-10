@@ -11,6 +11,19 @@ import es.gdebustamante.inadraft.databinding.RowPlayerDetailBinding
 import es.gdebustamante.inadraft.domain.PlayerBO
 import es.gdebustamante.inadraft.util.loadGlideCenterImage
 
+/**
+ * Clase utilizada para pintado de un listado de jugadores en un RecyclerView
+ *
+ * Esta clase extiende de ListAdapter, la cual usará un DiffUtil personalizado [PlayerBODiffCallback] para la optimización de esta lista y animaciones,
+ * el listado de jugadores será pasado a traves del método [ListAdapter.submitList]
+ *
+ *
+ * @author Germán De Bustamante Conde
+ *
+ * @see <a href = "https://developer.android.com/reference/androidx/recyclerview/widget/ListAdapter">Diff Util</a>
+ * @see <a href="https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter">Adapter</a>
+ * @see <a href="https://medium.com/geekculture/android-listadapter-a-better-implementation-for-the-recyclerview-1af1826a7d21">Recycler View with List Adapter</a>
+ */
 class PlayerDetailAdapter : ListAdapter<PlayerBO, PlayerDetailViewHolder>(
     PlayerBODiffCallback
 ) {
@@ -36,6 +49,9 @@ class PlayerDetailAdapter : ListAdapter<PlayerBO, PlayerDetailViewHolder>(
 
 //region viewholder
 
+/**
+ * ViewHolder personalizado para pintado de un jugador en la lista
+ */
 class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val binding = RowPlayerDetailBinding.bind(view)
 }
@@ -44,6 +60,9 @@ class PlayerDetailViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
 //region diffCallback
 
+/**
+ * DiffCallback personalizado para mejorar el rendimiento y agregar animaciones por defecto a la lista
+ */
 object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
     override fun areItemsTheSame(
         oldItem: PlayerBO,
@@ -63,6 +82,9 @@ object PlayerBODiffCallback : DiffUtil.ItemCallback<PlayerBO>() {
 
 //region private methods
 
+/**
+ * Dado un jugador en un item específico, pinta los datos de este en dicha fila
+ */
 private fun RowPlayerDetailBinding.bind(player: PlayerBO) {
     rowPlayerDetailContent.apply {
         playerDetailCardLabelPlayerMedia.text = player.average.toString()

@@ -6,12 +6,13 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.ViewBinding
-import es.gdebustamante.inadraft.R
 
+/**
+ * Clase base de fragmento para el control de memory leaks y la configuración de la navegación lateral
+ */
 abstract class BaseFragment<TypeBinding : ViewBinding> : Fragment() {
 
     protected var binding: TypeBinding? = null

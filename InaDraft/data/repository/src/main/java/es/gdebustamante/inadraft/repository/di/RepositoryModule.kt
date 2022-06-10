@@ -16,6 +16,9 @@ import es.gdebustamante.inadraft.repository.*
 import es.gdebustamante.inadraft.team.TeamLocalDataSource
 import es.gdebustamante.inadraft.team.TeamRemoteDataSource
 
+/**
+ * Modulo de inyección de dependencias sobre el módulo data:repository
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object RepositoryModule {

@@ -16,6 +16,11 @@ import es.gdebustamante.inadraft.ui.viewmodel.ChoosePlayerVM
 
 private const val PLAYER_POSITION_ID_DEFAULT = -1
 
+/**
+ * Cuadro de diálogo para mostrar un listado de jugadores al usuario y obligarle a elegir uno
+ *
+ * @see <a href="https://developer.android.com/guide/topics/ui/dialogs?hl=es-419">DialogFragment</a>
+ */
 @AndroidEntryPoint
 class ChoosePlayerDialog : DialogFragment() {
 
@@ -55,9 +60,7 @@ class ChoosePlayerDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         if (args.playerPositionId != PLAYER_POSITION_ID_DEFAULT) {
-            viewModel.randomPlayers.observe(viewLifecycleOwner) {
-                adapter?.submitList(it.toList())
-            }
+            setupVMObservers()
             viewModel.loadRandomPlayers(args.playerPositionId)
         }
     }
@@ -80,6 +83,15 @@ class ChoosePlayerDialog : DialogFragment() {
             parentFragment is ChoosePlayerListener -> parentFragment as ChoosePlayerListener
             activity is ChoosePlayerListener -> activity as ChoosePlayerListener
             else -> null
+        }
+    }
+
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
+    private fun setupVMObservers(){
+        viewModel.randomPlayers.observe(viewLifecycleOwner) {
+            adapter?.submitList(it.toList())
         }
     }
 

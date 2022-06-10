@@ -27,6 +27,11 @@ import java.util.*
 
 private const val GENERIC_USER_NICK = "Invitado"
 
+/**
+ * Cuadro de diálogo para mostrar los datos de la partida de un jugador y poder añadir un Nick para luego subir la partida a un servidor remoto
+ *
+ * @see <a href="https://developer.android.com/guide/topics/ui/dialogs?hl=es-419">DialogFragment</a>
+ */
 @AndroidEntryPoint
 class ScoreGameDialog : DialogFragment() {
 
@@ -76,6 +81,9 @@ class ScoreGameDialog : DialogFragment() {
 
     //region private methods
 
+    /**
+     * Dado unos datos sobre la partida jugada, pinta estos datos en este dialog
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     private fun DialogScoreGameBinding.setupViews(
         totalPunctuation: Int,
@@ -87,6 +95,10 @@ class ScoreGameDialog : DialogFragment() {
         scoreGameDialogProgressIndicatorTotalScore.progress = totalPunctuation/10
     }
 
+    /**
+     * Dado unos datos de la partida jugada, prepara el comportamiento al hacer click en Añadir Partida, mostrando un
+     * "Cargando" y insertando en remoto la partida jugada
+     */
     @RequiresApi(Build.VERSION_CODES.O)
     private fun DialogScoreGameBinding.setupListeners(score: Int, formationId: Int) {
         scoreGameDialogBtnAddGame.setOnClickListener {
@@ -118,6 +130,9 @@ class ScoreGameDialog : DialogFragment() {
         }
     }
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers() {
         viewModel.operationSuccess.observe(viewLifecycleOwner) {
             if (it) {

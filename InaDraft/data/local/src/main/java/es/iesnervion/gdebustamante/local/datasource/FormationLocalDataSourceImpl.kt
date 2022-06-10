@@ -6,6 +6,9 @@ import es.iesnervion.gdebustamante.local.room.dao.FormationDao
 import es.iesnervion.gdebustamante.local.room.toBO
 import es.iesnervion.gdebustamante.local.room.toDBO
 
+/**
+ * Implementación de [FormationLocalDataSource] que usa una BBDD para operaciones CRUD sobre formaciones
+ */
 class FormationLocalDataSourceImpl(
     private val formationDao: FormationDao
 ): FormationLocalDataSource {

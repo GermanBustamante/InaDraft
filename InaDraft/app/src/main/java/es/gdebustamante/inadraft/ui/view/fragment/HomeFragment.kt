@@ -9,6 +9,9 @@ import es.gdebustamante.inadraft.databinding.FragmentHomeBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setListeners
 
+/**
+ * Pantalla de inicio en la que se muestra el titulo de la App y un botón para comenzar a jugar
+ */
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 

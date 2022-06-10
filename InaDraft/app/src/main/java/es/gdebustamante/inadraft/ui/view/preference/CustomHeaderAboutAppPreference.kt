@@ -13,6 +13,9 @@ import es.gdebustamante.inadraft.util.EMPTY_STRING
 import es.gdebustamante.inadraft.util.getAppName
 import es.gdebustamante.inadraft.util.isDarkThemeOn
 
+/**
+ * Header customizado en función de si la app está en modo claro o oscuro
+ */
 class CustomHeaderAboutAppPreference @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet,

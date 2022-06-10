@@ -13,6 +13,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel del dialog de elegir jugador
+ * @property _randomPlayers LiveData observable con el listado de jugadores aleatorios a mostrar
+ */
 @HiltViewModel
 class ChoosePlayerVM @Inject constructor(
     private val getRandomPlayersByPositionUseCase: GetRandomPlayersByPositionUseCase

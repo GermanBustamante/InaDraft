@@ -17,8 +17,10 @@ import es.gdebustamante.inadraft.ui.view.dialog.choosePlayer.ChoosePlayerListene
 import es.gdebustamante.inadraft.ui.view.dialog.scoreGame.ScoreGameListener
 import es.gdebustamante.inadraft.ui.viewmodel.GameVM
 
-
-
+/**
+ * Pantalla en la que se muestran al inicio cartas de equipos vacías y el jugador va clickando en ellas hasta elegir los 11 jugadores,
+ * luego, puede clickar en el botón "Listo" para navegar a [ScoreGameDialog] y guardar la partida
+ */
 @AndroidEntryPoint
 class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), ChoosePlayerListener, ScoreGameListener {
 
@@ -73,6 +75,9 @@ class Formation442Fragment : BaseFragment<FragmentFormation442Binding>(), Choose
 
     //region private methods
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers(){
         viewModel.playersDraft.observe(viewLifecycleOwner){
             binding?.onPlayersDraftChanged(it, args.formationId)

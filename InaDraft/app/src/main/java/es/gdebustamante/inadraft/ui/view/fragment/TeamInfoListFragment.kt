@@ -12,6 +12,10 @@ import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.view.bindingExtension.*
 import es.gdebustamante.inadraft.ui.viewmodel.TeamInfoListVM
 
+/**
+ * Pantalla en la que se muestran un listado de equipos y el usuario puede clickar en una de ellos, una vez clickado, navega a
+ * un Fragment dependiendo del equipo clickado para mostrar su listado de jugadores
+ */
 @AndroidEntryPoint
 class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
@@ -55,6 +59,9 @@ class TeamInfoListFragment : BaseFragment<FragmentTeamInfoListBinding>() {
 
     //region private override methods
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers() {
         viewModel.teamList.observe(viewLifecycleOwner) {
             adapter?.let { adapter ->

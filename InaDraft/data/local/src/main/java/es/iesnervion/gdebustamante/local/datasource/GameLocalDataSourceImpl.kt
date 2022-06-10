@@ -1,11 +1,15 @@
 package es.iesnervion.gdebustamante.local.datasource
 
 import es.gdebustamante.inadraft.domain.GameBO
+import es.gdebustamante.inadraft.formation.FormationLocalDataSource
 import es.gdebustamante.inadraft.game.GameLocalDataSource
 import es.iesnervion.gdebustamante.local.room.dao.GameDao
 import es.iesnervion.gdebustamante.local.room.toDBO
 import es.iesnervion.gdebustamante.local.room.toGameBO
 
+/**
+ * Implementación de [GameLocalDataSource] que usa una BBDD para operaciones CRUD sobre partidas
+ */
 class GameLocalDataSourceImpl(private val gameDao: GameDao) : GameLocalDataSource {
 
     override suspend fun getLocalBestGames(): List<GameBO> =

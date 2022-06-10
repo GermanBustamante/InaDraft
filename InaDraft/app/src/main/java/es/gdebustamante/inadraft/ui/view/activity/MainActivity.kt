@@ -17,6 +17,9 @@ import es.gdebustamante.inadraft.databinding.ActivityMainBinding
 import es.gdebustamante.inadraft.ui.view.base.BaseActivity
 import es.gdebustamante.inadraft.ui.viewmodel.MainActivityVM
 
+/**
+ * Punto de inicio de la app que contendrá a las distintas pantallas [Fragment] por las que irá navegando
+ */
 @AndroidEntryPoint
 class MainActivity : BaseActivity() {
 

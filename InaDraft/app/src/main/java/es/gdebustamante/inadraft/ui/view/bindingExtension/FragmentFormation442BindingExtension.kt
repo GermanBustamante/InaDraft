@@ -22,6 +22,9 @@ private const val COUNTER = 1
 
 //region public methods
 
+/**
+ * Pinta los nombres previos de las posiciones de la carta
+ */
 fun FragmentFormation442Binding.setupInitialViews() {
     formation442BtnAddGame.iconTint =
         ColorStateList.valueOf(ContextCompat.getColor(root.context, R.color.white))
@@ -39,6 +42,9 @@ fun FragmentFormation442Binding.setupInitialViews() {
     contentFormationBase.formationFragmentToolbarTittle.text = FORMATION_4_4_2
 }
 
+/**
+ * Setea los click listeners para hacer las cartas clickables, definiendo su acción cuando ocurra esto
+ */
 fun FragmentFormation442Binding.setupListeners() {
     formation442Goalkeeper.root.setOnClickListener { onPlayerCardClicked(it) }
     formation442Defender1.root.setOnClickListener { onPlayerCardClicked(it) }
@@ -53,6 +59,9 @@ fun FragmentFormation442Binding.setupListeners() {
     formation442Forward2.root.setOnClickListener { onPlayerCardClicked(it) }
 }
 
+/**
+ * Setea las cartas clickables o no en función del parametro [isClickable]
+ */
 fun FragmentFormation442Binding.changeCardsClickable(isClickable : Boolean){
     formation442Goalkeeper.root.isClickable = isClickable
     formation442Defender1.root.isClickable = isClickable
@@ -67,6 +76,10 @@ fun FragmentFormation442Binding.changeCardsClickable(isClickable : Boolean){
     formation442Forward2.root.isClickable = isClickable
 }
 
+/**
+ * Dado una playerCard en la que se ha clickado, setea todas las cartas no clickables y navega a un [DialogFragment] en el que se mostrará el listado
+ * de jugadores aleatorios en función de la posición de la carta
+ */
 fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
     changeCardsClickable(false)
     val playerPositionId = when (playerCard.id) {
@@ -85,6 +98,11 @@ fun FragmentFormation442Binding.onPlayerCardClicked(playerCard: View) {
         )
 }
 
+/**
+ * Dado un listado de jugadores mapeado con los Ids de su carta correspondiente, pinta cada jugador en la carta.
+ * Además, si ya han sido elegidos todos los jugadores (tamaño de la lista = 11), hace el botón de AddGame clickable para que el usuario
+ * pueda guardar la partida y navegar a un [DialogFragment] para guardar esta
+ */
 fun FragmentFormation442Binding.onPlayersDraftChanged(
     playersMap: MutableMap<Int, PlayerBO>,
     formationId: Int,
@@ -117,17 +135,9 @@ fun FragmentFormation442Binding.onPlayersDraftChanged(
 
 //region private methods
 
-private fun drawPlayer(playerCardMiniBinding: PlayerMiniCardBinding, player: PlayerBO) {
-    playerCardMiniBinding.apply {
-        root.isClickable = false
-        playerMiniCardLabelPlayerMedia.text = player.average.toString()
-        playerMiniCardLabelPlayerPosition.text = player.position.name
-        playerMiniCardImgPlayerShield.loadGlideCenterImage(player.team.shield)
-        playerMiniCardImgPlayerPhoto.loadGlideCenterImage(player.photo)
-        playerMiniCardLabelPlayerName.text = player.firstName
-    }
-}
-
+/**
+ * Dado un id de una view carta y un jugador, llama a [drawPlayer] para pintar en un lugar específico
+ */
 private fun FragmentFormation442Binding.drawPlayerInCard(player: PlayerBO, playerCardId: Int?) {
     when (playerCardId) {
         R.id.formation442Goalkeeper -> drawPlayer(formation442Goalkeeper, player)
@@ -144,6 +154,23 @@ private fun FragmentFormation442Binding.drawPlayerInCard(player: PlayerBO, playe
     }
 }
 
+/**
+ * Pinta un jugador en una carta determinada
+ */
+private fun drawPlayer(playerCardMiniBinding: PlayerMiniCardBinding, player: PlayerBO) {
+    playerCardMiniBinding.apply {
+        root.isClickable = false
+        playerMiniCardLabelPlayerMedia.text = player.average.toString()
+        playerMiniCardLabelPlayerPosition.text = player.position.name
+        playerMiniCardImgPlayerShield.loadGlideCenterImage(player.team.shield)
+        playerMiniCardImgPlayerPhoto.loadGlideCenterImage(player.photo)
+        playerMiniCardLabelPlayerName.text = player.firstName
+    }
+}
+
+/**
+ * Pinta en una rating bar la media de un equipo sobre 5 y la media general en un texto
+ */
 private fun FragmentFormation442Binding.drawAverageTeam(players: List<PlayerBO>) {
     val averageTeamDraft = (players.sumOf { it.average } / NUMBER_OF_PLAYERS).toFloat()
     contentFormationBase.apply {

@@ -22,6 +22,9 @@ import javax.inject.Singleton
 private const val MAX_TIME_CONNECT_TIMEOUT_RETROFIT = 30L
 private const val MAX_TIME_READ_TIMEOUT_RETROFIT = 30L
 
+/**
+ * Modulo de inyección de dependencias sobre el módulo data:remote
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object RemoteModule {

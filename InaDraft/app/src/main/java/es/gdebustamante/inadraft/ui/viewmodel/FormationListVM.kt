@@ -11,6 +11,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel del fragment de listado de formaciones
+ * @property _formations LiveData observable con el listado de formaciones a mostrar
+ */
 @HiltViewModel
 class FormationListVM @Inject constructor(
     private val getFormationsUseCase: GetFormationsUseCase

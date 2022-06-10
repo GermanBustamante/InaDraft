@@ -15,6 +15,9 @@ import es.gdebustamante.inadraft.util.PREF_RATE_APP
 import es.gdebustamante.inadraft.util.SEND_EMAIL_TO_DEV
 import es.gdebustamante.inadraft.util.findPreferenceByKey
 
+/**
+ * Clase de preferences sobre la que se compone la pantalla de "Sobre nosotros"
+ */
 @AndroidEntryPoint
 class AboutAppPreferenceFragment : PreferenceFragmentCompat() {
 

@@ -1,11 +1,15 @@
 package es.iesnervion.gdebustamante.local.datasource
 
 import es.gdebustamante.inadraft.domain.PlayerBO
+import es.gdebustamante.inadraft.formation.FormationLocalDataSource
 import es.gdebustamante.inadraft.player.PlayerLocalDataSource
 import es.iesnervion.gdebustamante.local.room.dao.PlayerDao
 import es.iesnervion.gdebustamante.local.room.toDBO
 import es.iesnervion.gdebustamante.local.room.toPlayerBO
 
+/**
+ * Implementación de [PlayerLocalDataSource] que usa una BBDD para operaciones CRUD sobre jugadores
+ */
 class PlayerLocalDataSourceImpl(
     private val playerDao : PlayerDao,
 ) : PlayerLocalDataSource{

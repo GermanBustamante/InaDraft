@@ -11,6 +11,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * ViewModel del fragment de listado de jugadores con estadisticas
+ * @property _playerList LiveData observable con el listado de formaciones a mostrar
+ * @property _progressVisible LiveData observable para mostrar una vista de "Loading" o no
+ */
 @HiltViewModel
 class PlayerInfoListVM @Inject constructor(
     private val getPlayersByTeamUseCase: GetPlayersByTeamUseCase,

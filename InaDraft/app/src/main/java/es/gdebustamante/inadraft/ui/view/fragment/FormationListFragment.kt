@@ -14,6 +14,10 @@ import es.gdebustamante.inadraft.ui.view.bindingExtension.onFormationSelected
 import es.gdebustamante.inadraft.ui.view.bindingExtension.setupRecyclerView
 import es.gdebustamante.inadraft.ui.viewmodel.FormationListVM
 
+/**
+ * Pantalla en la que se muestran un listado de formaciones y el usuario puede clickar en una de ellas, una vez clickado, navega a
+ * un Fragment dependiendo de la formación clickada
+ */
 @AndroidEntryPoint
 class FormationListFragment : BaseFragment<FragmentFormationListBinding>() {
 
@@ -63,6 +67,9 @@ class FormationListFragment : BaseFragment<FragmentFormationListBinding>() {
 
     //region private methods
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers() {
         viewModel.formations.observe(viewLifecycleOwner) {
             adapter?.let { adapter ->

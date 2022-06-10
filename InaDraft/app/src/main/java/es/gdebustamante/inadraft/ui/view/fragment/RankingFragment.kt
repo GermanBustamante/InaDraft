@@ -11,6 +11,9 @@ import es.gdebustamante.inadraft.ui.adapter.GameAdapter
 import es.gdebustamante.inadraft.ui.view.base.BaseFragment
 import es.gdebustamante.inadraft.ui.viewmodel.RankingVM
 
+/**
+ * Pantalla en la que se muestran un listado de las partidas guardadas con sus puntuaciones
+ */
 @AndroidEntryPoint
 class RankingFragment : BaseFragment<FragmentRankingBinding>() {
 
@@ -60,6 +63,9 @@ class RankingFragment : BaseFragment<FragmentRankingBinding>() {
 
     //region private methods
 
+    /**
+     * Observa los liveData del VM y su comportamiento cuando estos cambiem
+     */
     private fun setupVMObservers() {
         viewModel.games.observe(viewLifecycleOwner){
             binding?.rankingFragmentProgressIndicatorLoadingBestGames?.visibility = View.GONE

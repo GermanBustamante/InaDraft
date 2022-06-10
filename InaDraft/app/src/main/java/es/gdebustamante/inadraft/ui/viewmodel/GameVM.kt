@@ -11,6 +11,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
+/**
+ * ViewModel del fragment de la pantalla de inicio
+ * @property _playersDraft LiveData observable con el listado de jugadores mapeado con el id de su carta correspondiente
+ */
 @HiltViewModel
 class GameVM @Inject constructor(
     private val getPlayerByIdUseCase: GetPlayerByIdUseCase

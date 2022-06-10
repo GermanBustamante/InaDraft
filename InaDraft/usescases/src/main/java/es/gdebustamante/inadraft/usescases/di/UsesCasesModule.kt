@@ -7,6 +7,9 @@ import dagger.hilt.components.SingletonComponent
 import es.gdebustamante.inadraft.repository.*
 import es.gdebustamante.inadraft.usescases.*
 
+/**
+ * Modulo de inyección de dependencias sobre el módulo data:usescases
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object UsesCasesModule {

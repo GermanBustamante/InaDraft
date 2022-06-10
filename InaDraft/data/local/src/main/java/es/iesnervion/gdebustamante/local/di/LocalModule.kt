@@ -17,6 +17,9 @@ import es.iesnervion.gdebustamante.local.room.dao.*
 import es.iesnervion.gdebustamante.local.room.database.InaDraftDatabase
 import javax.inject.Singleton
 
+/**
+ * Modulo de inyección de dependencias sobre el módulo data:local
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object LocalModule {
